@@ -32,7 +32,7 @@ A menu bar with at least the standard menu items is a requirement
 
 
 #### Stations:
-1. Frame Wlding Station:
+1. Frame Welding Station:
     - Button to record completion of each frame assembly
     - Deduct a specific amount of tubular steel from the stock based on the frame size and type
 
@@ -117,5 +117,19 @@ A menu bar with at least the standard menu items is a requirement
     - e.g. Sport, Tour, Commute, Compact...
 
 
+## Classes:
+- Type of bike (Standard, Sport, kids...)
+#### Bike:
+- 
 
 
+#### Customer:
+- Name
+- Address (Possible classs of its own)
+    - Address line 1
+    - Address line 2
+    - City
+    - Postcode
+    - Country
+- Phone Number
+- Orders
