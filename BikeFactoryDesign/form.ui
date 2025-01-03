@@ -36,7 +36,7 @@
      </size>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="StationsPage">
      <widget class="QTabWidget" name="Stations_TabWidget">
@@ -9225,7 +9225,7 @@
      <string>Bike Factory</string>
     </property>
     <addaction name="actionStations"/>
-    <addaction name="actionStationSatistics"/>
+    <addaction name="actionStationStatistics"/>
     <addaction name="separator"/>
     <addaction name="separator"/>
    </widget>
@@ -9283,7 +9283,7 @@
     <string>Order Management</string>
    </property>
   </action>
-  <action name="actionStationSatistics">
+  <action name="actionStationStatistics">
    <property name="text">
     <string>Satistics</string>
    </property>
@@ -9359,5 +9359,22 @@
   </action>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>actionStations</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>124</x>
+     <y>81</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>741</x>
+     <y>388</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

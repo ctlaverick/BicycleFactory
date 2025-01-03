@@ -34,16 +34,16 @@ class Ui_MainWindow(object):
         self.actionInventory_Management.setObjectName(u"actionInventory_Management")
         self.actionOrder_Management = QAction(MainWindow)
         self.actionOrder_Management.setObjectName(u"actionOrder_Management")
-        self.actionSatistics = QAction(MainWindow)
-        self.actionSatistics.setObjectName(u"actionSatistics")
+        self.actionStationSatistics = QAction(MainWindow)
+        self.actionStationSatistics.setObjectName(u"actionStationSatistics")
         self.actionClose = QAction(MainWindow)
         self.actionClose.setObjectName(u"actionClose")
         self.actionStations = QAction(MainWindow)
         self.actionStations.setObjectName(u"actionStations")
         self.actionInventoryDashboard = QAction(MainWindow)
         self.actionInventoryDashboard.setObjectName(u"actionInventoryDashboard")
-        self.actionStatistics = QAction(MainWindow)
-        self.actionStatistics.setObjectName(u"actionStatistics")
+        self.actionInventoryStatistics = QAction(MainWindow)
+        self.actionInventoryStatistics.setObjectName(u"actionInventoryStatistics")
         self.actionOrdersDashboard = QAction(MainWindow)
         self.actionOrdersDashboard.setObjectName(u"actionOrdersDashboard")
         self.actionAdd_Order = QAction(MainWindow)
@@ -64,11 +64,11 @@ class Ui_MainWindow(object):
         self.stackedWidget.setMaximumSize(QSize(1471, 761))
         self.StationsPage = QWidget()
         self.StationsPage.setObjectName(u"StationsPage")
-        self.tabWidget = QTabWidget(self.StationsPage)
-        self.tabWidget.setObjectName(u"tabWidget")
-        self.tabWidget.setGeometry(QRect(10, 10, 1131, 671))
-        self.tabWidget.setMinimumSize(QSize(1131, 446))
-        self.tabWidget.setMaximumSize(QSize(1131, 671))
+        self.Stations_TabWidget = QTabWidget(self.StationsPage)
+        self.Stations_TabWidget.setObjectName(u"Stations_TabWidget")
+        self.Stations_TabWidget.setGeometry(QRect(10, 10, 1131, 671))
+        self.Stations_TabWidget.setMinimumSize(QSize(1131, 446))
+        self.Stations_TabWidget.setMaximumSize(QSize(1131, 671))
         self.ForkStation = QWidget()
         self.ForkStation.setObjectName(u"ForkStation")
         self.gridLayout_17 = QGridLayout(self.ForkStation)
@@ -382,7 +382,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_17.addItem(self.verticalSpacer_7, 2, 1, 1, 1)
 
-        self.tabWidget.addTab(self.ForkStation, "")
+        self.Stations_TabWidget.addTab(self.ForkStation, "")
         self.FrameStation = QWidget()
         self.FrameStation.setObjectName(u"FrameStation")
         self.gridLayout_16 = QGridLayout(self.FrameStation)
@@ -693,7 +693,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_16.addItem(self.verticalSpacer_5, 2, 1, 1, 1)
 
-        self.tabWidget.addTab(self.FrameStation, "")
+        self.Stations_TabWidget.addTab(self.FrameStation, "")
         self.ChassisAssembly = QWidget()
         self.ChassisAssembly.setObjectName(u"ChassisAssembly")
         self.gridLayout_59 = QGridLayout(self.ChassisAssembly)
@@ -1110,7 +1110,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_59.addItem(self.verticalSpacer_9, 1, 2, 1, 1)
 
-        self.tabWidget.addTab(self.ChassisAssembly, "")
+        self.Stations_TabWidget.addTab(self.ChassisAssembly, "")
         self.Painting = QWidget()
         self.Painting.setObjectName(u"Painting")
         self.gridLayout_62 = QGridLayout(self.Painting)
@@ -1568,7 +1568,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_62.addItem(self.verticalSpacer_12, 1, 2, 1, 1)
 
-        self.tabWidget.addTab(self.Painting, "")
+        self.Stations_TabWidget.addTab(self.Painting, "")
         self.PedalAssembly = QWidget()
         self.PedalAssembly.setObjectName(u"PedalAssembly")
         self.gridLayout_12 = QGridLayout(self.PedalAssembly)
@@ -1873,31 +1873,31 @@ class Ui_MainWindow(object):
 
         self.gridLayout_12.addWidget(self.PedalStationInventoryBox, 0, 1, 2, 1)
 
-        self.groupBox_3 = QGroupBox(self.PedalAssembly)
-        self.groupBox_3.setObjectName(u"groupBox_3")
-        self.gridLayout_6 = QGridLayout(self.groupBox_3)
+        self.PedalsAssemblyGroupBox = QGroupBox(self.PedalAssembly)
+        self.PedalsAssemblyGroupBox.setObjectName(u"PedalsAssemblyGroupBox")
+        self.gridLayout_6 = QGridLayout(self.PedalsAssemblyGroupBox)
         self.gridLayout_6.setObjectName(u"gridLayout_6")
-        self.pushButton_2 = QPushButton(self.groupBox_3)
+        self.pushButton_2 = QPushButton(self.PedalsAssemblyGroupBox)
         self.pushButton_2.setObjectName(u"pushButton_2")
 
         self.gridLayout_6.addWidget(self.pushButton_2, 5, 0, 1, 3)
 
-        self.label_39 = QLabel(self.groupBox_3)
+        self.label_39 = QLabel(self.PedalsAssemblyGroupBox)
         self.label_39.setObjectName(u"label_39")
 
         self.gridLayout_6.addWidget(self.label_39, 0, 0, 1, 1)
 
-        self.label_38 = QLabel(self.groupBox_3)
+        self.label_38 = QLabel(self.PedalsAssemblyGroupBox)
         self.label_38.setObjectName(u"label_38")
 
         self.gridLayout_6.addWidget(self.label_38, 0, 2, 1, 1)
 
-        self.label_85 = QLabel(self.groupBox_3)
+        self.label_85 = QLabel(self.PedalsAssemblyGroupBox)
         self.label_85.setObjectName(u"label_85")
 
         self.gridLayout_6.addWidget(self.label_85, 4, 0, 1, 1)
 
-        self.label_40 = QLabel(self.groupBox_3)
+        self.label_40 = QLabel(self.PedalsAssemblyGroupBox)
         self.label_40.setObjectName(u"label_40")
 
         self.gridLayout_6.addWidget(self.label_40, 4, 2, 1, 1)
@@ -1914,24 +1914,24 @@ class Ui_MainWindow(object):
 
         self.gridLayout_6.addItem(self.horizontalSpacer_130, 1, 1, 1, 1)
 
-        self.label_60 = QLabel(self.groupBox_3)
+        self.label_60 = QLabel(self.PedalsAssemblyGroupBox)
         self.label_60.setObjectName(u"label_60")
 
         self.gridLayout_6.addWidget(self.label_60, 1, 0, 1, 1)
 
-        self.label_59 = QLabel(self.groupBox_3)
+        self.label_59 = QLabel(self.PedalsAssemblyGroupBox)
         self.label_59.setObjectName(u"label_59")
 
         self.gridLayout_6.addWidget(self.label_59, 1, 2, 1, 1)
 
 
-        self.gridLayout_12.addWidget(self.groupBox_3, 0, 2, 1, 1)
+        self.gridLayout_12.addWidget(self.PedalsAssemblyGroupBox, 0, 2, 1, 1)
 
         self.verticalSpacer = QSpacerItem(20, 441, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.gridLayout_12.addItem(self.verticalSpacer, 1, 2, 1, 1)
 
-        self.tabWidget.addTab(self.PedalAssembly, "")
+        self.Stations_TabWidget.addTab(self.PedalAssembly, "")
         self.DriveChainAssembly = QWidget()
         self.DriveChainAssembly.setObjectName(u"DriveChainAssembly")
         self.gridLayout_66 = QGridLayout(self.DriveChainAssembly)
@@ -2399,7 +2399,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_66.addWidget(self.DCAssembly, 0, 2, 1, 1)
 
-        self.tabWidget.addTab(self.DriveChainAssembly, "")
+        self.Stations_TabWidget.addTab(self.DriveChainAssembly, "")
         self.WheelAssembly = QWidget()
         self.WheelAssembly.setObjectName(u"WheelAssembly")
         self.gridLayout_67 = QGridLayout(self.WheelAssembly)
@@ -2711,31 +2711,31 @@ class Ui_MainWindow(object):
 
         self.gridLayout_67.addWidget(self.ChassisStationInventoryBox_5, 0, 1, 1, 1)
 
-        self.groupBox_6 = QGroupBox(self.WheelAssembly)
-        self.groupBox_6.setObjectName(u"groupBox_6")
-        self.gridLayout_7 = QGridLayout(self.groupBox_6)
+        self.WheelAssemblyBox = QGroupBox(self.WheelAssembly)
+        self.WheelAssemblyBox.setObjectName(u"WheelAssemblyBox")
+        self.gridLayout_7 = QGridLayout(self.WheelAssemblyBox)
         self.gridLayout_7.setObjectName(u"gridLayout_7")
-        self.label_93 = QLabel(self.groupBox_6)
+        self.label_93 = QLabel(self.WheelAssemblyBox)
         self.label_93.setObjectName(u"label_93")
 
         self.gridLayout_7.addWidget(self.label_93, 5, 2, 1, 1)
 
-        self.label_96 = QLabel(self.groupBox_6)
+        self.label_96 = QLabel(self.WheelAssemblyBox)
         self.label_96.setObjectName(u"label_96")
 
         self.gridLayout_7.addWidget(self.label_96, 7, 2, 1, 1)
 
-        self.pushButton_15 = QPushButton(self.groupBox_6)
+        self.pushButton_15 = QPushButton(self.WheelAssemblyBox)
         self.pushButton_15.setObjectName(u"pushButton_15")
 
         self.gridLayout_7.addWidget(self.pushButton_15, 8, 0, 1, 3)
 
-        self.label_97 = QLabel(self.groupBox_6)
+        self.label_97 = QLabel(self.WheelAssemblyBox)
         self.label_97.setObjectName(u"label_97")
 
         self.gridLayout_7.addWidget(self.label_97, 7, 0, 1, 1)
 
-        self.label_94 = QLabel(self.groupBox_6)
+        self.label_94 = QLabel(self.WheelAssemblyBox)
         self.label_94.setObjectName(u"label_94")
 
         self.gridLayout_7.addWidget(self.label_94, 6, 0, 1, 1)
@@ -2748,7 +2748,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_7.addItem(self.horizontalSpacer_190, 0, 1, 1, 1)
 
-        self.label_89 = QLabel(self.groupBox_6)
+        self.label_89 = QLabel(self.WheelAssemblyBox)
         self.label_89.setObjectName(u"label_89")
 
         self.gridLayout_7.addWidget(self.label_89, 0, 2, 1, 1)
@@ -2757,22 +2757,22 @@ class Ui_MainWindow(object):
 
         self.gridLayout_7.addItem(self.horizontalSpacer_220, 5, 1, 1, 1)
 
-        self.label_91 = QLabel(self.groupBox_6)
+        self.label_91 = QLabel(self.WheelAssemblyBox)
         self.label_91.setObjectName(u"label_91")
 
         self.gridLayout_7.addWidget(self.label_91, 1, 2, 1, 1)
 
-        self.label_95 = QLabel(self.groupBox_6)
+        self.label_95 = QLabel(self.WheelAssemblyBox)
         self.label_95.setObjectName(u"label_95")
 
         self.gridLayout_7.addWidget(self.label_95, 6, 2, 1, 1)
 
-        self.label_92 = QLabel(self.groupBox_6)
+        self.label_92 = QLabel(self.WheelAssemblyBox)
         self.label_92.setObjectName(u"label_92")
 
         self.gridLayout_7.addWidget(self.label_92, 5, 0, 1, 1)
 
-        self.label_90 = QLabel(self.groupBox_6)
+        self.label_90 = QLabel(self.WheelAssemblyBox)
         self.label_90.setObjectName(u"label_90")
 
         self.gridLayout_7.addWidget(self.label_90, 1, 0, 1, 1)
@@ -2785,7 +2785,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_7.addItem(self.horizontalSpacer_219, 1, 1, 1, 1)
 
-        self.label_88 = QLabel(self.groupBox_6)
+        self.label_88 = QLabel(self.WheelAssemblyBox)
         self.label_88.setObjectName(u"label_88")
 
         self.gridLayout_7.addWidget(self.label_88, 0, 0, 1, 1)
@@ -2794,20 +2794,20 @@ class Ui_MainWindow(object):
 
         self.gridLayout_7.addItem(self.horizontalSpacer_272, 2, 1, 1, 1)
 
-        self.label_42 = QLabel(self.groupBox_6)
+        self.label_42 = QLabel(self.WheelAssemblyBox)
         self.label_42.setObjectName(u"label_42")
 
         self.gridLayout_7.addWidget(self.label_42, 2, 2, 1, 1)
 
-        self.label_107 = QLabel(self.groupBox_6)
+        self.label_107 = QLabel(self.WheelAssemblyBox)
         self.label_107.setObjectName(u"label_107")
 
         self.gridLayout_7.addWidget(self.label_107, 2, 0, 1, 1)
 
 
-        self.gridLayout_67.addWidget(self.groupBox_6, 0, 2, 1, 1)
+        self.gridLayout_67.addWidget(self.WheelAssemblyBox, 0, 2, 1, 1)
 
-        self.tabWidget.addTab(self.WheelAssembly, "")
+        self.Stations_TabWidget.addTab(self.WheelAssembly, "")
         self.BrakeAssembly = QWidget()
         self.BrakeAssembly.setObjectName(u"BrakeAssembly")
         self.gridLayout_68 = QGridLayout(self.BrakeAssembly)
@@ -3231,12 +3231,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout_68.addWidget(self.BrakeAssemblyBox, 0, 2, 1, 1)
 
-        self.tabWidget.addTab(self.BrakeAssembly, "")
-        self.lightAssembly = QWidget()
-        self.lightAssembly.setObjectName(u"lightAssembly")
-        self.gridLayout_69 = QGridLayout(self.lightAssembly)
+        self.Stations_TabWidget.addTab(self.BrakeAssembly, "")
+        self.LightAssembly = QWidget()
+        self.LightAssembly.setObjectName(u"LightAssembly")
+        self.gridLayout_69 = QGridLayout(self.LightAssembly)
         self.gridLayout_69.setObjectName(u"gridLayout_69")
-        self.LightsOrder = QGroupBox(self.lightAssembly)
+        self.LightsOrder = QGroupBox(self.LightAssembly)
         self.LightsOrder.setObjectName(u"LightsOrder")
         self.LightsOrder.setMinimumSize(QSize(281, 385))
         self.gridLayout_31 = QGridLayout(self.LightsOrder)
@@ -3406,7 +3406,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_69.addWidget(self.LightsOrder, 0, 0, 1, 1)
 
-        self.ChassisStationInventoryBox_7 = QGroupBox(self.lightAssembly)
+        self.ChassisStationInventoryBox_7 = QGroupBox(self.LightAssembly)
         self.ChassisStationInventoryBox_7.setObjectName(u"ChassisStationInventoryBox_7")
         self.gridLayout_49 = QGridLayout(self.ChassisStationInventoryBox_7)
         self.gridLayout_49.setObjectName(u"gridLayout_49")
@@ -3517,11 +3517,11 @@ class Ui_MainWindow(object):
 
         self.gridLayout_69.addWidget(self.ChassisStationInventoryBox_7, 0, 1, 1, 1)
 
-        self.groupBox_8 = QGroupBox(self.lightAssembly)
-        self.groupBox_8.setObjectName(u"groupBox_8")
-        self.gridLayout_10 = QGridLayout(self.groupBox_8)
+        self.LigthAssemblyBox = QGroupBox(self.LightAssembly)
+        self.LigthAssemblyBox.setObjectName(u"LigthAssemblyBox")
+        self.gridLayout_10 = QGridLayout(self.LigthAssemblyBox)
         self.gridLayout_10.setObjectName(u"gridLayout_10")
-        self.label_219 = QLabel(self.groupBox_8)
+        self.label_219 = QLabel(self.LigthAssemblyBox)
         self.label_219.setObjectName(u"label_219")
 
         self.gridLayout_10.addWidget(self.label_219, 8, 0, 1, 1)
@@ -3530,7 +3530,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_10.addItem(self.horizontalSpacer_251, 9, 1, 1, 1)
 
-        self.label_222 = QLabel(self.groupBox_8)
+        self.label_222 = QLabel(self.LigthAssemblyBox)
         self.label_222.setObjectName(u"label_222")
 
         self.gridLayout_10.addWidget(self.label_222, 9, 2, 1, 1)
@@ -3539,12 +3539,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout_10.addItem(self.horizontalSpacer_246, 1, 1, 1, 1)
 
-        self.label_213 = QLabel(self.groupBox_8)
+        self.label_213 = QLabel(self.LigthAssemblyBox)
         self.label_213.setObjectName(u"label_213")
 
         self.gridLayout_10.addWidget(self.label_213, 5, 0, 1, 1)
 
-        self.label_210 = QLabel(self.groupBox_8)
+        self.label_210 = QLabel(self.LigthAssemblyBox)
         self.label_210.setObjectName(u"label_210")
 
         self.gridLayout_10.addWidget(self.label_210, 0, 2, 1, 1)
@@ -3553,22 +3553,22 @@ class Ui_MainWindow(object):
 
         self.gridLayout_10.addItem(self.horizontalSpacer_250, 8, 1, 1, 1)
 
-        self.label_214 = QLabel(self.groupBox_8)
+        self.label_214 = QLabel(self.LigthAssemblyBox)
         self.label_214.setObjectName(u"label_214")
 
         self.gridLayout_10.addWidget(self.label_214, 5, 2, 1, 1)
 
-        self.label_212 = QLabel(self.groupBox_8)
+        self.label_212 = QLabel(self.LigthAssemblyBox)
         self.label_212.setObjectName(u"label_212")
 
         self.gridLayout_10.addWidget(self.label_212, 1, 2, 1, 1)
 
-        self.label_216 = QLabel(self.groupBox_8)
+        self.label_216 = QLabel(self.LigthAssemblyBox)
         self.label_216.setObjectName(u"label_216")
 
         self.gridLayout_10.addWidget(self.label_216, 6, 2, 1, 1)
 
-        self.label_218 = QLabel(self.groupBox_8)
+        self.label_218 = QLabel(self.LigthAssemblyBox)
         self.label_218.setObjectName(u"label_218")
 
         self.gridLayout_10.addWidget(self.label_218, 7, 2, 1, 1)
@@ -3577,17 +3577,17 @@ class Ui_MainWindow(object):
 
         self.gridLayout_10.addItem(self.horizontalSpacer_245, 0, 1, 1, 1)
 
-        self.pushButton_17 = QPushButton(self.groupBox_8)
+        self.pushButton_17 = QPushButton(self.LigthAssemblyBox)
         self.pushButton_17.setObjectName(u"pushButton_17")
 
         self.gridLayout_10.addWidget(self.pushButton_17, 10, 0, 1, 3)
 
-        self.label_211 = QLabel(self.groupBox_8)
+        self.label_211 = QLabel(self.LigthAssemblyBox)
         self.label_211.setObjectName(u"label_211")
 
         self.gridLayout_10.addWidget(self.label_211, 1, 0, 1, 1)
 
-        self.label_215 = QLabel(self.groupBox_8)
+        self.label_215 = QLabel(self.LigthAssemblyBox)
         self.label_215.setObjectName(u"label_215")
 
         self.gridLayout_10.addWidget(self.label_215, 6, 0, 1, 1)
@@ -3600,12 +3600,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout_10.addItem(self.horizontalSpacer_248, 6, 1, 1, 1)
 
-        self.label_217 = QLabel(self.groupBox_8)
+        self.label_217 = QLabel(self.LigthAssemblyBox)
         self.label_217.setObjectName(u"label_217")
 
         self.gridLayout_10.addWidget(self.label_217, 7, 0, 1, 1)
 
-        self.label_221 = QLabel(self.groupBox_8)
+        self.label_221 = QLabel(self.LigthAssemblyBox)
         self.label_221.setObjectName(u"label_221")
 
         self.gridLayout_10.addWidget(self.label_221, 9, 0, 1, 1)
@@ -3614,12 +3614,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout_10.addItem(self.horizontalSpacer_247, 5, 1, 1, 1)
 
-        self.label_209 = QLabel(self.groupBox_8)
+        self.label_209 = QLabel(self.LigthAssemblyBox)
         self.label_209.setObjectName(u"label_209")
 
         self.gridLayout_10.addWidget(self.label_209, 0, 0, 1, 1)
 
-        self.label_220 = QLabel(self.groupBox_8)
+        self.label_220 = QLabel(self.LigthAssemblyBox)
         self.label_220.setObjectName(u"label_220")
 
         self.gridLayout_10.addWidget(self.label_220, 8, 2, 1, 1)
@@ -3628,20 +3628,20 @@ class Ui_MainWindow(object):
 
         self.gridLayout_10.addItem(self.horizontalSpacer_274, 2, 1, 1, 1)
 
-        self.label_44 = QLabel(self.groupBox_8)
+        self.label_44 = QLabel(self.LigthAssemblyBox)
         self.label_44.setObjectName(u"label_44")
 
         self.gridLayout_10.addWidget(self.label_44, 2, 2, 1, 1)
 
-        self.label_109 = QLabel(self.groupBox_8)
+        self.label_109 = QLabel(self.LigthAssemblyBox)
         self.label_109.setObjectName(u"label_109")
 
         self.gridLayout_10.addWidget(self.label_109, 2, 0, 1, 1)
 
 
-        self.gridLayout_69.addWidget(self.groupBox_8, 0, 2, 1, 1)
+        self.gridLayout_69.addWidget(self.LigthAssemblyBox, 0, 2, 1, 1)
 
-        self.tabWidget.addTab(self.lightAssembly, "")
+        self.Stations_TabWidget.addTab(self.LightAssembly, "")
         self.SeatAssembly = QWidget()
         self.SeatAssembly.setObjectName(u"SeatAssembly")
         self.gridLayout_70 = QGridLayout(self.SeatAssembly)
@@ -3959,16 +3959,16 @@ class Ui_MainWindow(object):
 
         self.gridLayout_70.addWidget(self.ChassisStationInventoryBox_8, 0, 1, 1, 1)
 
-        self.groupBox_9 = QGroupBox(self.SeatAssembly)
-        self.groupBox_9.setObjectName(u"groupBox_9")
-        self.gridLayout_11 = QGridLayout(self.groupBox_9)
+        self.LightAssemblyBox = QGroupBox(self.SeatAssembly)
+        self.LightAssemblyBox.setObjectName(u"LightAssemblyBox")
+        self.gridLayout_11 = QGridLayout(self.LightAssemblyBox)
         self.gridLayout_11.setObjectName(u"gridLayout_11")
-        self.label_227 = QLabel(self.groupBox_9)
+        self.label_227 = QLabel(self.LightAssemblyBox)
         self.label_227.setObjectName(u"label_227")
 
         self.gridLayout_11.addWidget(self.label_227, 5, 0, 1, 1)
 
-        self.label_237 = QLabel(self.groupBox_9)
+        self.label_237 = QLabel(self.LightAssemblyBox)
         self.label_237.setObjectName(u"label_237")
 
         self.gridLayout_11.addWidget(self.label_237, 10, 0, 1, 1)
@@ -3977,27 +3977,27 @@ class Ui_MainWindow(object):
 
         self.gridLayout_11.addItem(self.horizontalSpacer_265, 10, 1, 1, 1)
 
-        self.label_224 = QLabel(self.groupBox_9)
+        self.label_224 = QLabel(self.LightAssemblyBox)
         self.label_224.setObjectName(u"label_224")
 
         self.gridLayout_11.addWidget(self.label_224, 0, 2, 1, 1)
 
-        self.label_228 = QLabel(self.groupBox_9)
+        self.label_228 = QLabel(self.LightAssemblyBox)
         self.label_228.setObjectName(u"label_228")
 
         self.gridLayout_11.addWidget(self.label_228, 5, 2, 1, 1)
 
-        self.label_234 = QLabel(self.groupBox_9)
+        self.label_234 = QLabel(self.LightAssemblyBox)
         self.label_234.setObjectName(u"label_234")
 
         self.gridLayout_11.addWidget(self.label_234, 8, 2, 1, 1)
 
-        self.label_230 = QLabel(self.groupBox_9)
+        self.label_230 = QLabel(self.LightAssemblyBox)
         self.label_230.setObjectName(u"label_230")
 
         self.gridLayout_11.addWidget(self.label_230, 6, 2, 1, 1)
 
-        self.label_223 = QLabel(self.groupBox_9)
+        self.label_223 = QLabel(self.LightAssemblyBox)
         self.label_223.setObjectName(u"label_223")
 
         self.gridLayout_11.addWidget(self.label_223, 0, 0, 1, 1)
@@ -4006,17 +4006,17 @@ class Ui_MainWindow(object):
 
         self.gridLayout_11.addItem(self.horizontalSpacer_258, 9, 1, 1, 1)
 
-        self.label_226 = QLabel(self.groupBox_9)
+        self.label_226 = QLabel(self.LightAssemblyBox)
         self.label_226.setObjectName(u"label_226")
 
         self.gridLayout_11.addWidget(self.label_226, 1, 2, 1, 1)
 
-        self.label_235 = QLabel(self.groupBox_9)
+        self.label_235 = QLabel(self.LightAssemblyBox)
         self.label_235.setObjectName(u"label_235")
 
         self.gridLayout_11.addWidget(self.label_235, 9, 0, 1, 1)
 
-        self.label_225 = QLabel(self.groupBox_9)
+        self.label_225 = QLabel(self.LightAssemblyBox)
         self.label_225.setObjectName(u"label_225")
 
         self.gridLayout_11.addWidget(self.label_225, 1, 0, 1, 1)
@@ -4025,7 +4025,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_11.addItem(self.horizontalSpacer_253, 1, 1, 1, 1)
 
-        self.label_231 = QLabel(self.groupBox_9)
+        self.label_231 = QLabel(self.LightAssemblyBox)
         self.label_231.setObjectName(u"label_231")
 
         self.gridLayout_11.addWidget(self.label_231, 7, 0, 1, 1)
@@ -4034,7 +4034,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_11.addItem(self.horizontalSpacer_255, 6, 1, 1, 1)
 
-        self.label_238 = QLabel(self.groupBox_9)
+        self.label_238 = QLabel(self.LightAssemblyBox)
         self.label_238.setObjectName(u"label_238")
 
         self.gridLayout_11.addWidget(self.label_238, 10, 2, 1, 1)
@@ -4047,17 +4047,17 @@ class Ui_MainWindow(object):
 
         self.gridLayout_11.addItem(self.horizontalSpacer_252, 0, 1, 1, 1)
 
-        self.label_233 = QLabel(self.groupBox_9)
+        self.label_233 = QLabel(self.LightAssemblyBox)
         self.label_233.setObjectName(u"label_233")
 
         self.gridLayout_11.addWidget(self.label_233, 8, 0, 1, 1)
 
-        self.label_232 = QLabel(self.groupBox_9)
+        self.label_232 = QLabel(self.LightAssemblyBox)
         self.label_232.setObjectName(u"label_232")
 
         self.gridLayout_11.addWidget(self.label_232, 7, 2, 1, 1)
 
-        self.label_229 = QLabel(self.groupBox_9)
+        self.label_229 = QLabel(self.LightAssemblyBox)
         self.label_229.setObjectName(u"label_229")
 
         self.gridLayout_11.addWidget(self.label_229, 6, 0, 1, 1)
@@ -4070,12 +4070,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout_11.addItem(self.horizontalSpacer_254, 5, 1, 1, 1)
 
-        self.pushButton_18 = QPushButton(self.groupBox_9)
+        self.pushButton_18 = QPushButton(self.LightAssemblyBox)
         self.pushButton_18.setObjectName(u"pushButton_18")
 
         self.gridLayout_11.addWidget(self.pushButton_18, 13, 0, 1, 3)
 
-        self.label_236 = QLabel(self.groupBox_9)
+        self.label_236 = QLabel(self.LightAssemblyBox)
         self.label_236.setObjectName(u"label_236")
 
         self.gridLayout_11.addWidget(self.label_236, 9, 2, 1, 1)
@@ -4084,20 +4084,20 @@ class Ui_MainWindow(object):
 
         self.gridLayout_11.addItem(self.horizontalSpacer_275, 3, 1, 1, 1)
 
-        self.label_45 = QLabel(self.groupBox_9)
+        self.label_45 = QLabel(self.LightAssemblyBox)
         self.label_45.setObjectName(u"label_45")
 
         self.gridLayout_11.addWidget(self.label_45, 3, 2, 1, 1)
 
-        self.label_110 = QLabel(self.groupBox_9)
+        self.label_110 = QLabel(self.LightAssemblyBox)
         self.label_110.setObjectName(u"label_110")
 
         self.gridLayout_11.addWidget(self.label_110, 3, 0, 1, 1)
 
 
-        self.gridLayout_70.addWidget(self.groupBox_9, 0, 2, 1, 1)
+        self.gridLayout_70.addWidget(self.LightAssemblyBox, 0, 2, 1, 1)
 
-        self.tabWidget.addTab(self.SeatAssembly, "")
+        self.Stations_TabWidget.addTab(self.SeatAssembly, "")
         self.stackedWidget.addWidget(self.StationsPage)
         self.InventoryDashboardPage = QWidget()
         self.InventoryDashboardPage.setObjectName(u"InventoryDashboardPage")
@@ -4365,12 +4365,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout_75.addItem(self.verticalSpacer_2, 1, 0, 1, 1)
 
-        self.groupBox_2 = QGroupBox(self.Inventory_DashboardGroupBox)
-        self.groupBox_2.setObjectName(u"groupBox_2")
-        self.groupBox_2.setMaximumSize(QSize(1074, 629))
-        self.gridLayout_74 = QGridLayout(self.groupBox_2)
+        self.Inventory_PartsGroupBox = QGroupBox(self.Inventory_DashboardGroupBox)
+        self.Inventory_PartsGroupBox.setObjectName(u"Inventory_PartsGroupBox")
+        self.Inventory_PartsGroupBox.setMaximumSize(QSize(1074, 629))
+        self.gridLayout_74 = QGridLayout(self.Inventory_PartsGroupBox)
         self.gridLayout_74.setObjectName(u"gridLayout_74")
-        self.PartsInventory_PedalsGroupBox_6 = QGroupBox(self.groupBox_2)
+        self.PartsInventory_PedalsGroupBox_6 = QGroupBox(self.Inventory_PartsGroupBox)
         self.PartsInventory_PedalsGroupBox_6.setObjectName(u"PartsInventory_PedalsGroupBox_6")
         self.gridLayout_57 = QGridLayout(self.PartsInventory_PedalsGroupBox_6)
         self.gridLayout_57.setObjectName(u"gridLayout_57")
@@ -4457,7 +4457,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_74.addWidget(self.PartsInventory_PedalsGroupBox_6, 1, 1, 1, 1)
 
-        self.PartsInventory_PedalsGroupBox_4 = QGroupBox(self.groupBox_2)
+        self.PartsInventory_PedalsGroupBox_4 = QGroupBox(self.Inventory_PartsGroupBox)
         self.PartsInventory_PedalsGroupBox_4.setObjectName(u"PartsInventory_PedalsGroupBox_4")
         self.gridLayout_24 = QGridLayout(self.PartsInventory_PedalsGroupBox_4)
         self.gridLayout_24.setObjectName(u"gridLayout_24")
@@ -4544,7 +4544,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_74.addWidget(self.PartsInventory_PedalsGroupBox_4, 0, 1, 1, 1)
 
-        self.PartsInventory_PedalsGroupBox_2 = QGroupBox(self.groupBox_2)
+        self.PartsInventory_PedalsGroupBox_2 = QGroupBox(self.Inventory_PartsGroupBox)
         self.PartsInventory_PedalsGroupBox_2.setObjectName(u"PartsInventory_PedalsGroupBox_2")
         self.gridLayout_22 = QGridLayout(self.PartsInventory_PedalsGroupBox_2)
         self.gridLayout_22.setObjectName(u"gridLayout_22")
@@ -4631,7 +4631,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_74.addWidget(self.PartsInventory_PedalsGroupBox_2, 1, 0, 1, 1)
 
-        self.PartsInventory_PedalsGroupBox = QGroupBox(self.groupBox_2)
+        self.PartsInventory_PedalsGroupBox = QGroupBox(self.Inventory_PartsGroupBox)
         self.PartsInventory_PedalsGroupBox.setObjectName(u"PartsInventory_PedalsGroupBox")
         self.gridLayout_21 = QGridLayout(self.PartsInventory_PedalsGroupBox)
         self.gridLayout_21.setObjectName(u"gridLayout_21")
@@ -4718,7 +4718,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_74.addWidget(self.PartsInventory_PedalsGroupBox, 0, 0, 1, 1)
 
-        self.PartsInventory_PedalsGroupBox_5 = QGroupBox(self.groupBox_2)
+        self.PartsInventory_PedalsGroupBox_5 = QGroupBox(self.Inventory_PartsGroupBox)
         self.PartsInventory_PedalsGroupBox_5.setObjectName(u"PartsInventory_PedalsGroupBox_5")
         self.gridLayout_33 = QGridLayout(self.PartsInventory_PedalsGroupBox_5)
         self.gridLayout_33.setObjectName(u"gridLayout_33")
@@ -4805,7 +4805,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_74.addWidget(self.PartsInventory_PedalsGroupBox_5, 2, 1, 1, 1)
 
-        self.PartsInventory_PedalsGroupBox_3 = QGroupBox(self.groupBox_2)
+        self.PartsInventory_PedalsGroupBox_3 = QGroupBox(self.Inventory_PartsGroupBox)
         self.PartsInventory_PedalsGroupBox_3.setObjectName(u"PartsInventory_PedalsGroupBox_3")
         self.gridLayout_23 = QGridLayout(self.PartsInventory_PedalsGroupBox_3)
         self.gridLayout_23.setObjectName(u"gridLayout_23")
@@ -4892,7 +4892,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_74.addWidget(self.PartsInventory_PedalsGroupBox_3, 2, 0, 1, 1)
 
-        self.PartsInventory_PedalsGroupBox_7 = QGroupBox(self.groupBox_2)
+        self.PartsInventory_PedalsGroupBox_7 = QGroupBox(self.Inventory_PartsGroupBox)
         self.PartsInventory_PedalsGroupBox_7.setObjectName(u"PartsInventory_PedalsGroupBox_7")
         self.gridLayout_73 = QGridLayout(self.PartsInventory_PedalsGroupBox_7)
         self.gridLayout_73.setObjectName(u"gridLayout_73")
@@ -4941,20 +4941,20 @@ class Ui_MainWindow(object):
         self.gridLayout_74.addWidget(self.PartsInventory_PedalsGroupBox_7, 0, 2, 1, 1)
 
 
-        self.gridLayout_75.addWidget(self.groupBox_2, 0, 1, 2, 1)
+        self.gridLayout_75.addWidget(self.Inventory_PartsGroupBox, 0, 1, 2, 1)
 
         self.stackedWidget.addWidget(self.InventoryDashboardPage)
         self.InventoryStatisticsPage = QWidget()
         self.InventoryStatisticsPage.setObjectName(u"InventoryStatisticsPage")
-        self.label_3 = QLabel(self.InventoryStatisticsPage)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setGeometry(QRect(130, 100, 171, 20))
+        self.InventoryStatistics_GroupBox = QGroupBox(self.InventoryStatisticsPage)
+        self.InventoryStatistics_GroupBox.setObjectName(u"InventoryStatistics_GroupBox")
+        self.InventoryStatistics_GroupBox.setGeometry(QRect(10, 10, 1311, 651))
         self.stackedWidget.addWidget(self.InventoryStatisticsPage)
         self.OrdersPage = QWidget()
         self.OrdersPage.setObjectName(u"OrdersPage")
-        self.label_5 = QLabel(self.OrdersPage)
-        self.label_5.setObjectName(u"label_5")
-        self.label_5.setGeometry(QRect(20, 10, 81, 20))
+        self.OrdersPageLabel = QLabel(self.OrdersPage)
+        self.OrdersPageLabel.setObjectName(u"OrdersPageLabel")
+        self.OrdersPageLabel.setGeometry(QRect(20, 10, 81, 20))
         self.Orders_Table = QTableWidget(self.OrdersPage)
         if (self.Orders_Table.columnCount() < 11):
             self.Orders_Table.setColumnCount(11)
@@ -5224,9 +5224,9 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.NewOrderPage)
         self.StationStatisticsPage = QWidget()
         self.StationStatisticsPage.setObjectName(u"StationStatisticsPage")
-        self.label_2 = QLabel(self.StationStatisticsPage)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setGeometry(QRect(100, 20, 271, 20))
+        self.StationStatistics_GroupBox = QGroupBox(self.StationStatisticsPage)
+        self.StationStatistics_GroupBox.setObjectName(u"StationStatistics_GroupBox")
+        self.StationStatistics_GroupBox.setGeometry(QRect(10, 10, 1311, 651))
         self.stackedWidget.addWidget(self.StationStatisticsPage)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
@@ -5253,11 +5253,11 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menuInventory_Management.menuAction())
         self.menubar.addAction(self.menuOrders.menuAction())
         self.menuBike_Factory_Dashboard.addAction(self.actionStations)
-        self.menuBike_Factory_Dashboard.addAction(self.actionSatistics)
+        self.menuBike_Factory_Dashboard.addAction(self.actionStationSatistics)
         self.menuBike_Factory_Dashboard.addSeparator()
         self.menuBike_Factory_Dashboard.addSeparator()
         self.menuInventory_Management.addAction(self.actionInventoryDashboard)
-        self.menuInventory_Management.addAction(self.actionStatistics)
+        self.menuInventory_Management.addAction(self.actionInventoryStatistics)
         self.menuOrders.addAction(self.actionOrdersDashboard)
         self.menuOrders.addAction(self.actionAdd_Order)
         self.menuFile.addAction(self.actionSave)
@@ -5265,9 +5265,10 @@ class Ui_MainWindow(object):
         self.menuFile.addAction(self.actionAutosave)
 
         self.retranslateUi(MainWindow)
+        self.actionStations.triggered.connect(self.stackedWidget.setFocus)
 
-        self.stackedWidget.setCurrentIndex(3)
-        self.tabWidget.setCurrentIndex(7)
+        self.stackedWidget.setCurrentIndex(0)
+        self.Stations_TabWidget.setCurrentIndex(8)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -5278,7 +5279,7 @@ class Ui_MainWindow(object):
         self.actionDashboard.setText(QCoreApplication.translate("MainWindow", u"Dashboard", None))
         self.actionInventory_Management.setText(QCoreApplication.translate("MainWindow", u"Inventory Management", None))
         self.actionOrder_Management.setText(QCoreApplication.translate("MainWindow", u"Order Management", None))
-        self.actionSatistics.setText(QCoreApplication.translate("MainWindow", u"Satistics", None))
+        self.actionStationSatistics.setText(QCoreApplication.translate("MainWindow", u"Satistics", None))
         self.actionClose.setText(QCoreApplication.translate("MainWindow", u"Exit", None))
         self.actionStations.setText(QCoreApplication.translate("MainWindow", u"Stations", None))
 #if QT_CONFIG(shortcut)
@@ -5291,7 +5292,7 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(shortcut)
         self.actionInventoryDashboard.setShortcut(QCoreApplication.translate("MainWindow", u"Shift+I", None))
 #endif // QT_CONFIG(shortcut)
-        self.actionStatistics.setText(QCoreApplication.translate("MainWindow", u"Statistics", None))
+        self.actionInventoryStatistics.setText(QCoreApplication.translate("MainWindow", u"Statistics", None))
         self.actionOrdersDashboard.setText(QCoreApplication.translate("MainWindow", u"Dashboard", None))
 #if QT_CONFIG(shortcut)
         self.actionOrdersDashboard.setShortcut(QCoreApplication.translate("MainWindow", u"Ctrl+O", None))
@@ -5343,7 +5344,7 @@ class Ui_MainWindow(object):
         self.ForkStationForkLabel.setText(QCoreApplication.translate("MainWindow", u"Fork Type:", None))
         self.ForkWeldedButton.setText(QCoreApplication.translate("MainWindow", u"Fork Welded", None))
         self.ForkStationForkValue.setText(QCoreApplication.translate("MainWindow", u"[Fork Type]", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.ForkStation), QCoreApplication.translate("MainWindow", u"Forks", None))
+        self.Stations_TabWidget.setTabText(self.Stations_TabWidget.indexOf(self.ForkStation), QCoreApplication.translate("MainWindow", u"Forks", None))
         self.GroupBoxOrder.setTitle(QCoreApplication.translate("MainWindow", u"Order Information", None))
         self.LightsType.setText(QCoreApplication.translate("MainWindow", u"Lights", None))
         self.Colour.setText(QCoreApplication.translate("MainWindow", u"[Bike Type]", None))
@@ -5378,7 +5379,7 @@ class Ui_MainWindow(object):
         self.FrameWeldingStationLabel.setText(QCoreApplication.translate("MainWindow", u"Frame Type:", None))
         self.FrameWeldingStationType.setText(QCoreApplication.translate("MainWindow", u"[Frame Type]", None))
         self.FrameWeldingStationButton.setText(QCoreApplication.translate("MainWindow", u"Frame Welded", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.FrameStation), QCoreApplication.translate("MainWindow", u"Frames", None))
+        self.Stations_TabWidget.setTabText(self.Stations_TabWidget.indexOf(self.FrameStation), QCoreApplication.translate("MainWindow", u"Frames", None))
         self.ChassisOrder.setTitle(QCoreApplication.translate("MainWindow", u"Order Information", None))
         self.BrakesLabel_3.setText(QCoreApplication.translate("MainWindow", u"Brakes", None))
         self.OrderNumber_3.setText(QCoreApplication.translate("MainWindow", u"[Order Number]", None))
@@ -5421,7 +5422,7 @@ class Ui_MainWindow(object):
         self.ChassisAssemblyTypeLabel.setText(QCoreApplication.translate("MainWindow", u"Chassis Type:", None))
         self.ChassisAssemblyType.setText(QCoreApplication.translate("MainWindow", u"[Chassis Type]", None))
         self.ChassisAssemblyButton.setText(QCoreApplication.translate("MainWindow", u"Chassis Assembled", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.ChassisAssembly), QCoreApplication.translate("MainWindow", u"Chassis Assembly", None))
+        self.Stations_TabWidget.setTabText(self.Stations_TabWidget.indexOf(self.ChassisAssembly), QCoreApplication.translate("MainWindow", u"Chassis Assembly", None))
         self.PaintingStationInventoryBox.setTitle(QCoreApplication.translate("MainWindow", u"Station Inventory", None))
         self.PaintingChassisInventoryBox.setTitle(QCoreApplication.translate("MainWindow", u"Chassis Inventory", None))
         self.PaintStationInventoryTotalChassisLabel.setText(QCoreApplication.translate("MainWindow", u"Total Chassis", None))
@@ -5467,7 +5468,7 @@ class Ui_MainWindow(object):
         self.LightsLabel_5.setText(QCoreApplication.translate("MainWindow", u"Lights", None))
         self.WheelsLabel_5.setText(QCoreApplication.translate("MainWindow", u"Wheels", None))
         self.WheelType_5.setText(QCoreApplication.translate("MainWindow", u"Wheel Type:", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.Painting), QCoreApplication.translate("MainWindow", u"Painting", None))
+        self.Stations_TabWidget.setTabText(self.Stations_TabWidget.indexOf(self.Painting), QCoreApplication.translate("MainWindow", u"Painting", None))
         self.PedalsOrder.setTitle(QCoreApplication.translate("MainWindow", u"Order Information", None))
         self.BrakesLabel_4.setText(QCoreApplication.translate("MainWindow", u"Brakes", None))
         self.PartsLabel_4.setText(QCoreApplication.translate("MainWindow", u"Parts", None))
@@ -5503,7 +5504,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Chassis Type", None));
         ___qtablewidgetitem1 = self.PedalStationInventoryChassisTable.horizontalHeaderItem(1)
         ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Paint Colour", None));
-        self.groupBox_3.setTitle(QCoreApplication.translate("MainWindow", u"Pedal Assembly", None))
+        self.PedalsAssemblyGroupBox.setTitle(QCoreApplication.translate("MainWindow", u"Pedal Assembly", None))
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u" Assembled", None))
         self.label_39.setText(QCoreApplication.translate("MainWindow", u"Chassis Type:", None))
         self.label_38.setText(QCoreApplication.translate("MainWindow", u"[Bike Type]", None))
@@ -5511,7 +5512,7 @@ class Ui_MainWindow(object):
         self.label_40.setText(QCoreApplication.translate("MainWindow", u"[Pedal Type]", None))
         self.label_60.setText(QCoreApplication.translate("MainWindow", u"Colour:", None))
         self.label_59.setText(QCoreApplication.translate("MainWindow", u"[Colour]", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.PedalAssembly), QCoreApplication.translate("MainWindow", u"Pedals", None))
+        self.Stations_TabWidget.setTabText(self.Stations_TabWidget.indexOf(self.PedalAssembly), QCoreApplication.translate("MainWindow", u"Pedals", None))
         self.DriveChainOrder.setTitle(QCoreApplication.translate("MainWindow", u"Order Information", None))
         self.ColourLabel_7.setText(QCoreApplication.translate("MainWindow", u"Colour:", None))
         self.SeatLabel_7.setText(QCoreApplication.translate("MainWindow", u"Seat", None))
@@ -5567,7 +5568,7 @@ class Ui_MainWindow(object):
         self.DCAssemblyChainLabel.setText(QCoreApplication.translate("MainWindow", u"Chain Type:", None))
         self.DCAssemblyPedalValue.setText(QCoreApplication.translate("MainWindow", u"[Pedal Type]", None))
         self.DCAssemblyPedalLabel.setText(QCoreApplication.translate("MainWindow", u"Pedal Type:", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.DriveChainAssembly), QCoreApplication.translate("MainWindow", u"Drive Chain", None))
+        self.Stations_TabWidget.setTabText(self.Stations_TabWidget.indexOf(self.DriveChainAssembly), QCoreApplication.translate("MainWindow", u"Drive Chain", None))
         self.WheelsOrder.setTitle(QCoreApplication.translate("MainWindow", u"Order Information", None))
         self.Colour_6.setText(QCoreApplication.translate("MainWindow", u"[Bike Type]", None))
         self.OrderNumber_6.setText(QCoreApplication.translate("MainWindow", u"[Order Number]", None))
@@ -5609,7 +5610,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"Gear", None));
         ___qtablewidgetitem9 = self.tableWidget_3.horizontalHeaderItem(4)
         ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"Chain", None));
-        self.groupBox_6.setTitle(QCoreApplication.translate("MainWindow", u"Wheel Assembly", None))
+        self.WheelAssemblyBox.setTitle(QCoreApplication.translate("MainWindow", u"Wheel Assembly", None))
         self.label_93.setText(QCoreApplication.translate("MainWindow", u"[Chain Type]", None))
         self.label_96.setText(QCoreApplication.translate("MainWindow", u"[Wheel Type]", None))
         self.pushButton_15.setText(QCoreApplication.translate("MainWindow", u"Wheels Assembled", None))
@@ -5623,7 +5624,7 @@ class Ui_MainWindow(object):
         self.label_88.setText(QCoreApplication.translate("MainWindow", u"Chassis Type:", None))
         self.label_42.setText(QCoreApplication.translate("MainWindow", u"[Pedal Type]", None))
         self.label_107.setText(QCoreApplication.translate("MainWindow", u"Pedal Type:", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.WheelAssembly), QCoreApplication.translate("MainWindow", u"Wheels", None))
+        self.Stations_TabWidget.setTabText(self.Stations_TabWidget.indexOf(self.WheelAssembly), QCoreApplication.translate("MainWindow", u"Wheels", None))
         self.BrakesOrder.setTitle(QCoreApplication.translate("MainWindow", u"Order Information", None))
         self.BrakesLabel_8.setText(QCoreApplication.translate("MainWindow", u"Brakes", None))
         self.OrderNumberLabel_8.setText(QCoreApplication.translate("MainWindow", u"Order Number:", None))
@@ -5683,7 +5684,7 @@ class Ui_MainWindow(object):
         self.BrakeAssemblyColourValue.setText(QCoreApplication.translate("MainWindow", u"[Colour]", None))
         self.BrakeAssemblyPedalValue.setText(QCoreApplication.translate("MainWindow", u"[Pedal Type]", None))
         self.BrakeAssemblyPedalLabel.setText(QCoreApplication.translate("MainWindow", u"Pedal Type", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.BrakeAssembly), QCoreApplication.translate("MainWindow", u"Brakes", None))
+        self.Stations_TabWidget.setTabText(self.Stations_TabWidget.indexOf(self.BrakeAssembly), QCoreApplication.translate("MainWindow", u"Brakes", None))
         self.LightsOrder.setTitle(QCoreApplication.translate("MainWindow", u"Order Information", None))
         self.BikeTypeLabel_9.setText(QCoreApplication.translate("MainWindow", u"Bike Type:", None))
         self.PartsLabel_9.setText(QCoreApplication.translate("MainWindow", u"Parts", None))
@@ -5727,7 +5728,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"Wheels", None));
         ___qtablewidgetitem22 = self.tableWidget_5.horizontalHeaderItem(6)
         ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"Brakes", None));
-        self.groupBox_8.setTitle(QCoreApplication.translate("MainWindow", u"Light Assembly", None))
+        self.LigthAssemblyBox.setTitle(QCoreApplication.translate("MainWindow", u"Light Assembly", None))
         self.label_219.setText(QCoreApplication.translate("MainWindow", u"Brake Type:", None))
         self.label_222.setText(QCoreApplication.translate("MainWindow", u"[Light Type]", None))
         self.label_213.setText(QCoreApplication.translate("MainWindow", u"Chain Type:", None))
@@ -5745,7 +5746,7 @@ class Ui_MainWindow(object):
         self.label_220.setText(QCoreApplication.translate("MainWindow", u"[Brake Type]", None))
         self.label_44.setText(QCoreApplication.translate("MainWindow", u"[Pedal Type]", None))
         self.label_109.setText(QCoreApplication.translate("MainWindow", u"Pedal Type", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.lightAssembly), QCoreApplication.translate("MainWindow", u"Lights", None))
+        self.Stations_TabWidget.setTabText(self.Stations_TabWidget.indexOf(self.LightAssembly), QCoreApplication.translate("MainWindow", u"Lights", None))
         self.SeatsOrder.setTitle(QCoreApplication.translate("MainWindow", u"Order Information", None))
         self.PedalType_10.setText(QCoreApplication.translate("MainWindow", u"Pedal Type", None))
         self.SeatLabel_10.setText(QCoreApplication.translate("MainWindow", u"Seat", None))
@@ -5793,7 +5794,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem29.setText(QCoreApplication.translate("MainWindow", u"Brakes", None));
         ___qtablewidgetitem30 = self.tableWidget_6.horizontalHeaderItem(7)
         ___qtablewidgetitem30.setText(QCoreApplication.translate("MainWindow", u"Lights", None));
-        self.groupBox_9.setTitle(QCoreApplication.translate("MainWindow", u"Light Assembly", None))
+        self.LightAssemblyBox.setTitle(QCoreApplication.translate("MainWindow", u"Light Assembly", None))
         self.label_227.setText(QCoreApplication.translate("MainWindow", u"Chain Type:", None))
         self.label_237.setText(QCoreApplication.translate("MainWindow", u"Seat Type:", None))
         self.label_224.setText(QCoreApplication.translate("MainWindow", u"[Bike Type]", None))
@@ -5813,7 +5814,7 @@ class Ui_MainWindow(object):
         self.label_236.setText(QCoreApplication.translate("MainWindow", u"[Light Type]", None))
         self.label_45.setText(QCoreApplication.translate("MainWindow", u"[Pedal Type]", None))
         self.label_110.setText(QCoreApplication.translate("MainWindow", u"Pedal Type", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.SeatAssembly), QCoreApplication.translate("MainWindow", u"Seats", None))
+        self.Stations_TabWidget.setTabText(self.Stations_TabWidget.indexOf(self.SeatAssembly), QCoreApplication.translate("MainWindow", u"Seats", None))
         self.Inventory_DashboardGroupBox.setTitle(QCoreApplication.translate("MainWindow", u"Inventory Dashboard", None))
         self.Inevntory_RawMaterialsGroupBox.setTitle(QCoreApplication.translate("MainWindow", u"Raw Materials", None))
         self.Inventory_RawMaterial_Label.setText(QCoreApplication.translate("MainWindow", u"Tubular Steel", None))
@@ -5853,7 +5854,7 @@ class Ui_MainWindow(object):
         self.Inventory_RawMaterial_InventoryControlLabel.setText(QCoreApplication.translate("MainWindow", u"Inventory Controls", None))
         self.Inventory_RawMaterial_InventoryLabel.setText(QCoreApplication.translate("MainWindow", u"Inventory", None))
         self.Inventory_RawMaterial_ItemLabel.setText(QCoreApplication.translate("MainWindow", u"Item", None))
-        self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"Parts Inventory", None))
+        self.Inventory_PartsGroupBox.setTitle(QCoreApplication.translate("MainWindow", u"Parts Inventory", None))
         self.PartsInventory_PedalsGroupBox_6.setTitle(QCoreApplication.translate("MainWindow", u"Brakes", None))
         self.Inventory_Parts_Pedals_NormalLabel_6.setText(QCoreApplication.translate("MainWindow", u"Normal", None))
         self.Inventory_Parts_Pedals_NormalIncrease_6.setText(QCoreApplication.translate("MainWindow", u"Increase", None))
@@ -5939,8 +5940,8 @@ class Ui_MainWindow(object):
         self.Inventory_Parts_Pedals_PremiumLabel_10.setText(QCoreApplication.translate("MainWindow", u"Premium LEDs", None))
         self.Inventory_Parts_Pedals_PremiumIncrease_10.setText(QCoreApplication.translate("MainWindow", u"Increase", None))
         self.Inventory_Parts_Pedals_PremiumDecrease_10.setText(QCoreApplication.translate("MainWindow", u"Decrease", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Inventory Statistics", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Orders Page", None))
+        self.InventoryStatistics_GroupBox.setTitle(QCoreApplication.translate("MainWindow", u"Inventory Statistics", None))
+        self.OrdersPageLabel.setText(QCoreApplication.translate("MainWindow", u"Orders Page", None))
         ___qtablewidgetitem31 = self.Orders_Table.horizontalHeaderItem(0)
         ___qtablewidgetitem31.setText(QCoreApplication.translate("MainWindow", u"Order ID", None));
         ___qtablewidgetitem32 = self.Orders_Table.horizontalHeaderItem(1)
@@ -6032,7 +6033,7 @@ class Ui_MainWindow(object):
         self.NewOrder_CityLabel.setText(QCoreApplication.translate("MainWindow", u"City:", None))
         self.NewOrder_PostcodeLabel.setText(QCoreApplication.translate("MainWindow", u"Postcode:", None))
         self.NewOrder_SubmitOrderButton.setText(QCoreApplication.translate("MainWindow", u"Submit Order", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Station Statistics Page", None))
+        self.StationStatistics_GroupBox.setTitle(QCoreApplication.translate("MainWindow", u"Station Statistics", None))
         self.menuBike_Factory_Dashboard.setTitle(QCoreApplication.translate("MainWindow", u"Bike Factory", None))
         self.menuInventory_Management.setTitle(QCoreApplication.translate("MainWindow", u"Inventory", None))
         self.menuOrders.setTitle(QCoreApplication.translate("MainWindow", u"Orders", None))
