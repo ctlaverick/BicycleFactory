@@ -18,7 +18,7 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>0</y>
+      <y>30</y>
       <width>1351</width>
       <height>761</height>
      </rect>
@@ -42,8 +42,8 @@
      <widget class="QTabWidget" name="Stations_TabWidget">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>20</y>
+        <x>10</x>
+        <y>10</y>
         <width>1131</width>
         <height>671</height>
        </rect>
@@ -6301,18 +6301,39 @@
               <string>Lights Inventory</string>
              </property>
              <layout class="QGridLayout" name="gridLayout_50">
-              <item row="1" column="1" colspan="2">
-               <spacer name="horizontalSpacer_237">
+              <item row="0" column="1" colspan="2">
+               <spacer name="horizontalSpacer_239">
                 <property name="orientation">
                  <enum>Qt::Orientation::Horizontal</enum>
                 </property>
                 <property name="sizeHint" stdset="0">
                  <size>
-                  <width>40</width>
+                  <width>37</width>
                   <height>20</height>
                  </size>
                 </property>
                </spacer>
+              </item>
+              <item row="2" column="0" colspan="2">
+               <widget class="QLabel" name="PedalStationInventoryTotalKidsChassisLabel_16">
+                <property name="text">
+                 <string>Premium LEDs</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="3">
+               <widget class="QLCDNumber" name="PedalStationInventoryKidsChassis_15">
+                <property name="segmentStyle">
+                 <enum>QLCDNumber::SegmentStyle::Flat</enum>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="3">
+               <widget class="QLCDNumber" name="PedalStationInventoryNormalChassis_9">
+                <property name="segmentStyle">
+                 <enum>QLCDNumber::SegmentStyle::Flat</enum>
+                </property>
+               </widget>
               </item>
               <item row="2" column="2">
                <spacer name="horizontalSpacer_241">
@@ -6327,21 +6348,8 @@
                 </property>
                </spacer>
               </item>
-              <item row="0" column="1" colspan="2">
-               <spacer name="horizontalSpacer_239">
-                <property name="orientation">
-                 <enum>Qt::Orientation::Horizontal</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>37</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-              <item row="1" column="3">
-               <widget class="QLCDNumber" name="PedalStationInventoryNormalChassis_9">
+              <item row="0" column="3">
+               <widget class="QLCDNumber" name="PedalStationInventoryTotalChassis_11">
                 <property name="segmentStyle">
                  <enum>QLCDNumber::SegmentStyle::Flat</enum>
                 </property>
@@ -6354,31 +6362,23 @@
                 </property>
                </widget>
               </item>
-              <item row="2" column="3">
-               <widget class="QLCDNumber" name="PedalStationInventoryKidsChassis_15">
-                <property name="segmentStyle">
-                 <enum>QLCDNumber::SegmentStyle::Flat</enum>
+              <item row="1" column="1" colspan="2">
+               <spacer name="horizontalSpacer_237">
+                <property name="orientation">
+                 <enum>Qt::Orientation::Horizontal</enum>
                 </property>
-               </widget>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
               </item>
               <item row="1" column="0">
                <widget class="QLabel" name="PedalStationInventoryNormalChassisLabel_8">
                 <property name="text">
                  <string>Normal Lights</string>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="0" colspan="2">
-               <widget class="QLabel" name="PedalStationInventoryTotalKidsChassisLabel_16">
-                <property name="text">
-                 <string>Premium LEDs</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="3">
-               <widget class="QLCDNumber" name="PedalStationInventoryTotalChassis_11">
-                <property name="segmentStyle">
-                 <enum>QLCDNumber::SegmentStyle::Flat</enum>
                 </property>
                </widget>
               </item>
@@ -9210,6 +9210,102 @@
      </widget>
     </widget>
    </widget>
+   <widget class="QPushButton" name="Stations_ViewButton">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>83</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Stations</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="StationStatistics_ViewButton">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>0</y>
+      <width>131</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Station Statistics</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="InventoryStatistics_ViewButton">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>0</y>
+      <width>141</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Inventory Statistics</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Inventory_ViewButton">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>0</y>
+      <width>93</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Inventory</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="NewOrder_ViewButton">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>0</y>
+      <width>91</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>New Order</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Orders_ViewButton">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>0</y>
+      <width>91</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Orders</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1484</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionSave_2"/>
+    <addaction name="actionClose_2"/>
+   </widget>
+   <addaction name="menuFile"/>
   </widget>
   <action name="actionDashboard">
    <property name="text">
@@ -9300,24 +9396,20 @@
     <string>Ctrl+Shift+S</string>
    </property>
   </action>
+  <action name="actionSave_2">
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionClose_2">
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>actionStations</sender>
-   <signal>triggered()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>setFocus()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>124</x>
-     <y>81</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>741</x>
-     <y>388</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
