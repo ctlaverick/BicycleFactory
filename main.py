@@ -1724,9 +1724,9 @@ if __name__ == "__main__":
                         InventoryChange("Road Chassis", - 1.0)
                     elif paint_Station_Order[0].bike_order.bike_type == "Track Bike":
                         InventoryChange("Track Chassis", - 1.0)
-                    elif paint_Station_Order[0].bike_order.bike_type == "BMX Bike":
+                    elif paint_Station_Order[0].bike_order.bike_type == "BMX":
                         InventoryChange("BMX Chassis", - 1.0)
-                    elif paint_Station_Order[0].bike_order.bike_type == "Kids Bike":
+                    elif paint_Station_Order[0].bike_order.bike_type == "Kids":
                         InventoryChange("Kids Chassis", - 1.0)
                     InventoryChange(paint_Station_Order[0].bike_order.colour + " Paint", - 1.0)
                     # Move order to Pedal Station
@@ -2454,9 +2454,9 @@ if __name__ == "__main__":
                 # Check has required amounts
                 if BrakeHasRequiredAmount():
                     # Remove Brakes From Inventory
-                    if brakes_Station_Order[0].bike_order.wheels == "Standard":
+                    if brakes_Station_Order[0].bike_order.brakes == "Standard":
                         InventoryChange("Normal Brakes", - 2.0)
-                    elif brakes_Station_Order[0].bike_order.wheels == "Premium":
+                    elif brakes_Station_Order[0].bike_order.brakes == "Premium":
                         InventoryChange("Premium Brakes", - 2.0)
                     else:
                         ValueError("brakes_Station_Order[0].bike_order.brakes IS NOT SET CORRECTLY")
