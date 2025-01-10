@@ -1,5 +1,6 @@
 # Bicycle Factory
-
+Student ID: W22063136
+Name: Charles Laverick
 ## Brief
 
 Create a Python application that streamlines the production process of bicycles, incorporating various assembly stations, inventory management, and customer order management. You will need to fill in any details not explicitly stated in this specification, using your creativity and programming skills to enhance the functionality of the app.
