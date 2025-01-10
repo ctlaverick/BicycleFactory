@@ -1470,6 +1470,7 @@ if __name__ == "__main__":
             window.FrameStation_Brakes_Value.setText("[Brake Type]")
             window.FrameStation_Lights_Value.setText("[Lights Type]")
             window.FrameStation_Seat_Value.setText("[Seat Type]")
+            window.FrameStationFrameValue.setText("[Frame Type]")
             window.FrameStationTubularSteelRequiredCount.display(0)
             window.FrameStationTubularAluminiumRequiredCount.display(0)
             window.FrameStationCarbonRequiredCount.display(0)
@@ -1801,9 +1802,9 @@ if __name__ == "__main__":
             elif paint_Station_Order[0].bike_order.bike_type == "Track Bike":
                 window.PaintStationChassisValue.setText("Track Chassis")
             elif paint_Station_Order[0].bike_order.bike_type == "BMX":
-                window.PaintStationChassisValue.setText("Mountain Chassis")
+                window.PaintStationChassisValue.setText("BMX Chassis")
             elif paint_Station_Order[0].bike_order.bike_type == "Kids":
-                window.PaintStationChassisValue.setText("Mountain Chassis")
+                window.PaintStationChassisValue.setText("Kids Chassis")
             else:
                 ValueError("The bike type for the order is wrong and does not match bikes being made in this factory.")
             
@@ -2456,7 +2457,7 @@ if __name__ == "__main__":
                     # Remove Brakes From Inventory
                     if brakes_Station_Order[0].bike_order.brakes == "Standard":
                         InventoryChange("Normal Brakes", - 2.0)
-                    elif brakes_Station_Order[0].bike_order.brakes == "Premium":
+                    elif brakes_Station_Order[0].bike_order.brakes == "Premium Disc Brakes":
                         InventoryChange("Premium Brakes", - 2.0)
                     else:
                         ValueError("brakes_Station_Order[0].bike_order.brakes IS NOT SET CORRECTLY")
@@ -2651,7 +2652,7 @@ if __name__ == "__main__":
                     # Remove Brakes From Inventory
                     if lights_Station_Order[0].bike_order.lights == "Standard":
                         InventoryChange("Normal Lights", - 2.0)
-                    elif lights_Station_Order[0].bike_order.lights == "Premium":
+                    elif lights_Station_Order[0].bike_order.lights == "Premium LEDs":
                         InventoryChange("Premium Lights", - 2.0)
                     else:
                         ValueError("lights_Station_Order[0].bike_order.brakes IS NOT SET CORRECTLY")
@@ -2815,7 +2816,7 @@ if __name__ == "__main__":
                     # Remove Brakes From Inventory
                     if seat_Station_Order[0].bike_order.seat == "Standard":
                         InventoryChange("Normal Seat", - 1.0)
-                    elif seat_Station_Order[0].bike_order.seat == "Premium":
+                    elif seat_Station_Order[0].bike_order.seat == "Premium Gel Seat":
                         InventoryChange("Premium Seat", - 1.0)
                     elif seat_Station_Order[0].bike_order.seat == "Carbon Fibre":
                         InventoryChange("Carbon Fibre Seat", - 1.0)
