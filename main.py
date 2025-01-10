@@ -110,9 +110,29 @@ if __name__ == "__main__":
             # Check if Chassis Station has orders
             if len(chassis_Station_Order) > 0:
                 # Check if they now have required amount
-                if chassis_Station_Order[0].bike_order.fork == "Tubular Steel" and window.ChassisStationInventorySteelForksCount.value() > 0 and chassis_Station_Order[0].bike_order.frame == "Tubular Steel" and window.ChassisStationInventorySteelFrameCount.value() > 0:
-                    # Enable station button
-                    window.ChassisAssemblyButton.setEnabled(True)
+                if chassis_Station_Order[0].bike_order.fork == "Tubular Steel" and chassis_Station_Order[0].bike_order.frame == "Tubular Steel":
+                    if type(chassis_Station_Order[0].bike_order) == Bike:
+                        if window.ChassisStationInventoryStandardForksCount.value() > 0 and window.ChassisStationInventoryStandardFrameCount.value() > 0:
+                            window.ChassisAssemblyButton.setEnabled(True)
+                        else:
+                            window.ChassisAssemblyButton.setEnabled(False)
+                    elif type(chassis_Station_Order[0].bike_order) == MountainBike:
+                        if window.ChassisStationInventoryMountainForksCount.value() > 0 and window.ChassisStationInventoryMountainFrameCount.value() > 0:
+                            window.ChassisAssemblyButton.setEnabled(True)
+                        else:
+                            window.ChassisAssemblyButton.setEnabled(False)
+                    elif type(chassis_Station_Order[0].bike_order) == BMXBike:
+                        if window.ChassisStationInventoryBMXForksCount.value() > 0 and window.ChassisStationInventoryBMXFrameCount.value() > 0:
+                            window.ChassisAssemblyButton.setEnabled(True)
+                        else:
+                            window.ChassisAssemblyButton.setEnabled(False)
+                    elif type(chassis_Station_Order[0].bike_order) == KidsBike:
+                        if window.ChassisStationInventoryKidsForksCount.value() > 0 and window.ChassisStationInventoryKidsFrameCount.value() > 0:
+                            window.ChassisAssemblyButton.setEnabled(True)
+                        else:
+                            window.ChassisAssemblyButton.setEnabled(False)
+                    else:
+                        TypeError("Bike type is not recognised for chassis_Station_Order[0].bike_order")
 
                 elif chassis_Station_Order[0].bike_order.fork == "Tubular Aluminium" and window.ChassisStationInventoryAluminiumForksCount.value() > 0 and chassis_Station_Order[0].bike_order.frame == "Tubular Aluminium" and window.ChassisStationInventoryAluminiumFrameCount.value() > 0:
                     # Enable station button
@@ -294,17 +314,21 @@ if __name__ == "__main__":
         # Forks
 
         inventory["Total Forks"] = window.ForkStationInventoryTotalForksCount
-        inventory["Steel Forks"] = [window.ForkStationInventoryTubularSteelForksCount, window.ForkStationInventoryTotalForksCount, window.ChassisStationInventoryTotalForksCount, window.ChassisStationInventorySteelForksCount]
-        inventory["Aluminium Forks"] = [window.ForkStationInventoryTubularAluminiumForksCount, window.ForkStationInventoryTotalForksCount, window.ChassisStationInventoryTotalForksCount, window.ChassisStationInventoryAluminiumForksCount]
-        inventory["Carbon Forks"] = [window.ForkStationInventoryCarbonForksCount, window.ForkStationInventoryTotalForksCount,  window.ChassisStationInventoryTotalForksCount, window.ChassisStationInventoryCarbonForksCount]
+        inventory["Standard Forks"] = [window.ForkStationInventoryStandardForksCount, window.ForkStationInventoryTotalForksCount, window.ChassisStationInventoryTotalForksCount, window.ChassisStationInventoryStandardForksCount]
+        inventory["Mountain Forks"] = [window.ForkStationInventoryMountainForksCount, window.ForkStationInventoryTotalForksCount, window.ChassisStationInventoryTotalForksCount, window.ChassisStationInventoryMountainForksCount]
+        inventory["BMX Forks"] = [window.ForkStationInventoryBMXForksCount, window.ForkStationInventoryTotalForksCount, window.ChassisStationInventoryTotalForksCount, window.ChassisStationInventoryBMXForksCount]
+        inventory["Road Forks"] = [window.ForkStationInventoryTubularAluminiumForksCount, window.ForkStationInventoryTotalForksCount, window.ChassisStationInventoryTotalForksCount, window.ChassisStationInventoryAluminiumForksCount]
+        inventory["Track Forks"] = [window.ForkStationInventoryCarbonForksCount, window.ForkStationInventoryTotalForksCount,  window.ChassisStationInventoryTotalForksCount, window.ChassisStationInventoryCarbonForksCount]
         inventory["Kids Forks"] = [window.ForkStationInventoryKidsForksCount, window.ForkStationInventoryTotalForksCount, window.ChassisStationInventoryTotalForksCount, window.ChassisStationInventoryKidsForksCount]
 
         # Frames
 
         inventory["Total Frames"] = window.FrameStationInventoryTotalFramesCount
-        inventory["Steel Frames"] = [window.FrameStationInventorySteelFrameCount, window.FrameStationInventoryTotalFramesCount, window.ChassisStationInventoryTotalFrameCount, window.ChassisStationInventorySteelFrameCount]
-        inventory["Aluminium Frames"] = [window.FrameStationInventoryAluminiumFrameCount, window.FrameStationInventoryTotalFramesCount, window.ChassisStationInventoryTotalFrameCount, window.ChassisStationInventoryAluminiumFrameCount]
-        inventory["Carbon Frames"] = [window.FrameStationInventoryCarbonFrameCount, window.FrameStationInventoryTotalFramesCount, window.ChassisStationInventoryTotalFrameCount, window.ChassisStationInventoryCarbonFrameCount]
+        inventory["Standard Frames"] = [window.FrameStationInventoryStandardFrameCount, window.FrameStationInventoryTotalFramesCount, window.ChassisStationInventoryTotalFrameCount, window.ChassisStationInventoryStandardFrameCount]
+        inventory["Mountain Frames"] = [window.FrameStationInventoryMountainFrameCount, window.FrameStationInventoryTotalFramesCount, window.ChassisStationInventoryTotalFrameCount, window.ChassisStationInventoryMountainFrameCount]
+        inventory["BMX Frames"] = [window.FrameStationInventoryBMXFrameCount, window.FrameStationInventoryTotalFramesCount, window.ChassisStationInventoryTotalFrameCount, window.ChassisStationInventoryBMXFrameCount]
+        inventory["Road Frames"] = [window.FrameStationInventoryAluminiumFrameCount, window.FrameStationInventoryTotalFramesCount, window.ChassisStationInventoryTotalFrameCount, window.ChassisStationInventoryAluminiumFrameCount]
+        inventory["Track Frames"] = [window.FrameStationInventoryCarbonFrameCount, window.FrameStationInventoryTotalFramesCount, window.ChassisStationInventoryTotalFrameCount, window.ChassisStationInventoryCarbonFrameCount]
         inventory["Kids Frames"] = [window.FrameStationInventoryKidsFrameCount, window.FrameStationInventoryTotalFramesCount, window.ChassisStationInventoryTotalFrameCount, window.ChassisStationInventoryKidsFrameCount]
 
         # Chassis
@@ -687,7 +711,7 @@ if __name__ == "__main__":
 
         if colour == "":
             window.NewOrder_ErrorMessage.setEnabled(True)
-            window.NewOrder_ErrorMessage.setText("Your order cannot be completed without a colour address. \nPlease enter one and try again.")
+            window.NewOrder_ErrorMessage.setText("Your order cannot be completed without a colour. \nPlease enter one and try again.")
         else:
             if bike_type == "Standard":
                 bike = Bike(colour, pedal, brake, light, seat, gear, chain, wheel)
@@ -1170,23 +1194,34 @@ if __name__ == "__main__":
 
             if fork_Station_Order[0].id == int(window.ForkStation_OrderNumber_Value.text()):
                 if fork_Station_Order[0].bike_order.fork == "Tubular Steel" and window.ForkStationTubularSteelRequiredCount.value() <= inventory["Steel"][0].value():
-                    # Take away required amount
-                    InventoryChange("Steel", - window.ForkStationTubularSteelRequiredCount.value())
-                    # Add the new part to inventory
-                    InventoryChange("Steel Forks", + 1)
+                    if type(fork_Station_Order[0].bike_order)== Bike:
+                        InventoryChange("Steel", - window.ForkStationTubularSteelRequiredCount.value())
+                        InventoryChange("Standard Forks", + 1)
+                    elif type(fork_Station_Order[0].bike_order)== MountainBike:
+                        InventoryChange("Steel", - window.ForkStationTubularSteelRequiredCount.value())
+                        InventoryChange("Mountain Forks", + 1)
+                    elif type(fork_Station_Order[0].bike_order)== BMXBike:
+                        InventoryChange("Steel", - window.ForkStationTubularSteelRequiredCount.value())
+                        InventoryChange("BMX Forks", + 1)
+                    elif type(fork_Station_Order[0].bike_order)== KidsBike:
+                        InventoryChange("Steel", - window.ForkStationTubularSteelRequiredCount.value())
+                        InventoryChange("Kids Forks", + 1)
+                    else:
+                        TypeError("fork_Station_Order[0].bike_order type is not a Bike type")
                     ForkOrderToFrameOrder()
+
                 elif fork_Station_Order[0].bike_order.fork == "Tubular Aluminium" and window.ForkStationTubularAluminiumRequiredCount.value() <= inventory["Aluminium"][0].value():
                     # Take away required amount
                     InventoryChange("Aluminium", - window.ForkStationTubularAluminiumRequiredCount.value())
                     # Add the new part to inventory
-                    InventoryChange("Aluminium Forks", + 1)
+                    InventoryChange("Road Forks", + 1)
                     ForkOrderToFrameOrder()
 
                 elif fork_Station_Order[0].bike_order.fork == "Carbon Fibre" and window.ForkStationCarbonRequiredCount.value() <= inventory["Carbon Fibre"][0].value():
                      # Take away required amount
                     InventoryChange("Carbon Fibre", - window.ForkStationCarbonRequiredCount.value())
                     # Add the new part to inventory
-                    InventoryChange("Carbon Forks", + 1)
+                    InventoryChange("Track Forks", + 1)
                     ForkOrderToFrameOrder()
 
                 else:
@@ -1304,23 +1339,34 @@ if __name__ == "__main__":
 
             if frame_Station_Order[0].id == int(window.FrameStation_OrderNumber_Value.text()):
                 if frame_Station_Order[0].bike_order.frame == "Tubular Steel" and window.FrameStationTubularSteelRequiredCount.value() <= inventory["Steel"][0].value():
-                    # Take away required material
-                    InventoryChange("Steel", - window.FrameStationTubularSteelRequiredCount.value())
-                    # Add the new part to inventory
-                    InventoryChange("Steel Frames", + 1)
+                    if type(frame_Station_Order[0].bike_order)== Bike:
+                        InventoryChange("Steel", - window.FrameStationTubularSteelRequiredCount.value())
+                        InventoryChange("Standard Frames", + 1)
+                    elif type(frame_Station_Order[0].bike_order)== MountainBike:
+                        InventoryChange("Steel", - window.FrameStationTubularSteelRequiredCount.value())
+                        InventoryChange("Mountain Frames", + 1)
+                    elif type(frame_Station_Order[0].bike_order)== BMXBike:
+                        InventoryChange("Steel", - window.FrameStationTubularSteelRequiredCount.value())
+                        InventoryChange("BMX Frames", + 1)
+                    elif type(frame_Station_Order[0].bike_order)== KidsBike:
+                        InventoryChange("Steel", - window.FrameStationTubularSteelRequiredCount.value())
+                        InventoryChange("Kids Frames", + 1)
+                    else:
+                        TypeError("fork_Station_Order[0].bike_order type is not a Bike type")
+
                     FrameOrderToChassisOrder()
                 elif frame_Station_Order[0].bike_order.frame == "Tubular Aluminium" and window.FrameStationTubularAluminiumRequiredCount.value() <= inventory["Aluminium"][0].value():
                     # Take away required material
                     InventoryChange("Aluminium", - window.FrameStationTubularAluminiumRequiredCount.value())
                     # Add the new part to inventory
-                    InventoryChange("Aluminium Frames", + 1)
+                    InventoryChange("Road Frames", + 1)
                     FrameOrderToChassisOrder()
 
                 elif frame_Station_Order[0].bike_order.frame == "Carbon Fibre" and window.FrameStationCarbonRequiredCount.value() <= inventory["Carbon Fibre"][0].value():
                     # Take away required material
                     InventoryChange("Carbon Fibre", - window.FrameStationCarbonRequiredCount.value())
                     # Add the new part to inventory
-                    InventoryChange("Carbon Frames", + 1)
+                    InventoryChange("Track Frames", + 1)
                     FrameOrderToChassisOrder()
 
                 else:
@@ -1437,33 +1483,55 @@ if __name__ == "__main__":
         if len(chassis_Station_Order) > 0:
 
             if chassis_Station_Order[0].id == int(window.ChassisStation_OrderNumber_Value.text()):
-                if chassis_Station_Order[0].bike_order.fork == "Tubular Steel" and window.ChassisStationInventorySteelForksCount.value() >= 1 and chassis_Station_Order[0].bike_order.frame == "Tubular Steel" and window.ChassisStationInventorySteelFrameCount.value() >= 1:
-                    # Remove Inventory
-                    InventoryChange("Steel Forks", - 1.0)
-                    InventoryChange("Steel Frames", - 1.0)
+                if chassis_Station_Order[0].bike_order.fork == "Tubular Steel" and chassis_Station_Order[0].bike_order.frame == "Tubular Steel":
+
                     #Check the Bike type
                     if chassis_Station_Order[0].bike_order.bike_type == "Standard":
-                        # Add New Chassis To Inventory
-                        InventoryChange("Standard Chassis", 1.0)
+                        if window.ChassisStationInventoryStandardForksCount.value() > 0 and window.ChassisStationInventoryStandardFrameCount.value() > 0:
+                            # Remove Inventory
+                            InventoryChange("Standard Forks", - 1.0)
+                            InventoryChange("Standard Frames", - 1.0)
+                            # Add New Chassis To Inventory
+                            InventoryChange("Standard Chassis", 1.0)
+                        else:
+                            ValueError("Somehow the button to assemble is enabled even without required amounts")
                     elif chassis_Station_Order[0].bike_order.bike_type == "Mountain Bike":
-                        # Add New Chassis To Inventory
-                        InventoryChange("Mountain Chassis", 1.0)
+                        if window.ChassisStationInventoryMountainForksCount.value() > 0 and window.ChassisStationInventoryMountainFrameCount.value() > 0:
+                            # Remove Inventory
+                            InventoryChange("Mountain Forks", - 1.0)
+                            InventoryChange("Mountain Frames", - 1.0)
+                            # Add New Chassis To Inventory
+                            InventoryChange("Mountain Chassis", 1.0)
+                        else:
+                            ValueError("Somehow the button to assemble is enabled even without required amounts")
                     elif chassis_Station_Order[0].bike_order.bike_type == "BMX":
-                        # Add New Chassis To Inventory
-                        InventoryChange("BMX Chassis", 1.0)
+                        if window.ChassisStationInventoryBMXForksCount.value() > 0 and window.ChassisStationInventoryBMXFrameCount.value() > 0:
+                            # Remove Inventory
+                            InventoryChange("BMX Forks", - 1.0)
+                            InventoryChange("BMX Frames", - 1.0)
+                            # Add New Chassis To Inventory
+                            InventoryChange("BMX Chassis", 1.0)
+                        else:
+                            ValueError("Somehow the button to assemble is enabled even without required amounts")
                     elif chassis_Station_Order[0].bike_order.bike_type == "Kids":
-                        # Add New Chassis To Inventory
-                        InventoryChange("Kids Chassis", 1.0)
+                        if window.ChassisStationInventoryKidsForksCount.value() > 0 and window.ChassisStationInventoryKidsFrameCount.value() > 0:
+                            # Remove Inventory
+                            InventoryChange("Kids Forks", - 1.0)
+                            InventoryChange("Kids Frames", - 1.0)
+                            # Add New Chassis To Inventory
+                            InventoryChange("Kids Chassis", 1.0)
+                        else:
+                            ValueError("Somehow the button to assemble is enabled even without required amounts")
                     else:
-                        ValueError("The bike type for the order is wrong for the matieral being used. Should not be possible.")
+                        TypeError("The bike type for the order is wrong for the matieral being used. Should not be possible.")
 
                     # Move the order to next station
                     ChassisOrderToPaintOrder()
 
                 elif chassis_Station_Order[0].bike_order.fork == "Tubular Aluminium" and window.ChassisStationInventoryAluminiumForksCount.value() >= 1 and chassis_Station_Order[0].bike_order.frame == "Tubular Aluminium" and window.ChassisStationInventoryAluminiumFrameCount.value() >= 1:
                     # Remove Inventory
-                    InventoryChange("Aluminium Forks", - 1.0)
-                    InventoryChange("Aluminium Frames", - 1.0)
+                    InventoryChange("Road Forks", - 1.0)
+                    InventoryChange("Road Frames", - 1.0)
                     #Check the Bike type
                     if chassis_Station_Order[0].bike_order.bike_type == "Road Bike":
                         # Add New Chassis To Inventory
@@ -1474,8 +1542,8 @@ if __name__ == "__main__":
                 
                 elif chassis_Station_Order[0].bike_order.fork == "Carbon Fibre" and window.ChassisStationInventoryCarbonForksCount.value() >= 1 and chassis_Station_Order[0].bike_order.frame == "Carbon Fibre" and window.ChassisStationInventoryCarbonFrameCount.value() >= 1:
                     # Remove Inventory
-                    InventoryChange("Carbon Forks", - 1.0)
-                    InventoryChange("Carbon Frames", - 1.0)
+                    InventoryChange("Track Forks", - 1.0)
+                    InventoryChange("Track Frames", - 1.0)
                     if chassis_Station_Order[0].bike_order.bike_type == "Track Bike":
                         # Add New Chassis To Inventory
                         InventoryChange("Track Chassis", 1.0)
@@ -1558,10 +1626,33 @@ if __name__ == "__main__":
                 ValueError("The bike type for the order is wrong and does not match bikes being made in this factory.")
 
             # If has required amount enable button
-            if chassis_Station_Order[0].bike_order.fork == "Tubular Steel" and window.ChassisStationInventorySteelForksCount.value() > 0 and chassis_Station_Order[0].bike_order.frame == "Tubular Steel" and window.ChassisStationInventorySteelFrameCount.value() > 0:
-                window.ChassisAssemblyButton.setEnabled(True)
+            if chassis_Station_Order[0].bike_order.fork == "Tubular Steel" and chassis_Station_Order[0].bike_order.frame == "Tubular Steel":
+                if type(chassis_Station_Order[0].bike_order) == Bike:
+                    if window.ChassisStationInventoryStandardForksCount.value() > 0 and window.ChassisStationInventoryStandardFrameCount.value() > 0:
+                        window.ChassisAssemblyButton.setEnabled(True)
+                    else:
+                        window.ChassisAssemblyButton.setEnabled(False)
+                elif type(chassis_Station_Order[0].bike_order) == MountainBike:
+                    if window.ChassisStationInventoryMountainForksCount.value() > 0 and window.ChassisStationInventoryMountainFrameCount.value() > 0:
+                        window.ChassisAssemblyButton.setEnabled(True)
+                    else:
+                        window.ChassisAssemblyButton.setEnabled(False)
+                elif type(chassis_Station_Order[0].bike_order) == BMXBike:
+                    if window.ChassisStationInventoryBMXForksCount.value() > 0 and window.ChassisStationInventoryBMXFrameCount.value() > 0:
+                        window.ChassisAssemblyButton.setEnabled(True)
+                    else:
+                        window.ChassisAssemblyButton.setEnabled(False)
+                elif type(chassis_Station_Order[0].bike_order) == KidsBike:
+                    if window.ChassisStationInventoryKidsForksCount.value() > 0 and window.ChassisStationInventoryKidsFrameCount.value() > 0:
+                        window.ChassisAssemblyButton.setEnabled(True)
+                    else:
+                        window.ChassisAssemblyButton.setEnabled(False)
+                else:
+                    TypeError("Bike type is not recognised for chassis_Station_Order[0].bike_order")
+
             elif chassis_Station_Order[0].bike_order.fork == "Tubular Aluminium" and window.ChassisStationInventoryAluminiumForksCount.value() > 0 and chassis_Station_Order[0].bike_order.frame == "Tubular Aluminium" and window.ChassisStationInventoryAluminiumFrameCount.value() > 0:
                 window.ChassisAssemblyButton.setEnabled(True)
+
             elif chassis_Station_Order[0].bike_order.fork == "Carbon Fibre" and window.ChassisStationInventoryCarbonForksCount.value() > 0 and chassis_Station_Order[0].bike_order.frame == "Carbon Fibre" and window.ChassisStationInventoryCarbonFrameCount.value() > 0:
                 window.ChassisAssemblyButton.setEnabled(True)
             else:

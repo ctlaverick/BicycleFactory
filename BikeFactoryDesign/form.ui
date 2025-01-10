@@ -30,10 +30,10 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="StationsPage">
-       <layout class="QVBoxLayout" name="verticalLayout">
+       <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
          <widget class="QTabWidget" name="Stations_TabWidget">
           <property name="enabled">
@@ -417,43 +417,7 @@
                   <string>Forks Inventory</string>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_56">
-                  <item row="1" column="1">
-                   <spacer name="horizontalSpacer_131">
-                    <property name="orientation">
-                     <enum>Qt::Orientation::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>60</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item row="2" column="1">
-                   <spacer name="horizontalSpacer_144">
-                    <property name="orientation">
-                     <enum>Qt::Orientation::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>60</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item row="0" column="2">
-                   <widget class="QLCDNumber" name="ForkStationInventoryTotalForksCount">
-                    <property name="styleSheet">
-                     <string notr="true">QLCDNumber {background-color: red;}</string>
-                    </property>
-                    <property name="segmentStyle">
-                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="6" column="2">
+                  <item row="8" column="2">
                    <widget class="QLCDNumber" name="ForkStationInventoryKidsForksCount">
                     <property name="styleSheet">
                      <string notr="true">QLCDNumber {background-color: red;}</string>
@@ -463,64 +427,10 @@
                     </property>
                    </widget>
                   </item>
-                  <item row="0" column="0">
-                   <widget class="QLabel" name="ForkStationInventoryTotalForksLabel">
-                    <property name="text">
-                     <string>Total Forks</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="2">
-                   <widget class="QLCDNumber" name="ForkStationInventoryTubularSteelForksCount">
-                    <property name="styleSheet">
-                     <string notr="true">QLCDNumber {background-color: red;}</string>
-                    </property>
-                    <property name="segmentStyle">
-                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="0">
-                   <widget class="QLabel" name="ForkStationInventoryTubularSteelForksLabel">
-                    <property name="text">
-                     <string>Steel Forks</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="6" column="1">
-                   <spacer name="horizontalSpacer_145">
-                    <property name="orientation">
-                     <enum>Qt::Orientation::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>60</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item row="2" column="2">
-                   <widget class="QLCDNumber" name="ForkStationInventoryTubularAluminiumForksCount">
-                    <property name="styleSheet">
-                     <string notr="true">QLCDNumber {background-color: red;}</string>
-                    </property>
-                    <property name="segmentStyle">
-                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="6" column="0">
+                  <item row="8" column="0">
                    <widget class="QLabel" name="ForkStationInventoryKidsForksLabel">
                     <property name="text">
                      <string>Kids Forks</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="0">
-                   <widget class="QLabel" name="ForkStationInventoryTubularAluminiumForksLabel">
-                    <property name="text">
-                     <string>Aluminium Forks</string>
                     </property>
                    </widget>
                   </item>
@@ -537,14 +447,78 @@
                     </property>
                    </spacer>
                   </item>
-                  <item row="3" column="0">
-                   <widget class="QLabel" name="ForkStationInventoryCarbonForksLabel">
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="ForkStationInventoryTubularMountainForksLabel">
                     <property name="text">
-                     <string>Carbon Fibre Forks</string>
+                     <string>Mountain Forks</string>
                     </property>
                    </widget>
                   </item>
-                  <item row="3" column="1">
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="ForkStationInventoryCarbonForksLabel">
+                    <property name="text">
+                     <string>Track Bike Forks</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="ForkStationInventoryTotalForksLabel">
+                    <property name="text">
+                     <string>Total Forks</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="ForkStationInventoryTubularStandardForksLabel">
+                    <property name="text">
+                     <string>Standard Forks</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <spacer name="horizontalSpacer_131">
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>60</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="8" column="1">
+                   <spacer name="horizontalSpacer_145">
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>60</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="5" column="2">
+                   <widget class="QLCDNumber" name="ForkStationInventoryCarbonForksCount">
+                    <property name="styleSheet">
+                     <string notr="true">QLCDNumber {background-color: red;}</string>
+                    </property>
+                    <property name="segmentStyle">
+                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="ForkStationInventoryTubularAluminiumForksLabel">
+                    <property name="text">
+                     <string>Road Forks</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="1">
                    <spacer name="horizontalSpacer_158">
                     <property name="orientation">
                      <enum>Qt::Orientation::Horizontal</enum>
@@ -557,8 +531,8 @@
                     </property>
                    </spacer>
                   </item>
-                  <item row="3" column="2">
-                   <widget class="QLCDNumber" name="ForkStationInventoryCarbonForksCount">
+                  <item row="4" column="2">
+                   <widget class="QLCDNumber" name="ForkStationInventoryTubularAluminiumForksCount">
                     <property name="styleSheet">
                      <string notr="true">QLCDNumber {background-color: red;}</string>
                     </property>
@@ -566,6 +540,86 @@
                      <enum>QLCDNumber::SegmentStyle::Flat</enum>
                     </property>
                    </widget>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QLCDNumber" name="ForkStationInventoryTotalForksCount">
+                    <property name="styleSheet">
+                     <string notr="true">QLCDNumber {background-color: red;}</string>
+                    </property>
+                    <property name="segmentStyle">
+                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
+                   <spacer name="horizontalSpacer_144">
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>60</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="1" column="2">
+                   <widget class="QLCDNumber" name="ForkStationInventoryStandardForksCount">
+                    <property name="styleSheet">
+                     <string notr="true">QLCDNumber {background-color: red;}</string>
+                    </property>
+                    <property name="segmentStyle">
+                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="ForkStationInventoryTubularBMXForksLabel">
+                    <property name="text">
+                     <string>BMX Forks</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="2">
+                   <widget class="QLCDNumber" name="ForkStationInventoryMountainForksCount">
+                    <property name="styleSheet">
+                     <string notr="true">QLCDNumber {background-color: red;}</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="2">
+                   <widget class="QLCDNumber" name="ForkStationInventoryBMXForksCount">
+                    <property name="styleSheet">
+                     <string notr="true">QLCDNumber {background-color: red;}</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <spacer name="horizontalSpacer">
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="3" column="1">
+                   <spacer name="horizontalSpacer_2">
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
                   </item>
                  </layout>
                 </widget>
@@ -1229,23 +1283,13 @@
                   <string>Frames Inventory</string>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_55">
-                  <item row="2" column="1">
-                   <spacer name="horizontalSpacer_25">
-                    <property name="orientation">
-                     <enum>Qt::Orientation::Horizontal</enum>
+                  <item row="5" column="2">
+                   <widget class="QLCDNumber" name="FrameStationInventoryCarbonFrameCount">
+                    <property name="styleSheet">
+                     <string notr="true">QLCDNumber {background-color: red;}</string>
                     </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>40</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item row="2" column="0">
-                   <widget class="QLabel" name="FrameStationInventoryAluminiumFrameLabel">
-                    <property name="text">
-                     <string>Aluminium Frames</string>
+                    <property name="segmentStyle">
+                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
                     </property>
                    </widget>
                   </item>
@@ -1256,10 +1300,10 @@
                     </property>
                    </widget>
                   </item>
-                  <item row="1" column="0">
-                   <widget class="QLabel" name="FrameStationInventorySteelFrameLabel">
+                  <item row="8" column="0">
+                   <widget class="QLabel" name="FrameStationInventoryKidsFrameLabel">
                     <property name="text">
-                     <string>Steel Frames</string>
+                     <string>Kids Frames</string>
                     </property>
                    </widget>
                   </item>
@@ -1276,53 +1320,10 @@
                     </property>
                    </spacer>
                   </item>
-                  <item row="2" column="2">
-                   <widget class="QLCDNumber" name="FrameStationInventoryAluminiumFrameCount">
-                    <property name="styleSheet">
-                     <string notr="true">QLCDNumber {background-color: red;}</string>
-                    </property>
-                    <property name="segmentStyle">
-                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="6" column="1">
-                   <spacer name="horizontalSpacer_26">
-                    <property name="orientation">
-                     <enum>Qt::Orientation::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>20</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item row="1" column="2">
-                   <widget class="QLCDNumber" name="FrameStationInventorySteelFrameCount">
-                    <property name="styleSheet">
-                     <string notr="true">QLCDNumber {background-color: red;}</string>
-                    </property>
-                    <property name="segmentStyle">
-                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="6" column="0">
-                   <widget class="QLabel" name="FrameStationInventoryKidsFrameLabel">
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="FrameStationInventoryAluminiumFrameLabel">
                     <property name="text">
-                     <string>Kids Frames</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="6" column="2">
-                   <widget class="QLCDNumber" name="FrameStationInventoryKidsFrameCount">
-                    <property name="styleSheet">
-                     <string notr="true">QLCDNumber {background-color: red;}</string>
-                    </property>
-                    <property name="segmentStyle">
-                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
+                     <string>Road Frames</string>
                     </property>
                    </widget>
                   </item>
@@ -1339,8 +1340,8 @@
                     </property>
                    </spacer>
                   </item>
-                  <item row="0" column="2">
-                   <widget class="QLCDNumber" name="FrameStationInventoryTotalFramesCount">
+                  <item row="1" column="2">
+                   <widget class="QLCDNumber" name="FrameStationInventoryStandardFrameCount">
                     <property name="styleSheet">
                      <string notr="true">QLCDNumber {background-color: red;}</string>
                     </property>
@@ -1349,17 +1350,7 @@
                     </property>
                    </widget>
                   </item>
-                  <item row="3" column="2">
-                   <widget class="QLCDNumber" name="FrameStationInventoryCarbonFrameCount">
-                    <property name="styleSheet">
-                     <string notr="true">QLCDNumber {background-color: red;}</string>
-                    </property>
-                    <property name="segmentStyle">
-                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="3" column="1">
+                  <item row="5" column="1">
                    <spacer name="horizontalSpacer_31">
                     <property name="orientation">
                      <enum>Qt::Orientation::Horizontal</enum>
@@ -1372,12 +1363,129 @@
                     </property>
                    </spacer>
                   </item>
-                  <item row="3" column="0">
-                   <widget class="QLabel" name="FrameStationInventoryCarbonFrameLabel">
-                    <property name="text">
-                     <string>Carbon Fibre Frames</string>
+                  <item row="8" column="2">
+                   <widget class="QLCDNumber" name="FrameStationInventoryKidsFrameCount">
+                    <property name="styleSheet">
+                     <string notr="true">QLCDNumber {background-color: red;}</string>
+                    </property>
+                    <property name="segmentStyle">
+                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
                     </property>
                    </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="FrameStationInventoryStandardFrameLabel">
+                    <property name="text">
+                     <string>Standard Frames</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="1">
+                   <spacer name="horizontalSpacer_26">
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="FrameStationInventoryMountainFrameLabel">
+                    <property name="text">
+                     <string>Mountain Frames</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
+                   <spacer name="horizontalSpacer_25">
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QLCDNumber" name="FrameStationInventoryTotalFramesCount">
+                    <property name="styleSheet">
+                     <string notr="true">QLCDNumber {background-color: red;}</string>
+                    </property>
+                    <property name="segmentStyle">
+                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="2">
+                   <widget class="QLCDNumber" name="FrameStationInventoryAluminiumFrameCount">
+                    <property name="styleSheet">
+                     <string notr="true">QLCDNumber {background-color: red;}</string>
+                    </property>
+                    <property name="segmentStyle">
+                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="FrameStationInventoryCarbonFrameLabel">
+                    <property name="text">
+                     <string>Track Frames</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="FrameStationInventoryBMXFrameLabel">
+                    <property name="text">
+                     <string>BMX Frames</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="2">
+                   <widget class="QLCDNumber" name="FrameStationInventoryMountainFrameCount">
+                    <property name="styleSheet">
+                     <string notr="true">QLCDNumber {background-color: red;}</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="2">
+                   <widget class="QLCDNumber" name="FrameStationInventoryBMXFrameCount">
+                    <property name="styleSheet">
+                     <string notr="true">QLCDNumber {background-color: red;}</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <spacer name="horizontalSpacer_9">
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="3" column="1">
+                   <spacer name="horizontalSpacer_10">
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
                   </item>
                  </layout>
                 </widget>
@@ -1923,7 +2031,95 @@
                   <string>Frames Inventory</string>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_65">
-                  <item row="2" column="1">
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="ChassisStationCarbonFrameLabel">
+                    <property name="text">
+                     <string>Track Frames</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="ChassisStationStandardFrameLabel">
+                    <property name="text">
+                     <string>Standard Frames</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="ChassisStationAluminiumFrameLabel">
+                    <property name="text">
+                     <string>Road Frames</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="2">
+                   <widget class="QLCDNumber" name="ChassisStationInventoryStandardFrameCount">
+                    <property name="styleSheet">
+                     <string notr="true">QLCDNumber {background-color: red;}</string>
+                    </property>
+                    <property name="segmentStyle">
+                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="2">
+                   <widget class="QLCDNumber" name="ChassisStationInventoryKidsFrameCount">
+                    <property name="styleSheet">
+                     <string notr="true">QLCDNumber {background-color: red;}</string>
+                    </property>
+                    <property name="segmentStyle">
+                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="ChassisStationMountainFrameLabel">
+                    <property name="text">
+                     <string>Mountain Frames</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="2">
+                   <widget class="QLCDNumber" name="ChassisStationInventoryAluminiumFrameCount">
+                    <property name="styleSheet">
+                     <string notr="true">QLCDNumber {background-color: red;}</string>
+                    </property>
+                    <property name="segmentStyle">
+                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="1">
+                   <spacer name="horizontalSpacer_36">
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="ChassisStationTotalFrameLabel">
+                    <property name="text">
+                     <string>Total Frames</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QLCDNumber" name="ChassisStationInventoryTotalFrameCount">
+                    <property name="styleSheet">
+                     <string notr="true">QLCDNumber {background-color: red;}</string>
+                    </property>
+                    <property name="segmentStyle">
+                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
                    <spacer name="horizontalSpacer_32">
                     <property name="orientation">
                      <enum>Qt::Orientation::Horizontal</enum>
@@ -1936,24 +2132,26 @@
                     </property>
                    </spacer>
                   </item>
-                  <item row="2" column="0">
-                   <widget class="QLabel" name="ChassisStationAluminiumFrameLabel">
-                    <property name="text">
-                     <string>Aluminium Frames</string>
+                  <item row="8" column="1">
+                   <spacer name="horizontalSpacer_34">
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Horizontal</enum>
                     </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="0">
-                   <widget class="QLabel" name="ChassisStationTotalFrameLabel">
-                    <property name="text">
-                     <string>Total Frames</string>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>20</height>
+                     </size>
                     </property>
-                   </widget>
+                   </spacer>
                   </item>
-                  <item row="1" column="0">
-                   <widget class="QLabel" name="ChassisStationSteelFrameLabel">
-                    <property name="text">
-                     <string>Steel Frames</string>
+                  <item row="5" column="2">
+                   <widget class="QLCDNumber" name="ChassisStationInventoryCarbonFrameCount">
+                    <property name="styleSheet">
+                     <string notr="true">QLCDNumber {background-color: red;}</string>
+                    </property>
+                    <property name="segmentStyle">
+                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
                     </property>
                    </widget>
                   </item>
@@ -1970,56 +2168,6 @@
                     </property>
                    </spacer>
                   </item>
-                  <item row="2" column="2">
-                   <widget class="QLCDNumber" name="ChassisStationInventoryAluminiumFrameCount">
-                    <property name="styleSheet">
-                     <string notr="true">QLCDNumber {background-color: red;}</string>
-                    </property>
-                    <property name="segmentStyle">
-                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="6" column="1">
-                   <spacer name="horizontalSpacer_34">
-                    <property name="orientation">
-                     <enum>Qt::Orientation::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>20</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item row="1" column="2">
-                   <widget class="QLCDNumber" name="ChassisStationInventorySteelFrameCount">
-                    <property name="styleSheet">
-                     <string notr="true">QLCDNumber {background-color: red;}</string>
-                    </property>
-                    <property name="segmentStyle">
-                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="6" column="0">
-                   <widget class="QLabel" name="ChassisStationKidsFrameLabel">
-                    <property name="text">
-                     <string>Kids Frames</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="6" column="2">
-                   <widget class="QLCDNumber" name="ChassisStationInventoryKidsFrameCount">
-                    <property name="styleSheet">
-                     <string notr="true">QLCDNumber {background-color: red;}</string>
-                    </property>
-                    <property name="segmentStyle">
-                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
-                    </property>
-                   </widget>
-                  </item>
                   <item row="0" column="1">
                    <spacer name="horizontalSpacer_35">
                     <property name="orientation">
@@ -2033,28 +2181,36 @@
                     </property>
                    </spacer>
                   </item>
-                  <item row="0" column="2">
-                   <widget class="QLCDNumber" name="ChassisStationInventoryTotalFrameCount">
+                  <item row="8" column="0">
+                   <widget class="QLabel" name="ChassisStationKidsFrameLabel">
+                    <property name="text">
+                     <string>Kids Frames</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="ChassisStationBMXFrameLabel">
+                    <property name="text">
+                     <string>BMX Frames</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="2">
+                   <widget class="QLCDNumber" name="ChassisStationInventoryMountainFrameCount">
                     <property name="styleSheet">
                      <string notr="true">QLCDNumber {background-color: red;}</string>
-                    </property>
-                    <property name="segmentStyle">
-                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
                     </property>
                    </widget>
                   </item>
                   <item row="3" column="2">
-                   <widget class="QLCDNumber" name="ChassisStationInventoryCarbonFrameCount">
+                   <widget class="QLCDNumber" name="ChassisStationInventoryBMXFrameCount">
                     <property name="styleSheet">
                      <string notr="true">QLCDNumber {background-color: red;}</string>
                     </property>
-                    <property name="segmentStyle">
-                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
-                    </property>
                    </widget>
                   </item>
-                  <item row="3" column="1">
-                   <spacer name="horizontalSpacer_36">
+                  <item row="2" column="1">
+                   <spacer name="horizontalSpacer_37">
                     <property name="orientation">
                      <enum>Qt::Orientation::Horizontal</enum>
                     </property>
@@ -2066,12 +2222,18 @@
                     </property>
                    </spacer>
                   </item>
-                  <item row="3" column="0">
-                   <widget class="QLabel" name="ChassisStationCarbonFrameLabel">
-                    <property name="text">
-                     <string>Carbon Fibre Frames</string>
+                  <item row="3" column="1">
+                   <spacer name="horizontalSpacer_38">
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Horizontal</enum>
                     </property>
-                   </widget>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
                   </item>
                  </layout>
                 </widget>
@@ -2095,8 +2257,129 @@
                     </property>
                    </spacer>
                   </item>
-                  <item row="2" column="1">
+                  <item row="5" column="1">
+                   <spacer name="horizontalSpacer_281">
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>60</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="ChassisStationInventoryMountainForksLabel">
+                    <property name="text">
+                     <string>Mountain Forks</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="ChassisStationInventoryStandardForksLabel">
+                    <property name="text">
+                     <string>Standard Forks</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="2">
+                   <widget class="QLCDNumber" name="ChassisStationInventoryAluminiumForksCount">
+                    <property name="styleSheet">
+                     <string notr="true">QLCDNumber {background-color: red;}</string>
+                    </property>
+                    <property name="segmentStyle">
+                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="ChassisStationInventoryAluminiumForksLabel">
+                    <property name="text">
+                     <string>Road Forks</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="1">
+                   <spacer name="horizontalSpacer_173">
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>60</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="QLabel" name="ChassisStationInventoryCarbonForksLabel">
+                    <property name="text">
+                     <string>Track Forks</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="0">
+                   <widget class="QLabel" name="ChassisStationInventoryKidsForksLabel">
+                    <property name="text">
+                     <string>Kids Forks</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
                    <spacer name="horizontalSpacer_172">
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>60</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="8" column="2">
+                   <widget class="QLCDNumber" name="ChassisStationInventoryKidsForksCount">
+                    <property name="styleSheet">
+                     <string notr="true">QLCDNumber {background-color: red;}</string>
+                    </property>
+                    <property name="segmentStyle">
+                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="2">
+                   <widget class="QLCDNumber" name="ChassisStationInventoryStandardForksCount">
+                    <property name="styleSheet">
+                     <string notr="true">QLCDNumber {background-color: red;}</string>
+                    </property>
+                    <property name="segmentStyle">
+                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="ChassisStationInventoryTotalForksLabel">
+                    <property name="text">
+                     <string>Total Forks</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="2">
+                   <widget class="QLCDNumber" name="ChassisStationInventoryCarbonForksCount">
+                    <property name="styleSheet">
+                     <string notr="true">QLCDNumber {background-color: red;}</string>
+                    </property>
+                    <property name="segmentStyle">
+                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <spacer name="horizontalSpacer_174">
                     <property name="orientation">
                      <enum>Qt::Orientation::Horizontal</enum>
                     </property>
@@ -2118,119 +2401,52 @@
                     </property>
                    </widget>
                   </item>
-                  <item row="6" column="2">
-                   <widget class="QLCDNumber" name="ChassisStationInventoryKidsForksCount">
-                    <property name="styleSheet">
-                     <string notr="true">QLCDNumber {background-color: red;}</string>
-                    </property>
-                    <property name="segmentStyle">
-                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="2">
-                   <widget class="QLCDNumber" name="ChassisStationInventorySteelForksCount">
-                    <property name="styleSheet">
-                     <string notr="true">QLCDNumber {background-color: red;}</string>
-                    </property>
-                    <property name="segmentStyle">
-                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="0">
-                   <widget class="QLabel" name="ChassisStationInventoryTubularSteelForksLabel">
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="ChassisStationInventoryBMXForksLabel">
                     <property name="text">
-                     <string>Steel Forks</string>
+                     <string>BMX Forks</string>
                     </property>
                    </widget>
-                  </item>
-                  <item row="6" column="1">
-                   <spacer name="horizontalSpacer_173">
-                    <property name="orientation">
-                     <enum>Qt::Orientation::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>60</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
                   </item>
                   <item row="2" column="2">
-                   <widget class="QLCDNumber" name="ChassisStationInventoryAluminiumForksCount">
+                   <widget class="QLCDNumber" name="ChassisStationInventoryMountainForksCount">
                     <property name="styleSheet">
                      <string notr="true">QLCDNumber {background-color: red;}</string>
                     </property>
-                    <property name="segmentStyle">
-                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
-                    </property>
                    </widget>
-                  </item>
-                  <item row="6" column="0">
-                   <widget class="QLabel" name="ChassisStationInventoryKidsForksLabel">
-                    <property name="text">
-                     <string>Kids Forks</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="0">
-                   <widget class="QLabel" name="ChassisStationInventoryAluminiumForksLabel">
-                    <property name="text">
-                     <string>Aluminium Forks</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="1">
-                   <spacer name="horizontalSpacer_174">
-                    <property name="orientation">
-                     <enum>Qt::Orientation::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>60</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item row="3" column="0">
-                   <widget class="QLabel" name="ChassisStationInventoryCarbonForksLabel">
-                    <property name="text">
-                     <string>Carbon Fibre Forks</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="3" column="1">
-                   <spacer name="horizontalSpacer_281">
-                    <property name="orientation">
-                     <enum>Qt::Orientation::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>60</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
                   </item>
                   <item row="3" column="2">
-                   <widget class="QLCDNumber" name="ChassisStationInventoryCarbonForksCount">
+                   <widget class="QLCDNumber" name="ChassisStationInventoryBMXForksCount">
                     <property name="styleSheet">
                      <string notr="true">QLCDNumber {background-color: red;}</string>
                     </property>
-                    <property name="segmentStyle">
-                     <enum>QLCDNumber::SegmentStyle::Flat</enum>
-                    </property>
                    </widget>
                   </item>
-                  <item row="0" column="0">
-                   <widget class="QLabel" name="ChassisStationInventoryTotalForksLabel">
-                    <property name="text">
-                     <string>Total Forks</string>
+                  <item row="2" column="1">
+                   <spacer name="horizontalSpacer_11">
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Horizontal</enum>
                     </property>
-                   </widget>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="3" column="1">
+                   <spacer name="horizontalSpacer_12">
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
                   </item>
                  </layout>
                 </widget>
@@ -4961,6 +5177,9 @@
                       <height>211</height>
                      </size>
                     </property>
+                    <property name="alternatingRowColors">
+                     <bool>true</bool>
+                    </property>
                     <attribute name="horizontalHeaderDefaultSectionSize">
                      <number>162</number>
                     </attribute>
@@ -5731,6 +5950,9 @@
                       <height>211</height>
                      </size>
                     </property>
+                    <property name="alternatingRowColors">
+                     <bool>true</bool>
+                    </property>
                     <column>
                      <property name="text">
                       <string>Chassis</string>
@@ -6459,6 +6681,9 @@
                       <width>491</width>
                       <height>211</height>
                      </size>
+                    </property>
+                    <property name="alternatingRowColors">
+                     <bool>true</bool>
                     </property>
                     <column>
                      <property name="text">
@@ -7220,6 +7445,9 @@
                       <height>211</height>
                      </size>
                     </property>
+                    <property name="alternatingRowColors">
+                     <bool>true</bool>
+                    </property>
                     <column>
                      <property name="text">
                       <string>Chassis</string>
@@ -7913,6 +8141,9 @@
                       <width>491</width>
                       <height>211</height>
                      </size>
+                    </property>
+                    <property name="alternatingRowColors">
+                     <bool>true</bool>
                     </property>
                     <column>
                      <property name="text">
