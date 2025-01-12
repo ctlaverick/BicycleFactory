@@ -75,14 +75,14 @@ if __name__ == "__main__":
             # Check if fork and frames have orders
             if len(fork_Station_Order) > 0:
                 # Check if they now have required amount
-                if fork_Station_Order[0].bike_order.fork == "Tubular Steel" and window.ForkStationTubularSteelRequiredCount.value() <= inventory["Steel"][0].value():
+                if fork_Station_Order[0].get_bike_order().get_fork() == "Tubular Steel" and window.ForkStationTubularSteelRequiredCount.value() <= inventory["Steel"][0].value():
                     # Enable station button
                     window.ForkWeldedButton.setEnabled(True)
-                elif fork_Station_Order[0].bike_order.fork == "Tubular Aluminium" and window.ForkStationTubularAluminiumRequiredCount.value() <= inventory["Aluminium"][0].value():
+                elif fork_Station_Order[0].get_bike_order().get_fork() == "Tubular Aluminium" and window.ForkStationTubularAluminiumRequiredCount.value() <= inventory["Aluminium"][0].value():
                     # Enable station button
                     window.ForkWeldedButton.setEnabled(True)
 
-                elif fork_Station_Order[0].bike_order.fork == "Carbon Fibre" and window.ForkStationCarbonRequiredCount.value() <= inventory["Carbon Fibre"][0].value():
+                elif fork_Station_Order[0].get_bike_order().get_fork() == "Carbon Fibre" and window.ForkStationCarbonRequiredCount.value() <= inventory["Carbon Fibre"][0].value():
                     # Enable station button
                     window.ForkWeldedButton.setEnabled(True)
                 else:
@@ -91,14 +91,14 @@ if __name__ == "__main__":
 
             elif len(frame_Station_Order) > 0:
                 # Check if they now have required amount
-                if frame_Station_Order[0].bike_order.fork == "Tubular Steel" and window.FrameStationTubularSteelRequiredCount.value() <= inventory["Steel"][0].value():
+                if frame_Station_Order[0].get_bike_order().get_fork() == "Tubular Steel" and window.FrameStationTubularSteelRequiredCount.value() <= inventory["Steel"][0].value():
                     # Enable station button
                     window.FrameWeldedButton.setEnabled(True)
-                elif frame_Station_Order[0].bike_order.fork == "Tubular Aluminium" and window.FrameStationTubularAluminiumRequiredCount.value() <= inventory["Aluminium"][0].value():
+                elif frame_Station_Order[0].get_bike_order().get_fork() == "Tubular Aluminium" and window.FrameStationTubularAluminiumRequiredCount.value() <= inventory["Aluminium"][0].value():
                     # Enable station button
                     window.FrameWeldedButton.setEnabled(True)
 
-                elif frame_Station_Order[0].bike_order.fork == "Carbon Fibre" and window.FrameStationCarbonRequiredCount.value() <= inventory["Carbon Fibre"][0].value():
+                elif frame_Station_Order[0].get_bike_order().get_fork() == "Carbon Fibre" and window.FrameStationCarbonRequiredCount.value() <= inventory["Carbon Fibre"][0].value():
                     # Enable station button
                     window.FrameWeldedButton.setEnabled(True)
                 else:
@@ -110,35 +110,35 @@ if __name__ == "__main__":
             # Check if Chassis Station has orders
             if len(chassis_Station_Order) > 0:
                 # Check if they now have required amount
-                if chassis_Station_Order[0].bike_order.fork == "Tubular Steel" and chassis_Station_Order[0].bike_order.frame == "Tubular Steel":
-                    if type(chassis_Station_Order[0].bike_order) == Bike:
+                if chassis_Station_Order[0].get_bike_order().get_fork() == "Tubular Steel" and chassis_Station_Order[0].get_bike_order().get_frame() == "Tubular Steel":
+                    if type(chassis_Station_Order[0].get_bike_order()) == Bike:
                         if window.ChassisStationInventoryStandardForksCount.value() > 0 and window.ChassisStationInventoryStandardFrameCount.value() > 0:
                             window.ChassisAssemblyButton.setEnabled(True)
                         else:
                             window.ChassisAssemblyButton.setEnabled(False)
-                    elif type(chassis_Station_Order[0].bike_order) == MountainBike:
+                    elif type(chassis_Station_Order[0].get_bike_order()) == MountainBike:
                         if window.ChassisStationInventoryMountainForksCount.value() > 0 and window.ChassisStationInventoryMountainFrameCount.value() > 0:
                             window.ChassisAssemblyButton.setEnabled(True)
                         else:
                             window.ChassisAssemblyButton.setEnabled(False)
-                    elif type(chassis_Station_Order[0].bike_order) == BMXBike:
+                    elif type(chassis_Station_Order[0].get_bike_order()) == BMXBike:
                         if window.ChassisStationInventoryBMXForksCount.value() > 0 and window.ChassisStationInventoryBMXFrameCount.value() > 0:
                             window.ChassisAssemblyButton.setEnabled(True)
                         else:
                             window.ChassisAssemblyButton.setEnabled(False)
-                    elif type(chassis_Station_Order[0].bike_order) == KidsBike:
+                    elif type(chassis_Station_Order[0].get_bike_order()) == KidsBike:
                         if window.ChassisStationInventoryKidsForksCount.value() > 0 and window.ChassisStationInventoryKidsFrameCount.value() > 0:
                             window.ChassisAssemblyButton.setEnabled(True)
                         else:
                             window.ChassisAssemblyButton.setEnabled(False)
                     else:
-                        TypeError("Bike type is not recognised for chassis_Station_Order[0].bike_order")
+                        TypeError("Bike type is not recognised for chassis_Station_Order[0].get_bike_order()")
 
-                elif chassis_Station_Order[0].bike_order.fork == "Tubular Aluminium" and window.ChassisStationInventoryAluminiumForksCount.value() > 0 and chassis_Station_Order[0].bike_order.frame == "Tubular Aluminium" and window.ChassisStationInventoryAluminiumFrameCount.value() > 0:
+                elif chassis_Station_Order[0].get_bike_order().get_fork() == "Tubular Aluminium" and window.ChassisStationInventoryAluminiumForksCount.value() > 0 and chassis_Station_Order[0].get_bike_order().get_frame() == "Tubular Aluminium" and window.ChassisStationInventoryAluminiumFrameCount.value() > 0:
                     # Enable station button
                     window.ChassisAssemblyButton.setEnabled(True)
 
-                elif chassis_Station_Order[0].bike_order.fork == "Carbon Fibre" and window.ChassisStationInventoryCarbonForksCount.value() > 0 and chassis_Station_Order[0].bike_order.frame == "Carbon Fibre" and window.ChassisStationInventoryCarbonFrameCount.value() > 0:
+                elif chassis_Station_Order[0].get_bike_order().get_fork() == "Carbon Fibre" and window.ChassisStationInventoryCarbonForksCount.value() > 0 and chassis_Station_Order[0].get_bike_order().get_frame() == "Carbon Fibre" and window.ChassisStationInventoryCarbonFrameCount.value() > 0:
                     # Enable station button
                     window.ChassisAssemblyButton.setEnabled(True)
 
@@ -466,19 +466,19 @@ if __name__ == "__main__":
         order_table = window.Orders_Table
         row_count = window.Orders_Table.rowCount()
         order_table.insertRow(row_count)
-        order_table.setItem(row_count, 0, QTableWidgetItem(str(order.id)))
-        order_table.setItem(row_count, 1, QTableWidgetItem(str(order.customer.id)))
-        order_table.setItem(row_count, 2, QTableWidgetItem(order.bike_order.bike_type))
-        order_table.setItem(row_count, 3, QTableWidgetItem(order.bike_order.fork))
-        order_table.setItem(row_count, 4, QTableWidgetItem(order.bike_order.frame))
-        order_table.setItem(row_count, 5, QTableWidgetItem(order.bike_order.colour))
-        order_table.setItem(row_count, 6, QTableWidgetItem(order.bike_order.pedals))
-        order_table.setItem(row_count, 7, QTableWidgetItem(order.bike_order.gears))
-        order_table.setItem(row_count, 8, QTableWidgetItem(order.bike_order.chain))
-        order_table.setItem(row_count, 9, QTableWidgetItem(order.bike_order.wheels))
-        order_table.setItem(row_count, 10, QTableWidgetItem(order.bike_order.brakes))
-        order_table.setItem(row_count, 11, QTableWidgetItem(order.bike_order.lights))
-        order_table.setItem(row_count, 12, QTableWidgetItem(order.bike_order.seat))
+        order_table.setItem(row_count, 0, QTableWidgetItem(str(order.get_id())))
+        order_table.setItem(row_count, 1, QTableWidgetItem(str(order.get_customer().get_id())))
+        order_table.setItem(row_count, 2, QTableWidgetItem(order.get_bike_order().get_bike_type()))
+        order_table.setItem(row_count, 3, QTableWidgetItem(order.get_bike_order().get_fork()))
+        order_table.setItem(row_count, 4, QTableWidgetItem(order.get_bike_order().get_frame()))
+        order_table.setItem(row_count, 5, QTableWidgetItem(order.get_bike_order().get_colour()))
+        order_table.setItem(row_count, 6, QTableWidgetItem(order.get_bike_order().get_pedals()))
+        order_table.setItem(row_count, 7, QTableWidgetItem(order.get_bike_order().get_gears()))
+        order_table.setItem(row_count, 8, QTableWidgetItem(order.get_bike_order().get_chain()))
+        order_table.setItem(row_count, 9, QTableWidgetItem(order.get_bike_order().get_wheels()))
+        order_table.setItem(row_count, 10, QTableWidgetItem(order.get_bike_order().get_brakes()))
+        order_table.setItem(row_count, 11, QTableWidgetItem(order.get_bike_order().get_lights()))
+        order_table.setItem(row_count, 12, QTableWidgetItem(order.get_bike_order().get_seat()))
 
     def updatePedalsTable():
         table = window.PedalStationChassisInventoryTable
@@ -486,19 +486,19 @@ if __name__ == "__main__":
         for order in pedal_Station_Order:
             row_count = table.rowCount()
             table.insertRow(row_count)
-            if type(order.bike_order) == Bike:
+            if type(order.get_bike_order()) == Bike:
                 table.setItem(row_count, 0, QTableWidgetItem("Standard"))
-            elif type(order.bike_order) == MountainBike:
+            elif type(order.get_bike_order()) == MountainBike:
                 table.setItem(row_count, 0, QTableWidgetItem("Mountain"))
-            elif type(order.bike_order) == RoadBike:
+            elif type(order.get_bike_order()) == RoadBike:
                 table.setItem(row_count, 0, QTableWidgetItem("Road"))
-            elif type(order.bike_order) == TrackBike:
+            elif type(order.get_bike_order()) == TrackBike:
                 table.setItem(row_count, 0, QTableWidgetItem("Track"))
-            elif type(order.bike_order) == BMXBike:
+            elif type(order.get_bike_order()) == BMXBike:
                 table.setItem(row_count, 0, QTableWidgetItem("BMX"))
-            elif type(order.bike_order) == KidsBike:
+            elif type(order.get_bike_order()) == KidsBike:
                 table.setItem(row_count, 0, QTableWidgetItem("Kids"))
-            table.setItem(row_count, 1, QTableWidgetItem(str(order.bike_order.colour)))
+            table.setItem(row_count, 1, QTableWidgetItem(order.get_bike_order().get_colour()))
         TableChassisInventory(table, window.PedalStationInventoryTotalChassis)
 
     def updateDriveChainTable():
@@ -507,20 +507,20 @@ if __name__ == "__main__":
         for order in drive_chain_Station_Order:
             row_count = table.rowCount()
             table.insertRow(row_count)
-            if type(order.bike_order) == Bike:
+            if type(order.get_bike_order()) == Bike:
                 table.setItem(row_count, 0, QTableWidgetItem("Standard"))
-            elif type(order.bike_order) == MountainBike:
+            elif type(order.get_bike_order()) == MountainBike:
                 table.setItem(row_count, 0, QTableWidgetItem("Mountain"))
-            elif type(order.bike_order) == RoadBike:
+            elif type(order.get_bike_order()) == RoadBike:
                 table.setItem(row_count, 0, QTableWidgetItem("Road"))
-            elif type(order.bike_order) == TrackBike:
+            elif type(order.get_bike_order()) == TrackBike:
                 table.setItem(row_count, 0, QTableWidgetItem("Track"))
-            elif type(order.bike_order) == BMXBike:
+            elif type(order.get_bike_order()) == BMXBike:
                 table.setItem(row_count, 0, QTableWidgetItem("BMX"))
-            elif type(order.bike_order) == KidsBike:
+            elif type(order.get_bike_order()) == KidsBike:
                 table.setItem(row_count, 0, QTableWidgetItem("Kids"))
-            table.setItem(row_count, 1, QTableWidgetItem(str(order.bike_order.colour)))
-            table.setItem(row_count, 2, QTableWidgetItem(str(order.bike_order.pedals)))
+            table.setItem(row_count, 1, QTableWidgetItem(order.get_bike_order().get_colour()))
+            table.setItem(row_count, 2, QTableWidgetItem(order.get_bike_order().get_pedals()))
         TableChassisInventory(table, window.DCStationInventoryTotalChassis)
 
     def updateWheelTable():
@@ -529,22 +529,22 @@ if __name__ == "__main__":
         for order in wheel_Station_Order:
             row_count = table.rowCount()
             table.insertRow(row_count)
-            if type(order.bike_order) == Bike:
+            if type(order.get_bike_order()) == Bike:
                 table.setItem(row_count, 0, QTableWidgetItem("Standard"))
-            elif type(order.bike_order) == MountainBike:
+            elif type(order.get_bike_order()) == MountainBike:
                 table.setItem(row_count, 0, QTableWidgetItem("Mountain"))
-            elif type(order.bike_order) == RoadBike:
+            elif type(order.get_bike_order()) == RoadBike:
                 table.setItem(row_count, 0, QTableWidgetItem("Road"))
-            elif type(order.bike_order) == TrackBike:
+            elif type(order.get_bike_order()) == TrackBike:
                 table.setItem(row_count, 0, QTableWidgetItem("Track"))
-            elif type(order.bike_order) == BMXBike:
+            elif type(order.get_bike_order()) == BMXBike:
                 table.setItem(row_count, 0, QTableWidgetItem("BMX"))
-            elif type(order.bike_order) == KidsBike:
+            elif type(order.get_bike_order()) == KidsBike:
                 table.setItem(row_count, 0, QTableWidgetItem("Kids"))
-            table.setItem(row_count, 1, QTableWidgetItem(str(order.bike_order.colour)))
-            table.setItem(row_count, 2, QTableWidgetItem(str(order.bike_order.pedals)))
-            table.setItem(row_count, 3, QTableWidgetItem(str(order.bike_order.gears)))
-            table.setItem(row_count, 4, QTableWidgetItem(str(order.bike_order.chain)))
+            table.setItem(row_count, 1, QTableWidgetItem(order.get_bike_order().get_colour()))
+            table.setItem(row_count, 2, QTableWidgetItem(order.get_bike_order().get_pedals()))
+            table.setItem(row_count, 3, QTableWidgetItem(order.get_bike_order().get_gears()))
+            table.setItem(row_count, 4, QTableWidgetItem(order.get_bike_order().get_chain()))
         TableChassisInventory(table, window.WheelStationInventoryTotalChassis)
 
 
@@ -555,23 +555,23 @@ if __name__ == "__main__":
         for order in brakes_Station_Order:
             row_count = table.rowCount()
             table.insertRow(row_count)
-            if type(order.bike_order) == Bike:
+            if type(order.get_bike_order()) == Bike:
                 table.setItem(row_count, 0, QTableWidgetItem("Standard"))
-            elif type(order.bike_order) == MountainBike:
+            elif type(order.get_bike_order()) == MountainBike:
                 table.setItem(row_count, 0, QTableWidgetItem("Mountain"))
-            elif type(order.bike_order) == RoadBike:
+            elif type(order.get_bike_order()) == RoadBike:
                 table.setItem(row_count, 0, QTableWidgetItem("Road"))
-            elif type(order.bike_order) == TrackBike:
+            elif type(order.get_bike_order()) == TrackBike:
                 table.setItem(row_count, 0, QTableWidgetItem("Track"))
-            elif type(order.bike_order) == BMXBike:
+            elif type(order.get_bike_order()) == BMXBike:
                 table.setItem(row_count, 0, QTableWidgetItem("BMX"))
-            elif type(order.bike_order) == KidsBike:
+            elif type(order.get_bike_order()) == KidsBike:
                 table.setItem(row_count, 0, QTableWidgetItem("Kids"))
-            table.setItem(row_count, 1, QTableWidgetItem(str(order.bike_order.colour)))
-            table.setItem(row_count, 2, QTableWidgetItem(str(order.bike_order.pedals)))
-            table.setItem(row_count, 3, QTableWidgetItem(str(order.bike_order.gears)))
-            table.setItem(row_count, 4, QTableWidgetItem(str(order.bike_order.chain)))        
-            table.setItem(row_count, 5, QTableWidgetItem(str(order.bike_order.wheels)))    
+            table.setItem(row_count, 1, QTableWidgetItem(order.get_bike_order().get_colour()))
+            table.setItem(row_count, 2, QTableWidgetItem(order.get_bike_order().get_pedals()))
+            table.setItem(row_count, 3, QTableWidgetItem(order.get_bike_order().get_gears()))
+            table.setItem(row_count, 4, QTableWidgetItem(order.get_bike_order().get_chain()))        
+            table.setItem(row_count, 5, QTableWidgetItem(order.get_bike_order().get_wheels()))    
         TableChassisInventory(table, window.BrakeStationInventoryTotalChassis)
 
     def updateLightTable():
@@ -580,24 +580,24 @@ if __name__ == "__main__":
         for order in lights_Station_Order:
             row_count = table.rowCount()
             table.insertRow(row_count)
-            if type(order.bike_order) == Bike:
+            if type(order.get_bike_order()) == Bike:
                 table.setItem(row_count, 0, QTableWidgetItem("Standard"))
-            elif type(order.bike_order) == MountainBike:
+            elif type(order.get_bike_order()) == MountainBike:
                 table.setItem(row_count, 0, QTableWidgetItem("Mountain"))
-            elif type(order.bike_order) == RoadBike:
+            elif type(order.get_bike_order()) == RoadBike:
                 table.setItem(row_count, 0, QTableWidgetItem("Road"))
-            elif type(order.bike_order) == TrackBike:
+            elif type(order.get_bike_order()) == TrackBike:
                 table.setItem(row_count, 0, QTableWidgetItem("Track"))
-            elif type(order.bike_order) == BMXBike:
+            elif type(order.get_bike_order()) == BMXBike:
                 table.setItem(row_count, 0, QTableWidgetItem("BMX"))
-            elif type(order.bike_order) == KidsBike:
+            elif type(order.get_bike_order()) == KidsBike:
                 table.setItem(row_count, 0, QTableWidgetItem("Kids"))
-            table.setItem(row_count, 1, QTableWidgetItem(str(order.bike_order.colour)))
-            table.setItem(row_count, 2, QTableWidgetItem(str(order.bike_order.pedals)))
-            table.setItem(row_count, 3, QTableWidgetItem(str(order.bike_order.gears)))
-            table.setItem(row_count, 4, QTableWidgetItem(str(order.bike_order.chain)))        
-            table.setItem(row_count, 5, QTableWidgetItem(str(order.bike_order.wheels)))       
-            table.setItem(row_count, 6, QTableWidgetItem(str(order.bike_order.brakes)))             
+            table.setItem(row_count, 1, QTableWidgetItem(order.get_bike_order().get_colour()))
+            table.setItem(row_count, 2, QTableWidgetItem(order.get_bike_order().get_pedals()))
+            table.setItem(row_count, 3, QTableWidgetItem(order.get_bike_order().get_gears()))
+            table.setItem(row_count, 4, QTableWidgetItem(order.get_bike_order().get_chain()))        
+            table.setItem(row_count, 5, QTableWidgetItem(order.get_bike_order().get_wheels()))       
+            table.setItem(row_count, 6, QTableWidgetItem(order.get_bike_order().get_brakes()))             
         TableChassisInventory(table, window.LightStation_InventoryTotalChassisCount)
 
     def updateSeatTable():
@@ -606,25 +606,25 @@ if __name__ == "__main__":
         for order in seat_Station_Order:
             row_count = table.rowCount()
             table.insertRow(row_count)
-            if type(order.bike_order) == Bike:
+            if type(order.get_bike_order()) == Bike:
                 table.setItem(row_count, 0, QTableWidgetItem("Standard"))
-            elif type(order.bike_order) == MountainBike:
+            elif type(order.get_bike_order()) == MountainBike:
                 table.setItem(row_count, 0, QTableWidgetItem("Mountain"))
-            elif type(order.bike_order) == RoadBike:
+            elif type(order.get_bike_order()) == RoadBike:
                 table.setItem(row_count, 0, QTableWidgetItem("Road"))
-            elif type(order.bike_order) == TrackBike:
+            elif type(order.get_bike_order()) == TrackBike:
                 table.setItem(row_count, 0, QTableWidgetItem("Track"))
-            elif type(order.bike_order) == BMXBike:
+            elif type(order.get_bike_order()) == BMXBike:
                 table.setItem(row_count, 0, QTableWidgetItem("BMX"))
-            elif type(order.bike_order) == KidsBike:
+            elif type(order.get_bike_order()) == KidsBike:
                 table.setItem(row_count, 0, QTableWidgetItem("Kids"))
-            table.setItem(row_count, 1, QTableWidgetItem(str(order.bike_order.colour)))
-            table.setItem(row_count, 2, QTableWidgetItem(str(order.bike_order.pedals)))
-            table.setItem(row_count, 3, QTableWidgetItem(str(order.bike_order.gears)))
-            table.setItem(row_count, 4, QTableWidgetItem(str(order.bike_order.chain)))        
-            table.setItem(row_count, 5, QTableWidgetItem(str(order.bike_order.wheels)))       
-            table.setItem(row_count, 6, QTableWidgetItem(str(order.bike_order.brakes)))  
-            table.setItem(row_count, 7, QTableWidgetItem(str(order.bike_order.lights)))  
+            table.setItem(row_count, 1, QTableWidgetItem(order.get_bike_order().get_colour()))
+            table.setItem(row_count, 2, QTableWidgetItem(order.get_bike_order().get_pedals()))
+            table.setItem(row_count, 3, QTableWidgetItem(order.get_bike_order().get_gears()))
+            table.setItem(row_count, 4, QTableWidgetItem(order.get_bike_order().get_chain()))        
+            table.setItem(row_count, 5, QTableWidgetItem(order.get_bike_order().get_wheels()))       
+            table.setItem(row_count, 6, QTableWidgetItem(order.get_bike_order().get_brakes()))  
+            table.setItem(row_count, 7, QTableWidgetItem(order.get_bike_order().get_lights()))  
         TableChassisInventory(table, window.SeatStationInventoryTotalChassisCount)
     
     def updateCompletedOrdersTable(order):
@@ -633,19 +633,19 @@ if __name__ == "__main__":
         table.insertRow(row_count)
 
         # Add completed order data
-        table.setItem(row_count, 0, QTableWidgetItem(str(order.id)))
-        table.setItem(row_count, 1, QTableWidgetItem(str(order.customer.id)))
-        table.setItem(row_count, 2, QTableWidgetItem(order.bike_order.bike_type))
-        table.setItem(row_count, 3, QTableWidgetItem(order.bike_order.fork))
-        table.setItem(row_count, 4, QTableWidgetItem(order.bike_order.frame))
-        table.setItem(row_count, 5, QTableWidgetItem(order.bike_order.colour))
-        table.setItem(row_count, 6, QTableWidgetItem(order.bike_order.pedals))
-        table.setItem(row_count, 7, QTableWidgetItem(order.bike_order.gears))
-        table.setItem(row_count, 8, QTableWidgetItem(order.bike_order.chain))
-        table.setItem(row_count, 9, QTableWidgetItem(order.bike_order.wheels))
-        table.setItem(row_count, 10, QTableWidgetItem(order.bike_order.brakes))
-        table.setItem(row_count, 11, QTableWidgetItem(order.bike_order.lights))
-        table.setItem(row_count, 12, QTableWidgetItem(order.bike_order.seat))
+        table.setItem(row_count, 0, QTableWidgetItem(str(order.get_id())))
+        table.setItem(row_count, 1, QTableWidgetItem(str(order.get_customer().get_id())))
+        table.setItem(row_count, 2, QTableWidgetItem(order.get_bike_order().get_bike_type()))
+        table.setItem(row_count, 3, QTableWidgetItem(order.get_bike_order().get_fork()))
+        table.setItem(row_count, 4, QTableWidgetItem(order.get_bike_order().get_frame()))
+        table.setItem(row_count, 5, QTableWidgetItem(order.get_bike_order().get_colour()))
+        table.setItem(row_count, 6, QTableWidgetItem(order.get_bike_order().get_pedals()))
+        table.setItem(row_count, 7, QTableWidgetItem(order.get_bike_order().get_gears()))
+        table.setItem(row_count, 8, QTableWidgetItem(order.get_bike_order().get_chain()))
+        table.setItem(row_count, 9, QTableWidgetItem(order.get_bike_order().get_wheels()))
+        table.setItem(row_count, 10, QTableWidgetItem(order.get_bike_order().get_brakes()))
+        table.setItem(row_count, 11, QTableWidgetItem(order.get_bike_order().get_lights()))
+        table.setItem(row_count, 12, QTableWidgetItem(order.get_bike_order().get_seat()))
 
     def newOrder():
         global customers, orders
@@ -730,7 +730,7 @@ if __name__ == "__main__":
 
             if bike and customer:
                 order = Order(customer, bike)
-                orders[order.id] = order
+                orders[str(order.get_id())] = order
                 fork_Station_Order.append(order)
                 updatedOrderTable(order)
                 if len(fork_Station_Order) == 1:
@@ -1160,6 +1160,9 @@ if __name__ == "__main__":
             window.NewOrder_PedalTypeComboBox.setEnabled(False)
             window.NewOrder_GearTypeComboBox.setEnabled(False)
             window.NewOrder_WheelTypeComboBox.setEnabled(False)
+        else:
+            ValueError("Shouldn't be possible but the bike type order box has a value that doesn't match what is forced")
+
 
 #Station System Plan
 
@@ -1192,32 +1195,32 @@ if __name__ == "__main__":
         global fork_Station_Order
         if len(fork_Station_Order) > 0:
 
-            if fork_Station_Order[0].id == int(window.ForkStation_OrderNumber_Value.text()):
-                if fork_Station_Order[0].bike_order.fork == "Tubular Steel" and window.ForkStationTubularSteelRequiredCount.value() <= inventory["Steel"][0].value():
-                    if type(fork_Station_Order[0].bike_order)== Bike:
+            if fork_Station_Order[0].get_id() == int(window.ForkStation_OrderNumber_Value.text()):
+                if fork_Station_Order[0].get_bike_order().get_fork() == "Tubular Steel" and window.ForkStationTubularSteelRequiredCount.value() <= inventory["Steel"][0].value():
+                    if type(fork_Station_Order[0].get_bike_order())== Bike:
                         InventoryChange("Steel", - window.ForkStationTubularSteelRequiredCount.value())
                         InventoryChange("Standard Forks", + 1)
-                    elif type(fork_Station_Order[0].bike_order)== MountainBike:
+                    elif type(fork_Station_Order[0].get_bike_order())== MountainBike:
                         InventoryChange("Steel", - window.ForkStationTubularSteelRequiredCount.value())
                         InventoryChange("Mountain Forks", + 1)
-                    elif type(fork_Station_Order[0].bike_order)== BMXBike:
+                    elif type(fork_Station_Order[0].get_bike_order())== BMXBike:
                         InventoryChange("Steel", - window.ForkStationTubularSteelRequiredCount.value())
                         InventoryChange("BMX Forks", + 1)
-                    elif type(fork_Station_Order[0].bike_order)== KidsBike:
+                    elif type(fork_Station_Order[0].get_bike_order())== KidsBike:
                         InventoryChange("Steel", - window.ForkStationTubularSteelRequiredCount.value())
                         InventoryChange("Kids Forks", + 1)
                     else:
-                        TypeError("fork_Station_Order[0].bike_order type is not a Bike type")
+                        TypeError("fork_Station_Order[0].get_bike_order() type is not a Bike type")
                     ForkOrderToFrameOrder()
 
-                elif fork_Station_Order[0].bike_order.fork == "Tubular Aluminium" and window.ForkStationTubularAluminiumRequiredCount.value() <= inventory["Aluminium"][0].value():
+                elif fork_Station_Order[0].get_bike_order().get_fork() == "Tubular Aluminium" and window.ForkStationTubularAluminiumRequiredCount.value() <= inventory["Aluminium"][0].value():
                     # Take away required amount
                     InventoryChange("Aluminium", - window.ForkStationTubularAluminiumRequiredCount.value())
                     # Add the new part to inventory
                     InventoryChange("Road Forks", + 1)
                     ForkOrderToFrameOrder()
 
-                elif fork_Station_Order[0].bike_order.fork == "Carbon Fibre" and window.ForkStationCarbonRequiredCount.value() <= inventory["Carbon Fibre"][0].value():
+                elif fork_Station_Order[0].get_bike_order().get_fork() == "Carbon Fibre" and window.ForkStationCarbonRequiredCount.value() <= inventory["Carbon Fibre"][0].value():
                      # Take away required amount
                     InventoryChange("Carbon Fibre", - window.ForkStationCarbonRequiredCount.value())
                     # Add the new part to inventory
@@ -1270,21 +1273,21 @@ if __name__ == "__main__":
         if next_order:
             # Set new order information
             order = fork_Station_Order[0]
-            window.ForkStation_OrderNumber_Value.setText(str(order.id))
-            window.ForkStation_BikeType_Value.setText(str(order.bike_order.bike_type))
-            window.ForkStation_Colour_Value.setText(str(order.bike_order.colour))
-            window.ForkStation_Pedal_Value.setText(str(order.bike_order.pedals))
-            window.ForkStation_Chain_Value.setText(str(order.bike_order.chain))
-            window.ForkStation_Gear_Value.setText(str(order.bike_order.gears))
-            window.ForkStation_Wheel_Value.setText(str(order.bike_order.wheels))
-            window.ForkStation_Brakes_Value.setText(str(order.bike_order.brakes))
-            window.ForkStation_Lights_Value.setText(str(order.bike_order.lights))
-            window.ForkStation_Seat_Value.setText(str(order.bike_order.seat))
-            window.ForkStationForkValue.setText(str(order.bike_order.fork))
+            window.ForkStation_OrderNumber_Value.setText(str(order.get_id()))
+            window.ForkStation_BikeType_Value.setText(order.get_bike_order().get_bike_type())
+            window.ForkStation_Colour_Value.setText(order.get_bike_order().get_colour())
+            window.ForkStation_Pedal_Value.setText(order.get_bike_order().get_pedals())
+            window.ForkStation_Chain_Value.setText(order.get_bike_order().get_chain())
+            window.ForkStation_Gear_Value.setText(order.get_bike_order().get_gears())
+            window.ForkStation_Wheel_Value.setText(order.get_bike_order().get_wheels())
+            window.ForkStation_Brakes_Value.setText(order.get_bike_order().get_brakes())
+            window.ForkStation_Lights_Value.setText(order.get_bike_order().get_lights())
+            window.ForkStation_Seat_Value.setText(order.get_bike_order().get_seat())
+            window.ForkStationForkValue.setText(str(order.get_bike_order().get_fork()))
 
             # Set Required amounts for new order
-            if order.bike_order.frame == "Tubular Steel":
-                window.ForkStationTubularSteelRequiredCount.display(order.bike_order.frame_count)
+            if order.get_bike_order().get_frame() == "Tubular Steel":
+                window.ForkStationTubularSteelRequiredCount.display(order.get_bike_order().get_frame_count())
                 window.ForkStationTubularAluminiumRequiredCount.display(0)
                 window.ForkStationCarbonRequiredCount.display(0)
                 if window.ForkStationTubularSteelRequiredCount.value() > inventory["Steel"][0].value():
@@ -1293,9 +1296,9 @@ if __name__ == "__main__":
                 else:
                     window.ForkWeldedButton.setEnabled(True)
                     
-            elif order.bike_order.frame == "Tubular Aluminium":
+            elif order.get_bike_order().get_frame() == "Tubular Aluminium":
                 window.ForkStationTubularSteelRequiredCount.display(0)
-                window.ForkStationTubularAluminiumRequiredCount.display(order.bike_order.frame_count)
+                window.ForkStationTubularAluminiumRequiredCount.display(order.get_bike_order().get_frame_count())
                 window.ForkStationCarbonRequiredCount.display(0)
                 if window.ForkStationTubularAluminiumRequiredCount.value() > inventory["Aluminium"][0].value():
                     # Set button to disabled
@@ -1303,10 +1306,10 @@ if __name__ == "__main__":
                 else:
                     window.ForkWeldedButton.setEnabled(True)
 
-            elif order.bike_order.frame == "Carbon Fibre":
+            elif order.get_bike_order().get_frame() == "Carbon Fibre":
                 window.ForkStationTubularSteelRequiredCount.display(0)
                 window.ForkStationTubularAluminiumRequiredCount.display(0)
-                window.ForkStationCarbonRequiredCount.display(order.bike_order.frame_count)
+                window.ForkStationCarbonRequiredCount.display(order.get_bike_order().get_frame_count())
                 if window.ForkStationCarbonRequiredCount.value() > inventory["Carbon Fibre"][0].value():
                     # Set button to disabled
                     window.ForkWeldedButton.setEnabled(False)
@@ -1337,32 +1340,32 @@ if __name__ == "__main__":
         global frame_Station_Order
         if len(frame_Station_Order) > 0:
 
-            if frame_Station_Order[0].id == int(window.FrameStation_OrderNumber_Value.text()):
-                if frame_Station_Order[0].bike_order.frame == "Tubular Steel" and window.FrameStationTubularSteelRequiredCount.value() <= inventory["Steel"][0].value():
-                    if type(frame_Station_Order[0].bike_order)== Bike:
+            if frame_Station_Order[0].get_id() == int(window.FrameStation_OrderNumber_Value.text()):
+                if frame_Station_Order[0].get_bike_order().get_frame() == "Tubular Steel" and window.FrameStationTubularSteelRequiredCount.value() <= inventory["Steel"][0].value():
+                    if type(frame_Station_Order[0].get_bike_order())== Bike:
                         InventoryChange("Steel", - window.FrameStationTubularSteelRequiredCount.value())
                         InventoryChange("Standard Frames", + 1)
-                    elif type(frame_Station_Order[0].bike_order)== MountainBike:
+                    elif type(frame_Station_Order[0].get_bike_order())== MountainBike:
                         InventoryChange("Steel", - window.FrameStationTubularSteelRequiredCount.value())
                         InventoryChange("Mountain Frames", + 1)
-                    elif type(frame_Station_Order[0].bike_order)== BMXBike:
+                    elif type(frame_Station_Order[0].get_bike_order())== BMXBike:
                         InventoryChange("Steel", - window.FrameStationTubularSteelRequiredCount.value())
                         InventoryChange("BMX Frames", + 1)
-                    elif type(frame_Station_Order[0].bike_order)== KidsBike:
+                    elif type(frame_Station_Order[0].get_bike_order())== KidsBike:
                         InventoryChange("Steel", - window.FrameStationTubularSteelRequiredCount.value())
                         InventoryChange("Kids Frames", + 1)
                     else:
-                        TypeError("fork_Station_Order[0].bike_order type is not a Bike type")
+                        TypeError("fork_Station_Order[0].get_bike_order() type is not a Bike type")
 
                     FrameOrderToChassisOrder()
-                elif frame_Station_Order[0].bike_order.frame == "Tubular Aluminium" and window.FrameStationTubularAluminiumRequiredCount.value() <= inventory["Aluminium"][0].value():
+                elif frame_Station_Order[0].get_bike_order().get_frame() == "Tubular Aluminium" and window.FrameStationTubularAluminiumRequiredCount.value() <= inventory["Aluminium"][0].value():
                     # Take away required material
                     InventoryChange("Aluminium", - window.FrameStationTubularAluminiumRequiredCount.value())
                     # Add the new part to inventory
                     InventoryChange("Road Frames", + 1)
                     FrameOrderToChassisOrder()
 
-                elif frame_Station_Order[0].bike_order.frame == "Carbon Fibre" and window.FrameStationCarbonRequiredCount.value() <= inventory["Carbon Fibre"][0].value():
+                elif frame_Station_Order[0].get_bike_order().get_frame() == "Carbon Fibre" and window.FrameStationCarbonRequiredCount.value() <= inventory["Carbon Fibre"][0].value():
                     # Take away required material
                     InventoryChange("Carbon Fibre", - window.FrameStationCarbonRequiredCount.value())
                     # Add the new part to inventory
@@ -1415,21 +1418,21 @@ if __name__ == "__main__":
         if next_order:
             # Set new order information
             order = frame_Station_Order[0]
-            window.FrameStation_OrderNumber_Value.setText(str(order.id))
-            window.FrameStation_Bike_Value.setText(str(order.bike_order.bike_type))
-            window.FrameStation_Colour_Value.setText(str(order.bike_order.colour))
-            window.FrameStation_Pedal_Value.setText(str(order.bike_order.pedals))
-            window.FrameStation_Chain_Value.setText(str(order.bike_order.chain))
-            window.FrameStation_Gear_Value.setText(str(order.bike_order.gears))
-            window.FrameStation_Wheel_Value.setText(str(order.bike_order.wheels))
-            window.FrameStation_Brakes_Value.setText(str(order.bike_order.brakes))
-            window.FrameStation_Lights_Value.setText(str(order.bike_order.lights))
-            window.FrameStation_Seat_Value.setText(str(order.bike_order.seat))
-            window.FrameStationFrameValue.setText(str(order.bike_order.frame))
+            window.FrameStation_OrderNumber_Value.setText(str(order.get_id()))
+            window.FrameStation_Bike_Value.setText(order.get_bike_order().get_bike_type())
+            window.FrameStation_Colour_Value.setText(order.get_bike_order().get_colour())
+            window.FrameStation_Pedal_Value.setText(order.get_bike_order().get_pedals())
+            window.FrameStation_Chain_Value.setText(order.get_bike_order().get_chain())
+            window.FrameStation_Gear_Value.setText(order.get_bike_order().get_gears())
+            window.FrameStation_Wheel_Value.setText(order.get_bike_order().get_wheels())
+            window.FrameStation_Brakes_Value.setText(order.get_bike_order().get_brakes())
+            window.FrameStation_Lights_Value.setText(order.get_bike_order().get_lights())
+            window.FrameStation_Seat_Value.setText(order.get_bike_order().get_seat())
+            window.FrameStationFrameValue.setText(str(order.get_bike_order().get_frame()))
 
             # Set Required amounts for new order
-            if order.bike_order.frame == "Tubular Steel":
-                window.FrameStationTubularSteelRequiredCount.display(order.bike_order.frame_count)
+            if order.get_bike_order().get_frame() == "Tubular Steel":
+                window.FrameStationTubularSteelRequiredCount.display(order.get_bike_order().get_frame_count())
                 window.FrameStationTubularAluminiumRequiredCount.display(0)
                 window.FrameStationCarbonRequiredCount.display(0)
                 if window.FrameStationTubularSteelRequiredCount.value() > inventory["Steel"][0].value():
@@ -1438,9 +1441,9 @@ if __name__ == "__main__":
                 else:
                     window.FrameWeldedButton.setEnabled(True)
                     
-            elif order.bike_order.frame == "Tubular Aluminium":
+            elif order.get_bike_order().get_frame() == "Tubular Aluminium":
                 window.FrameStationTubularSteelRequiredCount.display(0)
-                window.FrameStationTubularAluminiumRequiredCount.display(order.bike_order.frame_count)
+                window.FrameStationTubularAluminiumRequiredCount.display(order.get_bike_order().get_frame_count())
                 window.FrameStationCarbonRequiredCount.display(0)
                 if window.FrameStationTubularAluminiumRequiredCount.value() > inventory["Aluminium"][0].value():
                     # Set button to disabled
@@ -1448,10 +1451,10 @@ if __name__ == "__main__":
                 else:
                     window.FrameWeldedButton.setEnabled(True)
 
-            elif order.bike_order.frame == "Carbon Fibre":
+            elif order.get_bike_order().get_frame() == "Carbon Fibre":
                 window.FrameStationTubularSteelRequiredCount.display(0)
                 window.FrameStationTubularAluminiumRequiredCount.display(0)
-                window.FrameStationCarbonRequiredCount.display(order.bike_order.frame_count)
+                window.FrameStationCarbonRequiredCount.display(order.get_bike_order().get_frame_count())
                 if window.FrameStationCarbonRequiredCount.value() > inventory["Carbon Fibre"][0].value():
                     # Set button to disabled
                     window.FrameWeldedButton.setEnabled(False)
@@ -1483,11 +1486,11 @@ if __name__ == "__main__":
         global chassis_Station_Order
         if len(chassis_Station_Order) > 0:
 
-            if chassis_Station_Order[0].id == int(window.ChassisStation_OrderNumber_Value.text()):
-                if chassis_Station_Order[0].bike_order.fork == "Tubular Steel" and chassis_Station_Order[0].bike_order.frame == "Tubular Steel":
+            if chassis_Station_Order[0].get_id() == int(window.ChassisStation_OrderNumber_Value.text()):
+                if chassis_Station_Order[0].get_bike_order().get_fork() == "Tubular Steel" and chassis_Station_Order[0].get_bike_order().get_frame() == "Tubular Steel":
 
                     #Check the Bike type
-                    if chassis_Station_Order[0].bike_order.bike_type == "Standard":
+                    if chassis_Station_Order[0].get_bike_order().get_bike_type() == "Standard":
                         if window.ChassisStationInventoryStandardForksCount.value() > 0 and window.ChassisStationInventoryStandardFrameCount.value() > 0:
                             # Remove Inventory
                             InventoryChange("Standard Forks", - 1.0)
@@ -1496,7 +1499,7 @@ if __name__ == "__main__":
                             InventoryChange("Standard Chassis", 1.0)
                         else:
                             ValueError("Somehow the button to assemble is enabled even without required amounts")
-                    elif chassis_Station_Order[0].bike_order.bike_type == "Mountain Bike":
+                    elif chassis_Station_Order[0].get_bike_order().get_bike_type() == "Mountain Bike":
                         if window.ChassisStationInventoryMountainForksCount.value() > 0 and window.ChassisStationInventoryMountainFrameCount.value() > 0:
                             # Remove Inventory
                             InventoryChange("Mountain Forks", - 1.0)
@@ -1505,7 +1508,7 @@ if __name__ == "__main__":
                             InventoryChange("Mountain Chassis", 1.0)
                         else:
                             ValueError("Somehow the button to assemble is enabled even without required amounts")
-                    elif chassis_Station_Order[0].bike_order.bike_type == "BMX":
+                    elif chassis_Station_Order[0].get_bike_order().get_bike_type() == "BMX":
                         if window.ChassisStationInventoryBMXForksCount.value() > 0 and window.ChassisStationInventoryBMXFrameCount.value() > 0:
                             # Remove Inventory
                             InventoryChange("BMX Forks", - 1.0)
@@ -1514,7 +1517,7 @@ if __name__ == "__main__":
                             InventoryChange("BMX Chassis", 1.0)
                         else:
                             ValueError("Somehow the button to assemble is enabled even without required amounts")
-                    elif chassis_Station_Order[0].bike_order.bike_type == "Kids":
+                    elif chassis_Station_Order[0].get_bike_order().get_bike_type() == "Kids":
                         if window.ChassisStationInventoryKidsForksCount.value() > 0 and window.ChassisStationInventoryKidsFrameCount.value() > 0:
                             # Remove Inventory
                             InventoryChange("Kids Forks", - 1.0)
@@ -1529,23 +1532,23 @@ if __name__ == "__main__":
                     # Move the order to next station
                     ChassisOrderToPaintOrder()
 
-                elif chassis_Station_Order[0].bike_order.fork == "Tubular Aluminium" and window.ChassisStationInventoryAluminiumForksCount.value() >= 1 and chassis_Station_Order[0].bike_order.frame == "Tubular Aluminium" and window.ChassisStationInventoryAluminiumFrameCount.value() >= 1:
+                elif chassis_Station_Order[0].get_bike_order().get_fork() == "Tubular Aluminium" and window.ChassisStationInventoryAluminiumForksCount.value() >= 1 and chassis_Station_Order[0].get_bike_order().get_frame() == "Tubular Aluminium" and window.ChassisStationInventoryAluminiumFrameCount.value() >= 1:
                     # Remove Inventory
                     InventoryChange("Road Forks", - 1.0)
                     InventoryChange("Road Frames", - 1.0)
                     #Check the Bike type
-                    if chassis_Station_Order[0].bike_order.bike_type == "Road Bike":
+                    if chassis_Station_Order[0].get_bike_order().get_bike_type() == "Road Bike":
                         # Add New Chassis To Inventory
                         InventoryChange("Road Chassis", 1.0)
 
                     # Move the order to next station
                     ChassisOrderToPaintOrder()
                 
-                elif chassis_Station_Order[0].bike_order.fork == "Carbon Fibre" and window.ChassisStationInventoryCarbonForksCount.value() >= 1 and chassis_Station_Order[0].bike_order.frame == "Carbon Fibre" and window.ChassisStationInventoryCarbonFrameCount.value() >= 1:
+                elif chassis_Station_Order[0].get_bike_order().get_fork() == "Carbon Fibre" and window.ChassisStationInventoryCarbonForksCount.value() >= 1 and chassis_Station_Order[0].get_bike_order().get_frame() == "Carbon Fibre" and window.ChassisStationInventoryCarbonFrameCount.value() >= 1:
                     # Remove Inventory
                     InventoryChange("Track Forks", - 1.0)
                     InventoryChange("Track Frames", - 1.0)
-                    if chassis_Station_Order[0].bike_order.bike_type == "Track Bike":
+                    if chassis_Station_Order[0].get_bike_order().get_bike_type() == "Track Bike":
                         # Add New Chassis To Inventory
                         InventoryChange("Track Chassis", 1.0)
 
@@ -1597,29 +1600,29 @@ if __name__ == "__main__":
         if next_order:
             # Set new order information
             order = chassis_Station_Order[0]
-            window.ChassisStation_OrderNumber_Value.setText(str(order.id))
-            window.ChassisStation_BikeType_Value.setText(str(order.bike_order.bike_type))
-            window.ChassisStation_Colour_Value.setText(str(order.bike_order.colour))
-            window.ChassisStation_Pedal_Value.setText(str(order.bike_order.pedals))
-            window.ChassisStation_Chain_Value.setText(str(order.bike_order.chain))
-            window.ChassisStation_Gear_Value.setText(str(order.bike_order.gears))
-            window.ChassisStation_Wheel_Value.setText(str(order.bike_order.wheels))
-            window.ChassisStation_Brakes_Value.setText(str(order.bike_order.brakes))
-            window.ChassisStation_Lights_Value.setText(str(order.bike_order.lights))
-            window.ChassisStation_Seat_Value.setText(str(order.bike_order.seat))
+            window.ChassisStation_OrderNumber_Value.setText(str(order.get_id()))
+            window.ChassisStation_BikeType_Value.setText(order.get_bike_order().get_bike_type())
+            window.ChassisStation_Colour_Value.setText(order.get_bike_order().get_colour())
+            window.ChassisStation_Pedal_Value.setText(order.get_bike_order().get_pedals())
+            window.ChassisStation_Chain_Value.setText(order.get_bike_order().get_chain())
+            window.ChassisStation_Gear_Value.setText(order.get_bike_order().get_gears())
+            window.ChassisStation_Wheel_Value.setText(order.get_bike_order().get_wheels())
+            window.ChassisStation_Brakes_Value.setText(order.get_bike_order().get_brakes())
+            window.ChassisStation_Lights_Value.setText(order.get_bike_order().get_lights())
+            window.ChassisStation_Seat_Value.setText(order.get_bike_order().get_seat())
 
-            if chassis_Station_Order[0].bike_order.bike_type == "Standard" or chassis_Station_Order[0].bike_order.bike_type == "Mountain Bike" or chassis_Station_Order[0].bike_order.bike_type == "BMX" or chassis_Station_Order[0].bike_order.bike_type == "Kids":
-                window.ChassisAssemblyChassisType.setText(str(chassis_Station_Order[0].bike_order.bike_type))
+            if chassis_Station_Order[0].get_bike_order().get_bike_type() == "Standard" or chassis_Station_Order[0].get_bike_order().get_bike_type() == "Mountain Bike" or chassis_Station_Order[0].get_bike_order().get_bike_type() == "BMX" or chassis_Station_Order[0].get_bike_order().get_bike_type() == "Kids":
+                window.ChassisAssemblyChassisType.setText(str(chassis_Station_Order[0].get_bike_order().get_bike_type()))
                 window.ChassisAssemblyForkType.setText(str("Steel"))
                 window.ChassisAssemblyFrameType.setText(str("Steel"))
 
-            elif chassis_Station_Order[0].bike_order.bike_type == "Road Bike":
-                window.ChassisAssemblyChassisType.setText(str(chassis_Station_Order[0].bike_order.bike_type))
+            elif chassis_Station_Order[0].get_bike_order().get_bike_type() == "Road Bike":
+                window.ChassisAssemblyChassisType.setText(str(chassis_Station_Order[0].get_bike_order().get_bike_type()))
                 window.ChassisAssemblyForkType.setText(str("Aluminium"))
                 window.ChassisAssemblyFrameType.setText(str("Aluminium"))
 
-            elif chassis_Station_Order[0].bike_order.bike_type == "Track Bike":
-                window.ChassisAssemblyChassisType.setText(str(chassis_Station_Order[0].bike_order.bike_type))
+            elif chassis_Station_Order[0].get_bike_order().get_bike_type() == "Track Bike":
+                window.ChassisAssemblyChassisType.setText(str(chassis_Station_Order[0].get_bike_order().get_bike_type()))
                 window.ChassisAssemblyForkType.setText(str("Carbon Fibre"))
                 window.ChassisAssemblyFrameType.setText(str("Carbon Fibre"))
 
@@ -1627,34 +1630,34 @@ if __name__ == "__main__":
                 ValueError("The bike type for the order is wrong and does not match bikes being made in this factory.")
 
             # If has required amount enable button
-            if chassis_Station_Order[0].bike_order.fork == "Tubular Steel" and chassis_Station_Order[0].bike_order.frame == "Tubular Steel":
-                if type(chassis_Station_Order[0].bike_order) == Bike:
+            if chassis_Station_Order[0].get_bike_order().get_fork() == "Tubular Steel" and chassis_Station_Order[0].get_bike_order().get_frame() == "Tubular Steel":
+                if type(chassis_Station_Order[0].get_bike_order()) == Bike:
                     if window.ChassisStationInventoryStandardForksCount.value() > 0 and window.ChassisStationInventoryStandardFrameCount.value() > 0:
                         window.ChassisAssemblyButton.setEnabled(True)
                     else:
                         window.ChassisAssemblyButton.setEnabled(False)
-                elif type(chassis_Station_Order[0].bike_order) == MountainBike:
+                elif type(chassis_Station_Order[0].get_bike_order()) == MountainBike:
                     if window.ChassisStationInventoryMountainForksCount.value() > 0 and window.ChassisStationInventoryMountainFrameCount.value() > 0:
                         window.ChassisAssemblyButton.setEnabled(True)
                     else:
                         window.ChassisAssemblyButton.setEnabled(False)
-                elif type(chassis_Station_Order[0].bike_order) == BMXBike:
+                elif type(chassis_Station_Order[0].get_bike_order()) == BMXBike:
                     if window.ChassisStationInventoryBMXForksCount.value() > 0 and window.ChassisStationInventoryBMXFrameCount.value() > 0:
                         window.ChassisAssemblyButton.setEnabled(True)
                     else:
                         window.ChassisAssemblyButton.setEnabled(False)
-                elif type(chassis_Station_Order[0].bike_order) == KidsBike:
+                elif type(chassis_Station_Order[0].get_bike_order()) == KidsBike:
                     if window.ChassisStationInventoryKidsForksCount.value() > 0 and window.ChassisStationInventoryKidsFrameCount.value() > 0:
                         window.ChassisAssemblyButton.setEnabled(True)
                     else:
                         window.ChassisAssemblyButton.setEnabled(False)
                 else:
-                    TypeError("Bike type is not recognised for chassis_Station_Order[0].bike_order")
+                    TypeError("Bike type is not recognised for chassis_Station_Order[0].get_bike_order()")
 
-            elif chassis_Station_Order[0].bike_order.fork == "Tubular Aluminium" and window.ChassisStationInventoryAluminiumForksCount.value() > 0 and chassis_Station_Order[0].bike_order.frame == "Tubular Aluminium" and window.ChassisStationInventoryAluminiumFrameCount.value() > 0:
+            elif chassis_Station_Order[0].get_bike_order().get_fork() == "Tubular Aluminium" and window.ChassisStationInventoryAluminiumForksCount.value() > 0 and chassis_Station_Order[0].get_bike_order().get_frame() == "Tubular Aluminium" and window.ChassisStationInventoryAluminiumFrameCount.value() > 0:
                 window.ChassisAssemblyButton.setEnabled(True)
 
-            elif chassis_Station_Order[0].bike_order.fork == "Carbon Fibre" and window.ChassisStationInventoryCarbonForksCount.value() > 0 and chassis_Station_Order[0].bike_order.frame == "Carbon Fibre" and window.ChassisStationInventoryCarbonFrameCount.value() > 0:
+            elif chassis_Station_Order[0].get_bike_order().get_fork() == "Carbon Fibre" and window.ChassisStationInventoryCarbonForksCount.value() > 0 and chassis_Station_Order[0].get_bike_order().get_frame() == "Carbon Fibre" and window.ChassisStationInventoryCarbonFrameCount.value() > 0:
                 window.ChassisAssemblyButton.setEnabled(True)
             else:
                 window.ChassisAssemblyButton.setEnabled(False)
@@ -1683,29 +1686,29 @@ if __name__ == "__main__":
 
 # Paint Station Functions
     def PaintStationHasRequiredAmount() -> bool:
-        if paint_Station_Order[0].bike_order.bike_type == "Standard":
+        if paint_Station_Order[0].get_bike_order().get_bike_type() == "Standard":
                     if window.PaintStationNormalChassisCount.value() >= 1:
-                        if inventory[paint_Station_Order[0].bike_order.colour + " Paint"][0].value() > 0:
+                        if inventory[paint_Station_Order[0].get_bike_order().get_colour() + " Paint"][0].value() > 0:
                             return True
-        elif paint_Station_Order[0].bike_order.bike_type == "Mountain Bike":
+        elif paint_Station_Order[0].get_bike_order().get_bike_type() == "Mountain Bike":
             if window.PaintStationMountainChassisCount.value() >= 1:
-                        if inventory[paint_Station_Order[0].bike_order.colour + " Paint"][0].value() >= 1:
+                        if inventory[paint_Station_Order[0].get_bike_order().get_colour() + " Paint"][0].value() >= 1:
                             return True
-        elif paint_Station_Order[0].bike_order.bike_type == "Road Bike":
+        elif paint_Station_Order[0].get_bike_order().get_bike_type() == "Road Bike":
             if window.PaintStationRoadChassisCount.value() >= 1:
-                        if inventory[paint_Station_Order[0].bike_order.colour + " Paint"][0].value() >= 1:
+                        if inventory[paint_Station_Order[0].get_bike_order().get_colour() + " Paint"][0].value() >= 1:
                             return True
-        elif paint_Station_Order[0].bike_order.bike_type == "Track Bike":
+        elif paint_Station_Order[0].get_bike_order().get_bike_type() == "Track Bike":
             if window.PaintStationTrackChassisCount.value() >= 1:
-                        if inventory[paint_Station_Order[0].bike_order.colour + " Paint"][0].value() >= 1:
+                        if inventory[paint_Station_Order[0].get_bike_order().get_colour() + " Paint"][0].value() >= 1:
                             return True
-        elif paint_Station_Order[0].bike_order.bike_type == "BMX":
+        elif paint_Station_Order[0].get_bike_order().get_bike_type() == "BMX":
             if window.PaintStationBMXChassisCount.value() >= 1:
-                        if inventory[paint_Station_Order[0].bike_order.colour + " Paint"][0].value() >= 1:
+                        if inventory[paint_Station_Order[0].get_bike_order().get_colour() + " Paint"][0].value() >= 1:
                             return True
-        elif paint_Station_Order[0].bike_order.bike_type == "Kids":
+        elif paint_Station_Order[0].get_bike_order().get_bike_type() == "Kids":
             if window.PaintStationKidsChassisCount.value() >= 1:
-                        if inventory[paint_Station_Order[0].bike_order.colour + " Paint"][0].value() >= 1:
+                        if inventory[paint_Station_Order[0].get_bike_order().get_colour() + " Paint"][0].value() >= 1:
                             return True
         else:
             return False      
@@ -1713,23 +1716,23 @@ if __name__ == "__main__":
     def Painted():
         global paint_Station_Order
         if len(paint_Station_Order) > 0:
-            if paint_Station_Order[0].id == int(window.PaintStation_OrderNumber_Value.text()):
+            if paint_Station_Order[0].get_id() == int(window.PaintStation_OrderNumber_Value.text()):
                 # Check has required amount
                 if PaintStationHasRequiredAmount():
                     # Remove Inventory
-                    if paint_Station_Order[0].bike_order.bike_type == "Standard":
+                    if paint_Station_Order[0].get_bike_order().get_bike_type() == "Standard":
                         InventoryChange("Standard Chassis", - 1.0)
-                    elif paint_Station_Order[0].bike_order.bike_type == "Mountain Bike":
+                    elif paint_Station_Order[0].get_bike_order().get_bike_type() == "Mountain Bike":
                         InventoryChange("Mountain Chassis", - 1.0)
-                    elif paint_Station_Order[0].bike_order.bike_type == "Road Bike":
+                    elif paint_Station_Order[0].get_bike_order().get_bike_type() == "Road Bike":
                         InventoryChange("Road Chassis", - 1.0)
-                    elif paint_Station_Order[0].bike_order.bike_type == "Track Bike":
+                    elif paint_Station_Order[0].get_bike_order().get_bike_type() == "Track Bike":
                         InventoryChange("Track Chassis", - 1.0)
-                    elif paint_Station_Order[0].bike_order.bike_type == "BMX":
+                    elif paint_Station_Order[0].get_bike_order().get_bike_type() == "BMX":
                         InventoryChange("BMX Chassis", - 1.0)
-                    elif paint_Station_Order[0].bike_order.bike_type == "Kids":
+                    elif paint_Station_Order[0].get_bike_order().get_bike_type() == "Kids":
                         InventoryChange("Kids Chassis", - 1.0)
-                    InventoryChange(paint_Station_Order[0].bike_order.colour + " Paint", - 1.0)
+                    InventoryChange(paint_Station_Order[0].get_bike_order().get_colour() + " Paint", - 1.0)
                     # Move order to Pedal Station
                     PaintOrderToPedalOrder()
                 else:
@@ -1782,33 +1785,33 @@ if __name__ == "__main__":
         if next_order:
             # Set new order information
             order = paint_Station_Order[0]
-            window.PaintStation_OrderNumber_Value.setText(str(order.id))
-            window.PaintStation_BikeType_Value.setText(str(order.bike_order.bike_type))
-            window.PaintStation_Colour_Value.setText(str(order.bike_order.colour))
-            window.PaintStation_Pedal_Value.setText(str(order.bike_order.pedals))
-            window.PaintStation_Chain_Value.setText(str(order.bike_order.chain))
-            window.PaintStation_Gear_Value.setText(str(order.bike_order.gears))
-            window.PaintStation_Wheel_Value.setText(str(order.bike_order.wheels))
-            window.PaintStation_Brakes_Value.setText(str(order.bike_order.brakes))
-            window.PaintStation_Lights_Value.setText(str(order.bike_order.lights))
-            window.PaintStation_Seat_Value.setText(str(order.bike_order.seat))
+            window.PaintStation_OrderNumber_Value.setText(str(order.get_id()))
+            window.PaintStation_BikeType_Value.setText(order.get_bike_order().get_bike_type())
+            window.PaintStation_Colour_Value.setText(order.get_bike_order().get_colour())
+            window.PaintStation_Pedal_Value.setText(order.get_bike_order().get_pedals())
+            window.PaintStation_Chain_Value.setText(order.get_bike_order().get_chain())
+            window.PaintStation_Gear_Value.setText(order.get_bike_order().get_gears())
+            window.PaintStation_Wheel_Value.setText(order.get_bike_order().get_wheels())
+            window.PaintStation_Brakes_Value.setText(order.get_bike_order().get_brakes())
+            window.PaintStation_Lights_Value.setText(order.get_bike_order().get_lights())
+            window.PaintStation_Seat_Value.setText(order.get_bike_order().get_seat())
 
-            if paint_Station_Order[0].bike_order.bike_type == "Standard":
+            if paint_Station_Order[0].get_bike_order().get_bike_type() == "Standard":
                 window.PaintStationChassisValue.setText("Standard Chassis")
-            elif paint_Station_Order[0].bike_order.bike_type == "Mountain Bike":
+            elif paint_Station_Order[0].get_bike_order().get_bike_type() == "Mountain Bike":
                 window.PaintStationChassisValue.setText("Mountain Chassis")
-            elif paint_Station_Order[0].bike_order.bike_type == "Road Bike":
+            elif paint_Station_Order[0].get_bike_order().get_bike_type() == "Road Bike":
                 window.PaintStationChassisValue.setText("Road Chassis")
-            elif paint_Station_Order[0].bike_order.bike_type == "Track Bike":
+            elif paint_Station_Order[0].get_bike_order().get_bike_type() == "Track Bike":
                 window.PaintStationChassisValue.setText("Track Chassis")
-            elif paint_Station_Order[0].bike_order.bike_type == "BMX":
+            elif paint_Station_Order[0].get_bike_order().get_bike_type() == "BMX":
                 window.PaintStationChassisValue.setText("BMX Chassis")
-            elif paint_Station_Order[0].bike_order.bike_type == "Kids":
+            elif paint_Station_Order[0].get_bike_order().get_bike_type() == "Kids":
                 window.PaintStationChassisValue.setText("Kids Chassis")
             else:
                 ValueError("The bike type for the order is wrong and does not match bikes being made in this factory.")
             
-            window.PaintStationColourValue.setText(str(order.bike_order.colour))
+            window.PaintStationColourValue.setText(order.get_bike_order().get_colour())
 
             if PaintStationHasRequiredAmount():
                 window.PaintedButton.setEnabled(True)
@@ -1836,34 +1839,34 @@ if __name__ == "__main__":
 
     def PedalStationHasRequiredAmount() -> bool:
         table = window.PedalStationChassisInventoryTable
-        if pedal_Station_Order[0].bike_order.pedals == "Standard" and window.PedalStationInventoryNormalPedalsCount.value() >= 2:
-            if type(pedal_Station_Order[0].bike_order) == Bike and table.item(0, 0).text() == "Standard" and table.item(0, 1).text() == pedal_Station_Order[0].bike_order.colour:
+        if pedal_Station_Order[0].get_bike_order().get_pedals() == "Standard" and window.PedalStationInventoryNormalPedalsCount.value() >= 2:
+            if type(pedal_Station_Order[0].get_bike_order()) == Bike and table.item(0, 0).text() == "Standard" and table.item(0, 1).text() == pedal_Station_Order[0].get_bike_order().get_colour():
                 return True
-            elif type(pedal_Station_Order[0].bike_order) == MountainBike and table.item(0, 0).text() == "Mountain" and table.item(0, 1).text() == pedal_Station_Order[0].bike_order.colour:
+            elif type(pedal_Station_Order[0].get_bike_order()) == MountainBike and table.item(0, 0).text() == "Mountain" and table.item(0, 1).text() == pedal_Station_Order[0].get_bike_order().get_colour():
                 return True
-            elif type(pedal_Station_Order[0].bike_order) == RoadBike and table.item(0, 0).text() == "Road" and table.item(0, 1).text() == pedal_Station_Order[0].bike_order.colour:
+            elif type(pedal_Station_Order[0].get_bike_order()) == RoadBike and table.item(0, 0).text() == "Road" and table.item(0, 1).text() == pedal_Station_Order[0].get_bike_order().get_colour():
                 return True
-            elif type(pedal_Station_Order[0].bike_order) == BMXBike and table.item(0, 0).text() == "BMX" and table.item(0, 1).text() == pedal_Station_Order[0].bike_order.colour:
+            elif type(pedal_Station_Order[0].get_bike_order()) == BMXBike and table.item(0, 0).text() == "BMX" and table.item(0, 1).text() == pedal_Station_Order[0].get_bike_order().get_colour():
                 return True
             else:
                 ValueError("Should not be possible here.")
 
-        elif pedal_Station_Order[0].bike_order.pedals == "Premium" and window.PedalStationInventoryPremiumPedalsCount.value() >= 2:
-            if type(pedal_Station_Order[0].bike_order) == Bike and table.item(0, 0).text() == "Standard" and table.item(0, 1).text() == pedal_Station_Order[0].bike_order.colour:
+        elif pedal_Station_Order[0].get_bike_order().get_pedals() == "Premium" and window.PedalStationInventoryPremiumPedalsCount.value() >= 2:
+            if type(pedal_Station_Order[0].get_bike_order()) == Bike and table.item(0, 0).text() == "Standard" and table.item(0, 1).text() == pedal_Station_Order[0].get_bike_order().get_colour():
                 return True
-            elif type(pedal_Station_Order[0].bike_order) == MountainBike and table.item(0, 0).text() == "Mountain" and table.item(0, 1).text() == pedal_Station_Order[0].bike_order.colour:
+            elif type(pedal_Station_Order[0].get_bike_order()) == MountainBike and table.item(0, 0).text() == "Mountain" and table.item(0, 1).text() == pedal_Station_Order[0].get_bike_order().get_colour():
                 return True
-            elif type(pedal_Station_Order[0].bike_order) == RoadBike and table.item(0, 0).text() == "Road" and table.item(0, 1).text() == pedal_Station_Order[0].bike_order.colour:
+            elif type(pedal_Station_Order[0].get_bike_order()) == RoadBike and table.item(0, 0).text() == "Road" and table.item(0, 1).text() == pedal_Station_Order[0].get_bike_order().get_colour():
                 return True
-            elif type(pedal_Station_Order[0].bike_order) == BMXBike and table.item(0, 0).text() == "BMX" and table.item(0, 1).text() == pedal_Station_Order[0].bike_order.colour:
+            elif type(pedal_Station_Order[0].get_bike_order()) == BMXBike and table.item(0, 0).text() == "BMX" and table.item(0, 1).text() == pedal_Station_Order[0].get_bike_order().get_colour():
                 return True
             else:
                 ValueError("Should not be possible here.")
-        elif pedal_Station_Order[0].bike_order.pedals == "Carbon Fibre" and window.PedalStationInventoryCarbonPedalsCount.value() >= 2:
-            if type(pedal_Station_Order[0].bike_order) == TrackBike and table.item(0, 0).text() == "Track" and table.item(0, 1).text() == pedal_Station_Order[0].bike_order.colour:
+        elif pedal_Station_Order[0].get_bike_order().get_pedals() == "Carbon Fibre" and window.PedalStationInventoryCarbonPedalsCount.value() >= 2:
+            if type(pedal_Station_Order[0].get_bike_order()) == TrackBike and table.item(0, 0).text() == "Track" and table.item(0, 1).text() == pedal_Station_Order[0].get_bike_order().get_colour():
                 return True
-        elif pedal_Station_Order[0].bike_order.pedals == "Kids" and window.PedalStationInventoryKidsPedalsCount.value() >= 2:
-            if type(pedal_Station_Order[0].bike_order) == KidsBike and table.item(0, 0).text() == "Kids" and table.item(0, 1).text() == pedal_Station_Order[0].bike_order.colour:
+        elif pedal_Station_Order[0].get_bike_order().get_pedals() == "Kids" and window.PedalStationInventoryKidsPedalsCount.value() >= 2:
+            if type(pedal_Station_Order[0].get_bike_order()) == KidsBike and table.item(0, 0).text() == "Kids" and table.item(0, 1).text() == pedal_Station_Order[0].get_bike_order().get_colour():
                 return True
             else:
                 ValueError("Should not be possible here.")
@@ -1873,17 +1876,17 @@ if __name__ == "__main__":
     def PedalsAssembled():
         global pedal_Station_Order
         if len(pedal_Station_Order) > 0:
-            if pedal_Station_Order[0].id == int(window.PedalStation_OrderNumber_Value.text()):
+            if pedal_Station_Order[0].get_id() == int(window.PedalStation_OrderNumber_Value.text()):
                 # Check has required amounts
                 if PedalStationHasRequiredAmount():
                     # Remove Pedals From Inventory
-                    if pedal_Station_Order[0].bike_order.pedals == "Standard":
+                    if pedal_Station_Order[0].get_bike_order().get_pedals() == "Standard":
                         InventoryChange("Normal Pedals", - 2.0)
-                    elif pedal_Station_Order[0].bike_order.pedals == "Premium":
+                    elif pedal_Station_Order[0].get_bike_order().get_pedals() == "Premium":
                         InventoryChange("Premium Pedals", - 2.0)
-                    elif pedal_Station_Order[0].bike_order.pedals == "Carbon Fibre":
+                    elif pedal_Station_Order[0].get_bike_order().get_pedals() == "Carbon Fibre":
                         InventoryChange("Carbon Fibre Pedals", - 2.0)
-                    elif pedal_Station_Order[0].bike_order.pedals == "Kids":
+                    elif pedal_Station_Order[0].get_bike_order().get_pedals() == "Kids":
                         InventoryChange("Kids Pedals", - 2.0)
 
                     # Move order to Pedal Station
@@ -1941,40 +1944,40 @@ if __name__ == "__main__":
         if next_order:
             # Set new order information
             order = pedal_Station_Order[0]
-            window.PedalStation_OrderNumber_Value.setText(str(order.id))
-            window.PedalStation_BikeType_Value.setText(str(order.bike_order.bike_type))
-            window.PedalStation_Colour_Value.setText(str(order.bike_order.colour))
-            window.PedalStation_Pedal_Value.setText(str(order.bike_order.pedals))
-            window.PedalStation_Chain_Value.setText(str(order.bike_order.chain))
-            window.PedalStation_Gear_Value.setText(str(order.bike_order.gears))
-            window.PedalStation_Wheel_Value.setText(str(order.bike_order.wheels))
-            window.PedalStation_Brakes_Value.setText(str(order.bike_order.brakes))
-            window.PedalStation_Lights_Value.setText(str(order.bike_order.lights))
-            window.PedalStation_Seat_Value.setText(str(order.bike_order.seat))
+            window.PedalStation_OrderNumber_Value.setText(str(order.get_id()))
+            window.PedalStation_BikeType_Value.setText(order.get_bike_order().get_bike_type())
+            window.PedalStation_Colour_Value.setText(order.get_bike_order().get_colour())
+            window.PedalStation_Pedal_Value.setText(order.get_bike_order().get_pedals())
+            window.PedalStation_Chain_Value.setText(order.get_bike_order().get_chain())
+            window.PedalStation_Gear_Value.setText(order.get_bike_order().get_gears())
+            window.PedalStation_Wheel_Value.setText(order.get_bike_order().get_wheels())
+            window.PedalStation_Brakes_Value.setText(order.get_bike_order().get_brakes())
+            window.PedalStation_Lights_Value.setText(order.get_bike_order().get_lights())
+            window.PedalStation_Seat_Value.setText(order.get_bike_order().get_seat())
 
             # Station Info:
-            if pedal_Station_Order[0].bike_order.bike_type == "Standard":
+            if pedal_Station_Order[0].get_bike_order().get_bike_type() == "Standard":
                 window.PedalAssembly_ChassisType.setText("Standard Chassis")
 
-            elif pedal_Station_Order[0].bike_order.bike_type == "Mountain Bike":
+            elif pedal_Station_Order[0].get_bike_order().get_bike_type() == "Mountain Bike":
                 window.PedalAssembly_ChassisType.setText("Mountain Chassis")
 
-            elif pedal_Station_Order[0].bike_order.bike_type == "Road Bike":
+            elif pedal_Station_Order[0].get_bike_order().get_bike_type() == "Road Bike":
                 window.PedalAssembly_ChassisType.setText("Road Chassis")
 
-            elif pedal_Station_Order[0].bike_order.bike_type == "Track Bike":
+            elif pedal_Station_Order[0].get_bike_order().get_bike_type() == "Track Bike":
                 window.PedalAssembly_ChassisType.setText("Track Chassis")
 
-            elif pedal_Station_Order[0].bike_order.bike_type == "BMX":
+            elif pedal_Station_Order[0].get_bike_order().get_bike_type() == "BMX":
                 window.PedalAssembly_ChassisType.setText("BMX Chassis")
 
-            elif pedal_Station_Order[0].bike_order.bike_type == "Kids":
+            elif pedal_Station_Order[0].get_bike_order().get_bike_type() == "Kids":
                 window.PedalAssembly_ChassisType.setText("Kids Chassis")
 
             else:
                 ValueError("The bike type for the order is wrong and does not match bikes being made in this factory.")
-            window.PedalAssembly_Colour.setText(str(order.bike_order.colour))
-            window.PedalAssembly_PedalType.setText(str(order.bike_order.pedals))
+            window.PedalAssembly_Colour.setText(order.get_bike_order().get_colour())
+            window.PedalAssembly_PedalType.setText(order.get_bike_order().get_pedals())
 
             # If required amount for order set button to enabled
             if PedalStationHasRequiredAmount():
@@ -2004,34 +2007,34 @@ if __name__ == "__main__":
 
     def DCStationHasRequiredAmount() -> bool:
         table = window.DCStationChassisInventoryTable
-        if drive_chain_Station_Order[0].bike_order.gears == "Standard" and window.DCStationInventoryNormalGearCounter.value() <= 0:
+        if drive_chain_Station_Order[0].get_bike_order().get_gears() == "Standard" and window.DCStationInventoryNormalGearCounter.value() <= 0:
             return False
-        elif drive_chain_Station_Order[0].bike_order.gears == "Low Speed" and window.DCStationInventoryLowSpeedGearCounter.value() <= 0:
+        elif drive_chain_Station_Order[0].get_bike_order().get_gears() == "Low Speed" and window.DCStationInventoryLowSpeedGearCounter.value() <= 0:
             return False
-        elif drive_chain_Station_Order[0].bike_order.gears == "High Speed" and window.DCStationInventoryHighSpeedGearCounter.value() <= 0:
+        elif drive_chain_Station_Order[0].get_bike_order().get_gears() == "High Speed" and window.DCStationInventoryHighSpeedGearCounter.value() <= 0:
             return False
-        elif drive_chain_Station_Order[0].bike_order.gears == "Kids" and window.DCStationInventoryKidsGearCounter.value() <= 0:
-            return False
-        
-        if drive_chain_Station_Order[0].bike_order.chain == "Standard" and window.DCStationInventoryNormalChainCounter.value() <= 0:
-            return False
-        elif drive_chain_Station_Order[0].bike_order.chain == "Premium" and window.DCStationInventoryPremiumChainCounter.value() <= 0:
-            return False
-        elif drive_chain_Station_Order[0].bike_order.chain == "Track" and window.DCStationInventoryTrackChainCounter.value() <= 0:
+        elif drive_chain_Station_Order[0].get_bike_order().get_gears() == "Kids" and window.DCStationInventoryKidsGearCounter.value() <= 0:
             return False
         
+        if drive_chain_Station_Order[0].get_bike_order().get_chain() == "Standard" and window.DCStationInventoryNormalChainCounter.value() <= 0:
+            return False
+        elif drive_chain_Station_Order[0].get_bike_order().get_chain() == "Premium" and window.DCStationInventoryPremiumChainCounter.value() <= 0:
+            return False
+        elif drive_chain_Station_Order[0].get_bike_order().get_chain() == "Track" and window.DCStationInventoryTrackChainCounter.value() <= 0:
+            return False
         
-        if type(drive_chain_Station_Order[0].bike_order) == Bike and table.item(0, 0).text() == "Standard" and table.item(0, 1).text() == drive_chain_Station_Order[0].bike_order.colour and table.item(0, 2).text() == drive_chain_Station_Order[0].bike_order.pedals:
+        
+        if type(drive_chain_Station_Order[0].get_bike_order()) == Bike and table.item(0, 0).text() == "Standard" and table.item(0, 1).text() == drive_chain_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == drive_chain_Station_Order[0].get_bike_order().get_pedals():
             return True
-        elif type(drive_chain_Station_Order[0].bike_order) == MountainBike and table.item(0, 0).text() == "Mountain" and table.item(0, 1).text() == drive_chain_Station_Order[0].bike_order.colour and table.item(0, 2).text() == drive_chain_Station_Order[0].bike_order.pedals:
+        elif type(drive_chain_Station_Order[0].get_bike_order()) == MountainBike and table.item(0, 0).text() == "Mountain" and table.item(0, 1).text() == drive_chain_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == drive_chain_Station_Order[0].get_bike_order().get_pedals():
             return True
-        elif type(drive_chain_Station_Order[0].bike_order) == RoadBike and table.item(0, 0).text() == "Road" and table.item(0, 1).text() == drive_chain_Station_Order[0].bike_order.colour and table.item(0, 2).text() == drive_chain_Station_Order[0].bike_order.pedals:
+        elif type(drive_chain_Station_Order[0].get_bike_order()) == RoadBike and table.item(0, 0).text() == "Road" and table.item(0, 1).text() == drive_chain_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == drive_chain_Station_Order[0].get_bike_order().get_pedals():
             return True
-        elif type(drive_chain_Station_Order[0].bike_order) == BMXBike and table.item(0, 0).text() == "BMX" and table.item(0, 1).text() == drive_chain_Station_Order[0].bike_order.colour and table.item(0, 2).text() == drive_chain_Station_Order[0].bike_order.pedals:
+        elif type(drive_chain_Station_Order[0].get_bike_order()) == BMXBike and table.item(0, 0).text() == "BMX" and table.item(0, 1).text() == drive_chain_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == drive_chain_Station_Order[0].get_bike_order().get_pedals():
             return True
-        elif type(drive_chain_Station_Order[0].bike_order) == TrackBike and table.item(0, 0).text() == "Track" and table.item(0, 1).text() == drive_chain_Station_Order[0].bike_order.colour and table.item(0, 2).text() == drive_chain_Station_Order[0].bike_order.pedals:
+        elif type(drive_chain_Station_Order[0].get_bike_order()) == TrackBike and table.item(0, 0).text() == "Track" and table.item(0, 1).text() == drive_chain_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == drive_chain_Station_Order[0].get_bike_order().get_pedals():
             return True
-        elif type(drive_chain_Station_Order[0].bike_order) == KidsBike and table.item(0, 0).text() == "Kids" and table.item(0, 1).text() == drive_chain_Station_Order[0].bike_order.colour and table.item(0, 2).text() == drive_chain_Station_Order[0].bike_order.pedals:
+        elif type(drive_chain_Station_Order[0].get_bike_order()) == KidsBike and table.item(0, 0).text() == "Kids" and table.item(0, 1).text() == drive_chain_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == drive_chain_Station_Order[0].get_bike_order().get_pedals():
             return True
         else:
             return False
@@ -2039,29 +2042,29 @@ if __name__ == "__main__":
     def DriveChainAssembled():
         global drive_chain_Station_Order
         if len(drive_chain_Station_Order) > 0:
-            if drive_chain_Station_Order[0].id == int(window.DCStation_OrderNumber_Value.text()):
+            if drive_chain_Station_Order[0].get_id() == int(window.DCStation_OrderNumber_Value.text()):
                 # Check has required amounts
                 if DCStationHasRequiredAmount():
                     # Remove Pedals From Inventory
-                    if drive_chain_Station_Order[0].bike_order.gears == "Standard":
+                    if drive_chain_Station_Order[0].get_bike_order().get_gears() == "Standard":
                         InventoryChange("Standard Gears", - 1.0)
-                    elif drive_chain_Station_Order[0].bike_order.gears == "Low Speed":
+                    elif drive_chain_Station_Order[0].get_bike_order().get_gears() == "Low Speed":
                         InventoryChange("Low Speed Gears", - 1.0)
-                    elif drive_chain_Station_Order[0].bike_order.gears == "High Speed":
+                    elif drive_chain_Station_Order[0].get_bike_order().get_gears() == "High Speed":
                         InventoryChange("High Speed Gears", - 1.0)
-                    elif drive_chain_Station_Order[0].bike_order.pedals == "Kids":
+                    elif drive_chain_Station_Order[0].get_bike_order().get_pedals() == "Kids":
                         InventoryChange("Kids Gears", - 1.0)
                     else:
-                        ValueError("drive_chain_Station_Order[0].bike_order.gears IS NOT SET CORRECTLY")
+                        ValueError("drive_chain_Station_Order[0].get_bike_order().get_gears() IS NOT SET CORRECTLY")
 
-                    if drive_chain_Station_Order[0].bike_order.chain == "Standard":
+                    if drive_chain_Station_Order[0].get_bike_order().get_chain() == "Standard":
                         InventoryChange("Standard Chain", - 1.0)
-                    elif drive_chain_Station_Order[0].bike_order.chain == "Premium":
+                    elif drive_chain_Station_Order[0].get_bike_order().get_chain() == "Premium":
                         InventoryChange("Premium Chain", - 1.0)
-                    elif drive_chain_Station_Order[0].bike_order.chain == "Track":
+                    elif drive_chain_Station_Order[0].get_bike_order().get_chain() == "Track":
                         InventoryChange("Track Chain", - 1.0)
                     else:
-                        ValueError("drive_chain_Station_Order[0].bike_order.chain IS NOT SET CORRECTLY")
+                        ValueError("drive_chain_Station_Order[0].get_bike_order().get_chain() IS NOT SET CORRECTLY")
 
                     # Move order to Wheel Station
                     DriveChainOrderToWheelOrder()
@@ -2119,36 +2122,36 @@ if __name__ == "__main__":
         if next_order:
             # Set new order information
             order = drive_chain_Station_Order[0]
-            window.DCStation_OrderNumber_Value.setText(str(order.id))
-            window.DCStation_BikeType_Value.setText(str(order.bike_order.bike_type))
-            window.DCStation_Colour_Value.setText(str(order.bike_order.colour))
-            window.DCStation_Pedal_Value.setText(str(order.bike_order.pedals))
-            window.DCStation_Chain_Value.setText(str(order.bike_order.chain))
-            window.DCStation_Gear_Value.setText(str(order.bike_order.gears))
-            window.DCStation_Wheel_Value.setText(str(order.bike_order.wheels))
-            window.DCStation_Brakes_Value.setText(str(order.bike_order.brakes))
-            window.DCStation_Lights_Value.setText(str(order.bike_order.lights))
-            window.DCStation_Seat_Value.setText(str(order.bike_order.seat))
+            window.DCStation_OrderNumber_Value.setText(str(order.get_id()))
+            window.DCStation_BikeType_Value.setText(order.get_bike_order().get_bike_type())
+            window.DCStation_Colour_Value.setText(order.get_bike_order().get_colour())
+            window.DCStation_Pedal_Value.setText(order.get_bike_order().get_pedals())
+            window.DCStation_Chain_Value.setText(order.get_bike_order().get_chain())
+            window.DCStation_Gear_Value.setText(order.get_bike_order().get_gears())
+            window.DCStation_Wheel_Value.setText(order.get_bike_order().get_wheels())
+            window.DCStation_Brakes_Value.setText(order.get_bike_order().get_brakes())
+            window.DCStation_Lights_Value.setText(order.get_bike_order().get_lights())
+            window.DCStation_Seat_Value.setText(order.get_bike_order().get_seat())
 
             # Station Info:
-            if drive_chain_Station_Order[0].bike_order.bike_type == "Standard":
+            if drive_chain_Station_Order[0].get_bike_order().get_bike_type() == "Standard":
                 window.DCAssemblyChassisValue.setText("Standard Chassis")
-            elif drive_chain_Station_Order[0].bike_order.bike_type == "Mountain Bike":
+            elif drive_chain_Station_Order[0].get_bike_order().get_bike_type() == "Mountain Bike":
                 window.DCAssemblyChassisValue.setText("Mountain Chassis")
-            elif drive_chain_Station_Order[0].bike_order.bike_type == "Road Bike":
+            elif drive_chain_Station_Order[0].get_bike_order().get_bike_type() == "Road Bike":
                 window.DCAssemblyChassisValue.setText("Road Chassis")
-            elif drive_chain_Station_Order[0].bike_order.bike_type == "Track Bike":
+            elif drive_chain_Station_Order[0].get_bike_order().get_bike_type() == "Track Bike":
                 window.DCAssemblyChassisValue.setText("Track Chassis")
-            elif drive_chain_Station_Order[0].bike_order.bike_type == "BMX":
+            elif drive_chain_Station_Order[0].get_bike_order().get_bike_type() == "BMX":
                 window.DCAssemblyChassisValue.setText("BMX Chassis")
-            elif drive_chain_Station_Order[0].bike_order.bike_type == "Kids":
+            elif drive_chain_Station_Order[0].get_bike_order().get_bike_type() == "Kids":
                 window.DCAssemblyChassisValue.setText("Kids Chassis")
             else:
                 ValueError("The bike type for the order is wrong and does not match bikes being made in this factory.")
-            window.DCAssemblyColourValue.setText(str(order.bike_order.colour))
-            window.DCAssemblyPedalValue.setText(str(order.bike_order.pedals))
-            window.DCAssemblyChainValue.setText(str(order.bike_order.chain))
-            window.DCAssemblyGearValue.setText(str(order.bike_order.gears))
+            window.DCAssemblyColourValue.setText(order.get_bike_order().get_colour())
+            window.DCAssemblyPedalValue.setText(order.get_bike_order().get_pedals())
+            window.DCAssemblyChainValue.setText(order.get_bike_order().get_chain())
+            window.DCAssemblyGearValue.setText(order.get_bike_order().get_gears())
 
             # If required amount for order set button to enabled
             if DCStationHasRequiredAmount():
@@ -2181,28 +2184,28 @@ if __name__ == "__main__":
     def WheelHasRequiredAmount():
         table = window.WheelStationChassisInventory
 
-        if wheel_Station_Order[0].bike_order.wheels == "Standard" and window.WheelStationInventory_NormalCount.value() <= 1:
+        if wheel_Station_Order[0].get_bike_order().get_wheels() == "Standard" and window.WheelStationInventory_NormalCount.value() <= 1:
             return False
-        elif wheel_Station_Order[0].bike_order.wheels == "Offroad" and window.WheelStationInventory_OffroadCount.value() <= 1:
+        elif wheel_Station_Order[0].get_bike_order().get_wheels() == "Offroad" and window.WheelStationInventory_OffroadCount.value() <= 1:
             return False
-        elif wheel_Station_Order[0].bike_order.wheels == "Road" and window.WheelStationInventory_RoadCount.value() <= 1:
+        elif wheel_Station_Order[0].get_bike_order().get_wheels() == "Road" and window.WheelStationInventory_RoadCount.value() <= 1:
             return False
-        elif wheel_Station_Order[0].bike_order.wheels == "Carbon Fibre" and window.WheelStationInventory_CarbonCount.value() <= 1:
+        elif wheel_Station_Order[0].get_bike_order().get_wheels() == "Carbon Fibre" and window.WheelStationInventory_CarbonCount.value() <= 1:
             return False
-        elif wheel_Station_Order[0].bike_order.wheels == "Kids" and window.WheelStationInventory_KidsCount.value() <= 1:
+        elif wheel_Station_Order[0].get_bike_order().get_wheels() == "Kids" and window.WheelStationInventory_KidsCount.value() <= 1:
             return False
     
-        if type(wheel_Station_Order[0].bike_order) == Bike and table.item(0, 0).text() == "Standard" and table.item(0, 1).text() == wheel_Station_Order[0].bike_order.colour and table.item(0, 2).text() == wheel_Station_Order[0].bike_order.pedals and table.item(0, 3).text() == wheel_Station_Order[0].bike_order.gears and table.item(0, 4).text() == wheel_Station_Order[0].bike_order.chain:
+        if type(wheel_Station_Order[0].get_bike_order()) == Bike and table.item(0, 0).text() == "Standard" and table.item(0, 1).text() == wheel_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == wheel_Station_Order[0].get_bike_order().get_pedals() and table.item(0, 3).text() == wheel_Station_Order[0].get_bike_order().get_gears() and table.item(0, 4).text() == wheel_Station_Order[0].get_bike_order().get_chain():
             return True
-        elif type(wheel_Station_Order[0].bike_order) == MountainBike and table.item(0, 0).text() == "Mountain" and table.item(0, 1).text() == wheel_Station_Order[0].bike_order.colour and table.item(0, 2).text() == wheel_Station_Order[0].bike_order.pedals and table.item(0, 3).text() == wheel_Station_Order[0].bike_order.gears and table.item(0, 4).text() == wheel_Station_Order[0].bike_order.chain:
+        elif type(wheel_Station_Order[0].get_bike_order()) == MountainBike and table.item(0, 0).text() == "Mountain" and table.item(0, 1).text() == wheel_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == wheel_Station_Order[0].get_bike_order().get_pedals() and table.item(0, 3).text() == wheel_Station_Order[0].get_bike_order().get_gears() and table.item(0, 4).text() == wheel_Station_Order[0].get_bike_order().get_chain():
             return True
-        elif type(wheel_Station_Order[0].bike_order) == RoadBike and table.item(0, 0).text() == "Road" and table.item(0, 1).text() == wheel_Station_Order[0].bike_order.colour and table.item(0, 2).text() == wheel_Station_Order[0].bike_order.pedals and table.item(0, 3).text() == wheel_Station_Order[0].bike_order.gears and table.item(0, 4).text() == wheel_Station_Order[0].bike_order.chain:
+        elif type(wheel_Station_Order[0].get_bike_order()) == RoadBike and table.item(0, 0).text() == "Road" and table.item(0, 1).text() == wheel_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == wheel_Station_Order[0].get_bike_order().get_pedals() and table.item(0, 3).text() == wheel_Station_Order[0].get_bike_order().get_gears() and table.item(0, 4).text() == wheel_Station_Order[0].get_bike_order().get_chain():
             return True
-        elif type(wheel_Station_Order[0].bike_order) == BMXBike and table.item(0, 0).text() == "BMX" and table.item(0, 1).text() == wheel_Station_Order[0].bike_order.colour and table.item(0, 2).text() == wheel_Station_Order[0].bike_order.pedals and table.item(0, 3).text() == wheel_Station_Order[0].bike_order.gears and table.item(0, 4).text() == wheel_Station_Order[0].bike_order.chain:
+        elif type(wheel_Station_Order[0].get_bike_order()) == BMXBike and table.item(0, 0).text() == "BMX" and table.item(0, 1).text() == wheel_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == wheel_Station_Order[0].get_bike_order().get_pedals() and table.item(0, 3).text() == wheel_Station_Order[0].get_bike_order().get_gears() and table.item(0, 4).text() == wheel_Station_Order[0].get_bike_order().get_chain():
             return True
-        elif type(wheel_Station_Order[0].bike_order) == TrackBike and table.item(0, 0).text() == "Track" and table.item(0, 1).text() == wheel_Station_Order[0].bike_order.colour and table.item(0, 2).text() == wheel_Station_Order[0].bike_order.pedals and table.item(0, 3).text() == wheel_Station_Order[0].bike_order.gears and table.item(0, 4).text() == wheel_Station_Order[0].bike_order.chain:
+        elif type(wheel_Station_Order[0].get_bike_order()) == TrackBike and table.item(0, 0).text() == "Track" and table.item(0, 1).text() == wheel_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == wheel_Station_Order[0].get_bike_order().get_pedals() and table.item(0, 3).text() == wheel_Station_Order[0].get_bike_order().get_gears() and table.item(0, 4).text() == wheel_Station_Order[0].get_bike_order().get_chain():
             return True
-        elif type(wheel_Station_Order[0].bike_order) == KidsBike and table.item(0, 0).text() == "Kids" and table.item(0, 1).text() == wheel_Station_Order[0].bike_order.colour and table.item(0, 2).text() == wheel_Station_Order[0].bike_order.pedals and table.item(0, 3).text() == wheel_Station_Order[0].bike_order.gears and table.item(0, 4).text() == wheel_Station_Order[0].bike_order.chain:
+        elif type(wheel_Station_Order[0].get_bike_order()) == KidsBike and table.item(0, 0).text() == "Kids" and table.item(0, 1).text() == wheel_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == wheel_Station_Order[0].get_bike_order().get_pedals() and table.item(0, 3).text() == wheel_Station_Order[0].get_bike_order().get_gears() and table.item(0, 4).text() == wheel_Station_Order[0].get_bike_order().get_chain():
             return True
         else:
             return False
@@ -2210,25 +2213,25 @@ if __name__ == "__main__":
     def WheelsAssembled():
         global wheel_Station_Order
         if len(wheel_Station_Order) > 0:
-            if wheel_Station_Order[0].id == int(window.WheelStation_OrderNumber_Value.text()):
+            if wheel_Station_Order[0].get_id() == int(window.WheelStation_OrderNumber_Value.text()):
                 # Check has required amounts
                 if WheelHasRequiredAmount():
                     # Remove Wheels From Inventory
-                    if wheel_Station_Order[0].bike_order.wheels == "Standard":
+                    if wheel_Station_Order[0].get_bike_order().get_wheels() == "Standard":
                         InventoryChange("Standard Wheels", - 2.0)
-                    elif wheel_Station_Order[0].bike_order.wheels == "Offroad":
+                    elif wheel_Station_Order[0].get_bike_order().get_wheels() == "Offroad":
                         InventoryChange("Offroad Wheels", - 2.0)
-                    elif wheel_Station_Order[0].bike_order.wheels == "Road":
+                    elif wheel_Station_Order[0].get_bike_order().get_wheels() == "Road":
                         InventoryChange("Road Wheels", - 2.0)
-                    elif wheel_Station_Order[0].bike_order.wheels == "Carbon Fibre":
+                    elif wheel_Station_Order[0].get_bike_order().get_wheels() == "Carbon Fibre":
                         InventoryChange("Carbon Fibre Wheels", - 2.0)
-                    elif wheel_Station_Order[0].bike_order.wheels == "Kids":
+                    elif wheel_Station_Order[0].get_bike_order().get_wheels() == "Kids":
                         InventoryChange("Kids Wheels", - 2.0)
                     else:
-                        ValueError("wheel_Station_Order[0].bike_order.gears IS NOT SET CORRECTLY")
+                        ValueError("wheel_Station_Order[0].get_bike_order().get_gears() IS NOT SET CORRECTLY")
 
-                    if wheel_Station_Order[0].bike_order.brakes == "None":
-                        if wheel_Station_Order[0].bike_order.lights == "None":
+                    if wheel_Station_Order[0].get_bike_order().get_brakes() == "None":
+                        if wheel_Station_Order[0].get_bike_order().get_lights() == "None":
                             # Skip Brake and Light Station and go straight to Seat Station
                             WheelStationToSeatStation()
                         else:
@@ -2363,38 +2366,38 @@ if __name__ == "__main__":
         if next_order:
             # Set new order information
             order = wheel_Station_Order[0]
-            window.WheelStation_OrderNumber_Value.setText(str(order.id))
-            window.WheelStation_BikeType_Value.setText(str(order.bike_order.bike_type))
-            window.WheelStation_Colour_Value.setText(str(order.bike_order.colour))
-            window.WheelStation_Pedal_Value.setText(str(order.bike_order.pedals))
-            window.WheelStation_Chain_Value.setText(str(order.bike_order.chain))
-            window.WheelStation_Gear_Value.setText(str(order.bike_order.gears))
-            window.WheelStation_Wheel_Value.setText(str(order.bike_order.wheels))
-            window.WheelStation_Brakes_Value.setText(str(order.bike_order.brakes))
-            window.WheelStation_Lights_Value.setText(str(order.bike_order.lights))
-            window.WheelStation_Seat_Value.setText(str(order.bike_order.seat))
+            window.WheelStation_OrderNumber_Value.setText(str(order.get_id()))
+            window.WheelStation_BikeType_Value.setText(order.get_bike_order().get_bike_type())
+            window.WheelStation_Colour_Value.setText(order.get_bike_order().get_colour())
+            window.WheelStation_Pedal_Value.setText(order.get_bike_order().get_pedals())
+            window.WheelStation_Chain_Value.setText(order.get_bike_order().get_chain())
+            window.WheelStation_Gear_Value.setText(order.get_bike_order().get_gears())
+            window.WheelStation_Wheel_Value.setText(order.get_bike_order().get_wheels())
+            window.WheelStation_Brakes_Value.setText(order.get_bike_order().get_brakes())
+            window.WheelStation_Lights_Value.setText(order.get_bike_order().get_lights())
+            window.WheelStation_Seat_Value.setText(order.get_bike_order().get_seat())
 
             # Station Info:
-            if wheel_Station_Order[0].bike_order.bike_type == "Standard":
+            if wheel_Station_Order[0].get_bike_order().get_bike_type() == "Standard":
                 window.WheelAssembly_ChassisType.setText("Standard Chassis")
-            elif wheel_Station_Order[0].bike_order.bike_type == "Mountain Bike":
+            elif wheel_Station_Order[0].get_bike_order().get_bike_type() == "Mountain Bike":
                 window.WheelAssembly_ChassisType.setText("Mountain Chassis")
-            elif wheel_Station_Order[0].bike_order.bike_type == "Road Bike":
+            elif wheel_Station_Order[0].get_bike_order().get_bike_type() == "Road Bike":
                 window.WheelAssembly_ChassisType.setText("Road Chassis")
-            elif wheel_Station_Order[0].bike_order.bike_type == "Track Bike":
+            elif wheel_Station_Order[0].get_bike_order().get_bike_type() == "Track Bike":
                 window.WheelAssembly_ChassisType.setText("Track Chassis")
-            elif wheel_Station_Order[0].bike_order.bike_type == "BMX":
+            elif wheel_Station_Order[0].get_bike_order().get_bike_type() == "BMX":
                 window.WheelAssembly_ChassisType.setText("BMX Chassis")
-            elif wheel_Station_Order[0].bike_order.bike_type == "Kids":
+            elif wheel_Station_Order[0].get_bike_order().get_bike_type() == "Kids":
                 window.WheelAssembly_ChassisType.setText("Kids Chassis")
             else:
                 ValueError("The bike type for the order is wrong and does not match bikes being made in this factory.")
                 
-            window.WheelAssembly_Colour.setText(str(order.bike_order.colour))
-            window.WheelAssembly_PedalType.setText(str(order.bike_order.pedals))
-            window.WheelAssembly_ChainType.setText(str(order.bike_order.chain))
-            window.WheelAssembly_GearType.setText(str(order.bike_order.gears))
-            window.WheelAssembly_WheelType.setText(str(order.bike_order.wheels))
+            window.WheelAssembly_Colour.setText(order.get_bike_order().get_colour())
+            window.WheelAssembly_PedalType.setText(order.get_bike_order().get_pedals())
+            window.WheelAssembly_ChainType.setText(order.get_bike_order().get_chain())
+            window.WheelAssembly_GearType.setText(order.get_bike_order().get_gears())
+            window.WheelAssembly_WheelType.setText(order.get_bike_order().get_wheels())
 
             # If required amount for order set button to enabled
             if WheelHasRequiredAmount():
@@ -2428,22 +2431,22 @@ if __name__ == "__main__":
     def BrakeHasRequiredAmount():
         table = window.BrakeStationChassisInventoryTable
 
-        if brakes_Station_Order[0].bike_order.brakes == "Standard" and window.BrakeStationNormalBrakeCounter.value() <= 1:
+        if brakes_Station_Order[0].get_bike_order().get_brakes() == "Standard" and window.BrakeStationNormalBrakeCounter.value() <= 1:
             return False
-        elif brakes_Station_Order[0].bike_order.brakes == "Premium" and window.BrakeStationPremiumBrakeCounter.value() <= 1:
+        elif brakes_Station_Order[0].get_bike_order().get_brakes() == "Premium" and window.BrakeStationPremiumBrakeCounter.value() <= 1:
             return False
     
-        if type(brakes_Station_Order[0].bike_order) == Bike and table.item(0, 0).text() == "Standard" and table.item(0, 1).text() == brakes_Station_Order[0].bike_order.colour and table.item(0, 2).text() == brakes_Station_Order[0].bike_order.pedals and table.item(0, 3).text() == brakes_Station_Order[0].bike_order.gears and table.item(0, 4).text() == brakes_Station_Order[0].bike_order.chain and table.item(0, 5).text() == brakes_Station_Order[0].bike_order.wheels:
+        if type(brakes_Station_Order[0].get_bike_order()) == Bike and table.item(0, 0).text() == "Standard" and table.item(0, 1).text() == brakes_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == brakes_Station_Order[0].get_bike_order().get_pedals() and table.item(0, 3).text() == brakes_Station_Order[0].get_bike_order().get_gears() and table.item(0, 4).text() == brakes_Station_Order[0].get_bike_order().get_chain() and table.item(0, 5).text() == brakes_Station_Order[0].get_bike_order().get_wheels():
             return True
-        elif type(brakes_Station_Order[0].bike_order) == MountainBike and table.item(0, 0).text() == "Mountain" and table.item(0, 1).text() == brakes_Station_Order[0].bike_order.colour and table.item(0, 2).text() == brakes_Station_Order[0].bike_order.pedals and table.item(0, 3).text() == brakes_Station_Order[0].bike_order.gears and table.item(0, 4).text() == brakes_Station_Order[0].bike_order.chain and table.item(0, 5).text() == brakes_Station_Order[0].bike_order.wheels:
+        elif type(brakes_Station_Order[0].get_bike_order()) == MountainBike and table.item(0, 0).text() == "Mountain" and table.item(0, 1).text() == brakes_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == brakes_Station_Order[0].get_bike_order().get_pedals() and table.item(0, 3).text() == brakes_Station_Order[0].get_bike_order().get_gears() and table.item(0, 4).text() == brakes_Station_Order[0].get_bike_order().get_chain() and table.item(0, 5).text() == brakes_Station_Order[0].get_bike_order().get_wheels():
             return True
-        elif type(brakes_Station_Order[0].bike_order) == RoadBike and table.item(0, 0).text() == "Road" and table.item(0, 1).text() == brakes_Station_Order[0].bike_order.colour and table.item(0, 2).text() == brakes_Station_Order[0].bike_order.pedals and table.item(0, 3).text() == brakes_Station_Order[0].bike_order.gears and table.item(0, 4).text() == brakes_Station_Order[0].bike_order.chain and table.item(0, 5).text() == brakes_Station_Order[0].bike_order.wheels:
+        elif type(brakes_Station_Order[0].get_bike_order()) == RoadBike and table.item(0, 0).text() == "Road" and table.item(0, 1).text() == brakes_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == brakes_Station_Order[0].get_bike_order().get_pedals() and table.item(0, 3).text() == brakes_Station_Order[0].get_bike_order().get_gears() and table.item(0, 4).text() == brakes_Station_Order[0].get_bike_order().get_chain() and table.item(0, 5).text() == brakes_Station_Order[0].get_bike_order().get_wheels():
             return True
-        elif type(brakes_Station_Order[0].bike_order) == BMXBike and table.item(0, 0).text() == "BMX" and table.item(0, 1).text() == brakes_Station_Order[0].bike_order.colour and table.item(0, 2).text() == brakes_Station_Order[0].bike_order.pedals and table.item(0, 3).text() == brakes_Station_Order[0].bike_order.gears and table.item(0, 4).text() == brakes_Station_Order[0].bike_order.chain and table.item(0, 5).text() == brakes_Station_Order[0].bike_order.wheels:
+        elif type(brakes_Station_Order[0].get_bike_order()) == BMXBike and table.item(0, 0).text() == "BMX" and table.item(0, 1).text() == brakes_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == brakes_Station_Order[0].get_bike_order().get_pedals() and table.item(0, 3).text() == brakes_Station_Order[0].get_bike_order().get_gears() and table.item(0, 4).text() == brakes_Station_Order[0].get_bike_order().get_chain() and table.item(0, 5).text() == brakes_Station_Order[0].get_bike_order().get_wheels():
             return True
-        elif type(brakes_Station_Order[0].bike_order) == TrackBike and table.item(0, 0).text() == "Track" and table.item(0, 1).text() == brakes_Station_Order[0].bike_order.colour and table.item(0, 2).text() == brakes_Station_Order[0].bike_order.pedals and table.item(0, 3).text() == brakes_Station_Order[0].bike_order.gears and table.item(0, 4).text() == brakes_Station_Order[0].bike_order.chain and table.item(0, 5).text() == brakes_Station_Order[0].bike_order.wheels:
+        elif type(brakes_Station_Order[0].get_bike_order()) == TrackBike and table.item(0, 0).text() == "Track" and table.item(0, 1).text() == brakes_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == brakes_Station_Order[0].get_bike_order().get_pedals() and table.item(0, 3).text() == brakes_Station_Order[0].get_bike_order().get_gears() and table.item(0, 4).text() == brakes_Station_Order[0].get_bike_order().get_chain() and table.item(0, 5).text() == brakes_Station_Order[0].get_bike_order().get_wheels():
             return True
-        elif type(brakes_Station_Order[0].bike_order) == KidsBike and table.item(0, 0).text() == "Kids" and table.item(0, 1).text() == brakes_Station_Order[0].bike_order.colour and table.item(0, 2).text() == brakes_Station_Order[0].bike_order.pedals and table.item(0, 3).text() == brakes_Station_Order[0].bike_order.gears and table.item(0, 4).text() == brakes_Station_Order[0].bike_order.chain and table.item(0, 5).text() == brakes_Station_Order[0].bike_order.wheels:
+        elif type(brakes_Station_Order[0].get_bike_order()) == KidsBike and table.item(0, 0).text() == "Kids" and table.item(0, 1).text() == brakes_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == brakes_Station_Order[0].get_bike_order().get_pedals() and table.item(0, 3).text() == brakes_Station_Order[0].get_bike_order().get_gears() and table.item(0, 4).text() == brakes_Station_Order[0].get_bike_order().get_chain() and table.item(0, 5).text() == brakes_Station_Order[0].get_bike_order().get_wheels():
             return True
         else:
             return False
@@ -2451,18 +2454,18 @@ if __name__ == "__main__":
     def BrakesAssembled():
         global brakes_Station_Order
         if len(brakes_Station_Order) > 0:
-            if brakes_Station_Order[0].id == int(window.BrakesStation_OrderNumber_Value.text()):
+            if brakes_Station_Order[0].get_id() == int(window.BrakesStation_OrderNumber_Value.text()):
                 # Check has required amounts
                 if BrakeHasRequiredAmount():
                     # Remove Brakes From Inventory
-                    if brakes_Station_Order[0].bike_order.brakes == "Standard":
+                    if brakes_Station_Order[0].get_bike_order().get_brakes() == "Standard":
                         InventoryChange("Normal Brakes", - 2.0)
-                    elif brakes_Station_Order[0].bike_order.brakes == "Premium Disc Brakes":
+                    elif brakes_Station_Order[0].get_bike_order().get_brakes() == "Premium Disc Brakes":
                         InventoryChange("Premium Brakes", - 2.0)
                     else:
-                        ValueError("brakes_Station_Order[0].bike_order.brakes IS NOT SET CORRECTLY")
+                        ValueError("brakes_Station_Order[0].get_bike_order().get_brakes() IS NOT SET CORRECTLY")
 
-                    if brakes_Station_Order[0].bike_order.lights == "None":
+                    if brakes_Station_Order[0].get_bike_order().get_lights() == "None":
                         BrakeStationToSeatStation()
                     else:
                         BrakeStationToLightsStation()
@@ -2557,39 +2560,39 @@ if __name__ == "__main__":
         if next_order:
             # Set new order information
             order = brakes_Station_Order[0]
-            window.BrakesStation_OrderNumber_Value.setText(str(order.id))
-            window.BrakesStation_BikeType_Value.setText(str(order.bike_order.bike_type))
-            window.BrakesStation_Colour_Value.setText(str(order.bike_order.colour))
-            window.BrakesStation_Pedal_Value.setText(str(order.bike_order.pedals))
-            window.BrakesStation_Chain_Value.setText(str(order.bike_order.chain))
-            window.BrakesStation_Gear_Value.setText(str(order.bike_order.gears))
-            window.BrakesStation_Wheel_Value.setText(str(order.bike_order.wheels))
-            window.BrakesStation_Brakes_Value.setText(str(order.bike_order.brakes))
-            window.BrakesStation_Lights_Value.setText(str(order.bike_order.lights))
-            window.BrakesStation_Seat_Value.setText(str(order.bike_order.seat))
+            window.BrakesStation_OrderNumber_Value.setText(str(order.get_id()))
+            window.BrakesStation_BikeType_Value.setText(order.get_bike_order().get_bike_type())
+            window.BrakesStation_Colour_Value.setText(order.get_bike_order().get_colour())
+            window.BrakesStation_Pedal_Value.setText(order.get_bike_order().get_pedals())
+            window.BrakesStation_Chain_Value.setText(order.get_bike_order().get_chain())
+            window.BrakesStation_Gear_Value.setText(order.get_bike_order().get_gears())
+            window.BrakesStation_Wheel_Value.setText(order.get_bike_order().get_wheels())
+            window.BrakesStation_Brakes_Value.setText(order.get_bike_order().get_brakes())
+            window.BrakesStation_Lights_Value.setText(order.get_bike_order().get_lights())
+            window.BrakesStation_Seat_Value.setText(order.get_bike_order().get_seat())
 
             # Station Info:
-            if brakes_Station_Order[0].bike_order.bike_type == "Standard":
+            if brakes_Station_Order[0].get_bike_order().get_bike_type() == "Standard":
                 window.BrakeAssemblyChassisType.setText("Standard Chassis")
-            elif brakes_Station_Order[0].bike_order.bike_type == "Mountain Bike":
+            elif brakes_Station_Order[0].get_bike_order().get_bike_type() == "Mountain Bike":
                 window.BrakeAssemblyChassisType.setText("Mountain Chassis")
-            elif brakes_Station_Order[0].bike_order.bike_type == "Road Bike":
+            elif brakes_Station_Order[0].get_bike_order().get_bike_type() == "Road Bike":
                 window.BrakeAssemblyChassisType.setText("Road Chassis")
-            elif brakes_Station_Order[0].bike_order.bike_type == "Track Bike":
+            elif brakes_Station_Order[0].get_bike_order().get_bike_type() == "Track Bike":
                 window.BrakeAssemblyChassisType.setText("Track Chassis")
-            elif brakes_Station_Order[0].bike_order.bike_type == "BMX":
+            elif brakes_Station_Order[0].get_bike_order().get_bike_type() == "BMX":
                 window.BrakeAssemblyChassisType.setText("BMX Chassis")
-            elif brakes_Station_Order[0].bike_order.bike_type == "Kids":
+            elif brakes_Station_Order[0].get_bike_order().get_bike_type() == "Kids":
                 window.BrakeAssemblyChassisType.setText("Kids Chassis")
             else:
                 ValueError("The bike type for the order is wrong and does not match bikes being made in this factory.")
                 
-            window.BrakeAssemblyColourValue.setText(str(order.bike_order.colour))
-            window.BrakeAssemblyPedalValue.setText(str(order.bike_order.pedals))
-            window.BrakeAssemblyChainValue.setText(str(order.bike_order.chain))
-            window.BrakeAssemblyGearValue.setText(str(order.bike_order.gears))
-            window.BrakeAssemblyWheelValue.setText(str(order.bike_order.wheels))
-            window.BrakeAssemblyBrakeValue.setText(str(order.bike_order.brakes))
+            window.BrakeAssemblyColourValue.setText(order.get_bike_order().get_colour())
+            window.BrakeAssemblyPedalValue.setText(order.get_bike_order().get_pedals())
+            window.BrakeAssemblyChainValue.setText(order.get_bike_order().get_chain())
+            window.BrakeAssemblyGearValue.setText(order.get_bike_order().get_gears())
+            window.BrakeAssemblyWheelValue.setText(order.get_bike_order().get_wheels())
+            window.BrakeAssemblyBrakeValue.setText(order.get_bike_order().get_brakes())
 
             # If required amount for order set button to enabled
             if BrakeHasRequiredAmount():
@@ -2623,22 +2626,22 @@ if __name__ == "__main__":
     def LightHasRequiredAmount():
         table = window.LightStation_ChassisInventory_Table
 
-        if lights_Station_Order[0].bike_order.lights == "Standard" and window.LightStation_NormalLightCount.value() <= 1:
+        if lights_Station_Order[0].get_bike_order().get_lights() == "Standard" and window.LightStation_NormalLightCount.value() <= 1:
             return False
-        elif lights_Station_Order[0].bike_order.lights == "Premium" and window.LightStation_PremiumLightCount.value() <= 1:
+        elif lights_Station_Order[0].get_bike_order().get_lights() == "Premium" and window.LightStation_PremiumLightCount.value() <= 1:
             return False
     
-        if type(lights_Station_Order[0].bike_order) == Bike and table.item(0, 0).text() == "Standard" and table.item(0, 1).text() == lights_Station_Order[0].bike_order.colour and table.item(0, 2).text() == lights_Station_Order[0].bike_order.pedals and table.item(0, 3).text() == lights_Station_Order[0].bike_order.gears and table.item(0, 4).text() == lights_Station_Order[0].bike_order.chain and table.item(0, 5).text() == lights_Station_Order[0].bike_order.wheels and table.item(0, 6).text() == lights_Station_Order[0].bike_order.brakes:
+        if type(lights_Station_Order[0].get_bike_order()) == Bike and table.item(0, 0).text() == "Standard" and table.item(0, 1).text() == lights_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == lights_Station_Order[0].get_bike_order().get_pedals() and table.item(0, 3).text() == lights_Station_Order[0].get_bike_order().get_gears() and table.item(0, 4).text() == lights_Station_Order[0].get_bike_order().get_chain() and table.item(0, 5).text() == lights_Station_Order[0].get_bike_order().get_wheels() and table.item(0, 6).text() == lights_Station_Order[0].get_bike_order().get_brakes():
             return True
-        elif type(lights_Station_Order[0].bike_order) == MountainBike and table.item(0, 0).text() == "Mountain" and table.item(0, 1).text() == lights_Station_Order[0].bike_order.colour and table.item(0, 2).text() == lights_Station_Order[0].bike_order.pedals and table.item(0, 3).text() == lights_Station_Order[0].bike_order.gears and table.item(0, 4).text() == lights_Station_Order[0].bike_order.chain and table.item(0, 5).text() == lights_Station_Order[0].bike_order.wheels and table.item(0, 6).text() == lights_Station_Order[0].bike_order.brakes:
+        elif type(lights_Station_Order[0].get_bike_order()) == MountainBike and table.item(0, 0).text() == "Mountain" and table.item(0, 1).text() == lights_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == lights_Station_Order[0].get_bike_order().get_pedals() and table.item(0, 3).text() == lights_Station_Order[0].get_bike_order().get_gears() and table.item(0, 4).text() == lights_Station_Order[0].get_bike_order().get_chain() and table.item(0, 5).text() == lights_Station_Order[0].get_bike_order().get_wheels() and table.item(0, 6).text() == lights_Station_Order[0].get_bike_order().get_brakes():
             return True
-        elif type(lights_Station_Order[0].bike_order) == RoadBike and table.item(0, 0).text() == "Road" and table.item(0, 1).text() == lights_Station_Order[0].bike_order.colour and table.item(0, 2).text() == lights_Station_Order[0].bike_order.pedals and table.item(0, 3).text() == lights_Station_Order[0].bike_order.gears and table.item(0, 4).text() == lights_Station_Order[0].bike_order.chain and table.item(0, 5).text() == lights_Station_Order[0].bike_order.wheels and table.item(0, 6).text() == lights_Station_Order[0].bike_order.brakes:
+        elif type(lights_Station_Order[0].get_bike_order()) == RoadBike and table.item(0, 0).text() == "Road" and table.item(0, 1).text() == lights_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == lights_Station_Order[0].get_bike_order().get_pedals() and table.item(0, 3).text() == lights_Station_Order[0].get_bike_order().get_gears() and table.item(0, 4).text() == lights_Station_Order[0].get_bike_order().get_chain() and table.item(0, 5).text() == lights_Station_Order[0].get_bike_order().get_wheels() and table.item(0, 6).text() == lights_Station_Order[0].get_bike_order().get_brakes():
             return True
-        elif type(lights_Station_Order[0].bike_order) == BMXBike and table.item(0, 0).text() == "BMX" and table.item(0, 1).text() == lights_Station_Order[0].bike_order.colour and table.item(0, 2).text() == lights_Station_Order[0].bike_order.pedals and table.item(0, 3).text() == lights_Station_Order[0].bike_order.gears and table.item(0, 4).text() == lights_Station_Order[0].bike_order.chain and table.item(0, 5).text() == lights_Station_Order[0].bike_order.wheels and table.item(0, 6).text() == lights_Station_Order[0].bike_order.brakes:
+        elif type(lights_Station_Order[0].get_bike_order()) == BMXBike and table.item(0, 0).text() == "BMX" and table.item(0, 1).text() == lights_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == lights_Station_Order[0].get_bike_order().get_pedals() and table.item(0, 3).text() == lights_Station_Order[0].get_bike_order().get_gears() and table.item(0, 4).text() == lights_Station_Order[0].get_bike_order().get_chain() and table.item(0, 5).text() == lights_Station_Order[0].get_bike_order().get_wheels() and table.item(0, 6).text() == lights_Station_Order[0].get_bike_order().get_brakes():
             return True
-        elif type(lights_Station_Order[0].bike_order) == TrackBike and table.item(0, 0).text() == "Track" and table.item(0, 1).text() == lights_Station_Order[0].bike_order.colour and table.item(0, 2).text() == lights_Station_Order[0].bike_order.pedals and table.item(0, 3).text() == lights_Station_Order[0].bike_order.gears and table.item(0, 4).text() == lights_Station_Order[0].bike_order.chain and table.item(0, 5).text() == lights_Station_Order[0].bike_order.wheels and table.item(0, 6).text() == lights_Station_Order[0].bike_order.brakes:
+        elif type(lights_Station_Order[0].get_bike_order()) == TrackBike and table.item(0, 0).text() == "Track" and table.item(0, 1).text() == lights_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == lights_Station_Order[0].get_bike_order().get_pedals() and table.item(0, 3).text() == lights_Station_Order[0].get_bike_order().get_gears() and table.item(0, 4).text() == lights_Station_Order[0].get_bike_order().get_chain() and table.item(0, 5).text() == lights_Station_Order[0].get_bike_order().get_wheels() and table.item(0, 6).text() == lights_Station_Order[0].get_bike_order().get_brakes():
             return True
-        elif type(lights_Station_Order[0].bike_order) == KidsBike and table.item(0, 0).text() == "Kids" and table.item(0, 1).text() == lights_Station_Order[0].bike_order.colour and table.item(0, 2).text() == lights_Station_Order[0].bike_order.pedals and table.item(0, 3).text() == lights_Station_Order[0].bike_order.gears and table.item(0, 4).text() == lights_Station_Order[0].bike_order.chain and table.item(0, 5).text() == lights_Station_Order[0].bike_order.wheels and table.item(0, 6).text() == lights_Station_Order[0].bike_order.brakes:
+        elif type(lights_Station_Order[0].get_bike_order()) == KidsBike and table.item(0, 0).text() == "Kids" and table.item(0, 1).text() == lights_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == lights_Station_Order[0].get_bike_order().get_pedals() and table.item(0, 3).text() == lights_Station_Order[0].get_bike_order().get_gears() and table.item(0, 4).text() == lights_Station_Order[0].get_bike_order().get_chain() and table.item(0, 5).text() == lights_Station_Order[0].get_bike_order().get_wheels() and table.item(0, 6).text() == lights_Station_Order[0].get_bike_order().get_brakes():
             return True
         else:
             return False
@@ -2646,16 +2649,16 @@ if __name__ == "__main__":
     def LightsAssembled():
         global lights_Station_Order
         if len(lights_Station_Order) > 0:
-            if lights_Station_Order[0].id == int(window.LightStation_OrderNumber_Value.text()):
+            if lights_Station_Order[0].get_id() == int(window.LightStation_OrderNumber_Value.text()):
                 # Check has required amounts
                 if LightHasRequiredAmount():
                     # Remove Brakes From Inventory
-                    if lights_Station_Order[0].bike_order.lights == "Standard":
+                    if lights_Station_Order[0].get_bike_order().get_lights() == "Standard":
                         InventoryChange("Normal Lights", - 2.0)
-                    elif lights_Station_Order[0].bike_order.lights == "Premium LEDs":
+                    elif lights_Station_Order[0].get_bike_order().get_lights() == "Premium LEDs":
                         InventoryChange("Premium Lights", - 2.0)
                     else:
-                        ValueError("lights_Station_Order[0].bike_order.brakes IS NOT SET CORRECTLY")
+                        ValueError("lights_Station_Order[0].get_bike_order().get_brakes() IS NOT SET CORRECTLY")
 
                     LightStationToSeatStation()
                 else:
@@ -2712,45 +2715,45 @@ if __name__ == "__main__":
         if next_order:
             # Set new order information
             order = lights_Station_Order[0]
-            window.LightStation_OrderNumber_Value.setText(str(order.id))
-            window.LightStation_BikeType_Value.setText(str(order.bike_order.bike_type))
-            window.LightStation_Colour_Value.setText(str(order.bike_order.colour))
-            window.LightStation_Pedal_Value.setText(str(order.bike_order.pedals))
-            window.LightStation_Chain_Value.setText(str(order.bike_order.chain))
-            window.LightStation_Gear_Value.setText(str(order.bike_order.gears))
-            window.LightStation_Wheel_Value.setText(str(order.bike_order.wheels))
-            window.LightStation_Brakes_Value.setText(str(order.bike_order.brakes))
-            window.LightStation_Lights_Value.setText(str(order.bike_order.lights))
-            window.LightStation_Seat_Value.setText(str(order.bike_order.seat))
+            window.LightStation_OrderNumber_Value.setText(str(order.get_id()))
+            window.LightStation_BikeType_Value.setText(order.get_bike_order().get_bike_type())
+            window.LightStation_Colour_Value.setText(order.get_bike_order().get_colour())
+            window.LightStation_Pedal_Value.setText(order.get_bike_order().get_pedals())
+            window.LightStation_Chain_Value.setText(order.get_bike_order().get_chain())
+            window.LightStation_Gear_Value.setText(order.get_bike_order().get_gears())
+            window.LightStation_Wheel_Value.setText(order.get_bike_order().get_wheels())
+            window.LightStation_Brakes_Value.setText(order.get_bike_order().get_brakes())
+            window.LightStation_Lights_Value.setText(order.get_bike_order().get_lights())
+            window.LightStation_Seat_Value.setText(order.get_bike_order().get_seat())
 
             # Station Info:
-            if lights_Station_Order[0].bike_order.bike_type == "Standard":
+            if lights_Station_Order[0].get_bike_order().get_bike_type() == "Standard":
                 window.LightStation_Assembly_ChassisType.setText("Standard Chassis")
 
-            elif lights_Station_Order[0].bike_order.bike_type == "Mountain Bike":
+            elif lights_Station_Order[0].get_bike_order().get_bike_type() == "Mountain Bike":
                 window.LightStation_Assembly_ChassisType.setText("Mountain Chassis")
 
-            elif lights_Station_Order[0].bike_order.bike_type == "Road Bike":
+            elif lights_Station_Order[0].get_bike_order().get_bike_type() == "Road Bike":
                 window.LightStation_Assembly_ChassisType.setText("Road Chassis")
 
-            elif lights_Station_Order[0].bike_order.bike_type == "Track Bike":
+            elif lights_Station_Order[0].get_bike_order().get_bike_type() == "Track Bike":
                 window.LightStation_Assembly_ChassisType.setText("Track Chassis")
 
-            elif lights_Station_Order[0].bike_order.bike_type == "BMX":
+            elif lights_Station_Order[0].get_bike_order().get_bike_type() == "BMX":
                 window.LightStation_Assembly_ChassisType.setText("BMX Chassis")
 
-            elif lights_Station_Order[0].bike_order.bike_type == "Kids":
+            elif lights_Station_Order[0].get_bike_order().get_bike_type() == "Kids":
                 window.LightStation_Assembly_ChassisType.setText("Kids Chassis")
             else:
                 ValueError("The bike type for the order is wrong and does not match bikes being made in this factory.")
                 
-            window.LightStation_Assembly_Colour.setText(str(order.bike_order.colour))
-            window.LightStation_Assembly_PedalType.setText(str(order.bike_order.pedals))
-            window.LightStation_Assembly_ChainType.setText(str(order.bike_order.chain))
-            window.LightStation_Assembly_GearType.setText(str(order.bike_order.gears))
-            window.LightStation_Assembly_WheelType.setText(str(order.bike_order.wheels))
-            window.LightStation_Assembly_BrakeType.setText(str(order.bike_order.brakes))
-            window.LightStation_Assembly_LightType.setText(str(order.bike_order.lights))
+            window.LightStation_Assembly_Colour.setText(order.get_bike_order().get_colour())
+            window.LightStation_Assembly_PedalType.setText(order.get_bike_order().get_pedals())
+            window.LightStation_Assembly_ChainType.setText(order.get_bike_order().get_chain())
+            window.LightStation_Assembly_GearType.setText(order.get_bike_order().get_gears())
+            window.LightStation_Assembly_WheelType.setText(order.get_bike_order().get_wheels())
+            window.LightStation_Assembly_BrakeType.setText(order.get_bike_order().get_brakes())
+            window.LightStation_Assembly_LightType.setText(order.get_bike_order().get_lights())
 
             # If required amount for order set button to enabled
             if LightHasRequiredAmount():
@@ -2759,7 +2762,7 @@ if __name__ == "__main__":
         else:
             # Default order information
             window.LightStation_OrderNumber_Value.setText("[Order ID]")
-            window.SeatStation_BikeType_Value.setText("[Bike Type]")
+            window.LightStation_BikeType_Value.setText("[Bike Type]")
             window.LightStation_Colour_Value.setText("[Colour]")
             window.LightStation_Pedal_Value.setText("[Pedal Type]")
             window.LightStation_Chain_Value.setText("[Chain Type]")
@@ -2785,24 +2788,24 @@ if __name__ == "__main__":
     def SeatHasRequiredAmount():
         table = window.SeatStationChassisInventoryTable
 
-        if seat_Station_Order[0].bike_order.seat == "Standard" and window.SeatStationInventoryNormalSeatCount.value() < 1:
+        if seat_Station_Order[0].get_bike_order().get_seat() == "Standard" and window.SeatStationInventoryNormalSeatCount.value() < 1:
             return False
-        elif seat_Station_Order[0].bike_order.seat == "Premium" and window.SeatStationInventoryPremiumSeatCount.value() < 1:
+        elif seat_Station_Order[0].get_bike_order().get_seat() == "Premium" and window.SeatStationInventoryPremiumSeatCount.value() < 1:
             return False
-        elif seat_Station_Order[0].bike_order.seat == "Carbon Fibre" and window.SeatStationInventoryCarbonSeatCount.value() < 1:
+        elif seat_Station_Order[0].get_bike_order().get_seat() == "Carbon Fibre" and window.SeatStationInventoryCarbonSeatCount.value() < 1:
             return False
     
-        if type(seat_Station_Order[0].bike_order) == Bike and table.item(0, 0).text() == "Standard" and table.item(0, 1).text() == seat_Station_Order[0].bike_order.colour and table.item(0, 2).text() == seat_Station_Order[0].bike_order.pedals and table.item(0, 3).text() == seat_Station_Order[0].bike_order.gears and table.item(0, 4).text() == seat_Station_Order[0].bike_order.chain and table.item(0, 5).text() == seat_Station_Order[0].bike_order.wheels and table.item(0, 6).text() == seat_Station_Order[0].bike_order.brakes and table.item(0, 7).text() == seat_Station_Order[0].bike_order.lights:
+        if type(seat_Station_Order[0].get_bike_order()) == Bike and table.item(0, 0).text() == "Standard" and table.item(0, 1).text() == seat_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == seat_Station_Order[0].get_bike_order().get_pedals() and table.item(0, 3).text() == seat_Station_Order[0].get_bike_order().get_gears() and table.item(0, 4).text() == seat_Station_Order[0].get_bike_order().get_chain() and table.item(0, 5).text() == seat_Station_Order[0].get_bike_order().get_wheels() and table.item(0, 6).text() == seat_Station_Order[0].get_bike_order().get_brakes() and table.item(0, 7).text() == seat_Station_Order[0].get_bike_order().get_lights():
             return True
-        elif type(seat_Station_Order[0].bike_order) == MountainBike and table.item(0, 0).text() == "Mountain" and table.item(0, 1).text() == seat_Station_Order[0].bike_order.colour and table.item(0, 2).text() == seat_Station_Order[0].bike_order.pedals and table.item(0, 3).text() == seat_Station_Order[0].bike_order.gears and table.item(0, 4).text() == seat_Station_Order[0].bike_order.chain and table.item(0, 5).text() == seat_Station_Order[0].bike_order.wheels and table.item(0, 6).text() == seat_Station_Order[0].bike_order.brakes and table.item(0, 7).text() == seat_Station_Order[0].bike_order.lights:
+        elif type(seat_Station_Order[0].get_bike_order()) == MountainBike and table.item(0, 0).text() == "Mountain" and table.item(0, 1).text() == seat_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == seat_Station_Order[0].get_bike_order().get_pedals() and table.item(0, 3).text() == seat_Station_Order[0].get_bike_order().get_gears() and table.item(0, 4).text() == seat_Station_Order[0].get_bike_order().get_chain() and table.item(0, 5).text() == seat_Station_Order[0].get_bike_order().get_wheels() and table.item(0, 6).text() == seat_Station_Order[0].get_bike_order().get_brakes() and table.item(0, 7).text() == seat_Station_Order[0].get_bike_order().get_lights():
             return True
-        elif type(seat_Station_Order[0].bike_order) == RoadBike and table.item(0, 0).text() == "Road" and table.item(0, 1).text() == seat_Station_Order[0].bike_order.colour and table.item(0, 2).text() == seat_Station_Order[0].bike_order.pedals and table.item(0, 3).text() == seat_Station_Order[0].bike_order.gears and table.item(0, 4).text() == seat_Station_Order[0].bike_order.chain and table.item(0, 5).text() == seat_Station_Order[0].bike_order.wheels and table.item(0, 6).text() == seat_Station_Order[0].bike_order.brakes and table.item(0, 7).text() == seat_Station_Order[0].bike_order.lights:
+        elif type(seat_Station_Order[0].get_bike_order()) == RoadBike and table.item(0, 0).text() == "Road" and table.item(0, 1).text() == seat_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == seat_Station_Order[0].get_bike_order().get_pedals() and table.item(0, 3).text() == seat_Station_Order[0].get_bike_order().get_gears() and table.item(0, 4).text() == seat_Station_Order[0].get_bike_order().get_chain() and table.item(0, 5).text() == seat_Station_Order[0].get_bike_order().get_wheels() and table.item(0, 6).text() == seat_Station_Order[0].get_bike_order().get_brakes() and table.item(0, 7).text() == seat_Station_Order[0].get_bike_order().get_lights():
             return True
-        elif type(seat_Station_Order[0].bike_order) == BMXBike and table.item(0, 0).text() == "BMX" and table.item(0, 1).text() == seat_Station_Order[0].bike_order.colour and table.item(0, 2).text() == seat_Station_Order[0].bike_order.pedals and table.item(0, 3).text() == seat_Station_Order[0].bike_order.gears and table.item(0, 4).text() == seat_Station_Order[0].bike_order.chain and table.item(0, 5).text() == seat_Station_Order[0].bike_order.wheels and table.item(0, 6).text() == seat_Station_Order[0].bike_order.brakes and table.item(0, 7).text() == seat_Station_Order[0].bike_order.lights:
+        elif type(seat_Station_Order[0].get_bike_order()) == BMXBike and table.item(0, 0).text() == "BMX" and table.item(0, 1).text() == seat_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == seat_Station_Order[0].get_bike_order().get_pedals() and table.item(0, 3).text() == seat_Station_Order[0].get_bike_order().get_gears() and table.item(0, 4).text() == seat_Station_Order[0].get_bike_order().get_chain() and table.item(0, 5).text() == seat_Station_Order[0].get_bike_order().get_wheels() and table.item(0, 6).text() == seat_Station_Order[0].get_bike_order().get_brakes() and table.item(0, 7).text() == seat_Station_Order[0].get_bike_order().get_lights():
             return True
-        elif type(seat_Station_Order[0].bike_order) == TrackBike and table.item(0, 0).text() == "Track" and table.item(0, 1).text() == seat_Station_Order[0].bike_order.colour and table.item(0, 2).text() == seat_Station_Order[0].bike_order.pedals and table.item(0, 3).text() == seat_Station_Order[0].bike_order.gears and table.item(0, 4).text() == seat_Station_Order[0].bike_order.chain and table.item(0, 5).text() == seat_Station_Order[0].bike_order.wheels and table.item(0, 6).text() == seat_Station_Order[0].bike_order.brakes and table.item(0, 7).text() == seat_Station_Order[0].bike_order.lights:
+        elif type(seat_Station_Order[0].get_bike_order()) == TrackBike and table.item(0, 0).text() == "Track" and table.item(0, 1).text() == seat_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == seat_Station_Order[0].get_bike_order().get_pedals() and table.item(0, 3).text() == seat_Station_Order[0].get_bike_order().get_gears() and table.item(0, 4).text() == seat_Station_Order[0].get_bike_order().get_chain() and table.item(0, 5).text() == seat_Station_Order[0].get_bike_order().get_wheels() and table.item(0, 6).text() == seat_Station_Order[0].get_bike_order().get_brakes() and table.item(0, 7).text() == seat_Station_Order[0].get_bike_order().get_lights():
             return True
-        elif type(seat_Station_Order[0].bike_order) == KidsBike and table.item(0, 0).text() == "Kids" and table.item(0, 1).text() == seat_Station_Order[0].bike_order.colour and table.item(0, 2).text() == seat_Station_Order[0].bike_order.pedals and table.item(0, 3).text() == seat_Station_Order[0].bike_order.gears and table.item(0, 4).text() == seat_Station_Order[0].bike_order.chain and table.item(0, 5).text() == seat_Station_Order[0].bike_order.wheels and table.item(0, 6).text() == seat_Station_Order[0].bike_order.brakes and table.item(0, 7).text() == seat_Station_Order[0].bike_order.lights:
+        elif type(seat_Station_Order[0].get_bike_order()) == KidsBike and table.item(0, 0).text() == "Kids" and table.item(0, 1).text() == seat_Station_Order[0].get_bike_order().get_colour() and table.item(0, 2).text() == seat_Station_Order[0].get_bike_order().get_pedals() and table.item(0, 3).text() == seat_Station_Order[0].get_bike_order().get_gears() and table.item(0, 4).text() == seat_Station_Order[0].get_bike_order().get_chain() and table.item(0, 5).text() == seat_Station_Order[0].get_bike_order().get_wheels() and table.item(0, 6).text() == seat_Station_Order[0].get_bike_order().get_brakes() and table.item(0, 7).text() == seat_Station_Order[0].get_bike_order().get_lights():
             return True
         else:
             return False
@@ -2810,18 +2813,18 @@ if __name__ == "__main__":
     def SeatAssembled():
         global seat_Station_Order
         if len(seat_Station_Order) > 0:
-            if seat_Station_Order[0].id == int(window.SeatStation_OrderNumber_Value.text()):
+            if seat_Station_Order[0].get_id() == int(window.SeatStation_OrderNumber_Value.text()):
                 # Check has required amounts
                 if SeatHasRequiredAmount():
                     # Remove Brakes From Inventory
-                    if seat_Station_Order[0].bike_order.seat == "Standard":
+                    if seat_Station_Order[0].get_bike_order().get_seat() == "Standard":
                         InventoryChange("Normal Seat", - 1.0)
-                    elif seat_Station_Order[0].bike_order.seat == "Premium Gel Seat":
+                    elif seat_Station_Order[0].get_bike_order().get_seat() == "Premium Gel Seat":
                         InventoryChange("Premium Seat", - 1.0)
-                    elif seat_Station_Order[0].bike_order.seat == "Carbon Fibre":
+                    elif seat_Station_Order[0].get_bike_order().get_seat() == "Carbon Fibre":
                         InventoryChange("Carbon Fibre Seat", - 1.0)
                     else:
-                        ValueError("seat_Station_Order[0].bike_order.brakes IS NOT SET CORRECTLY")
+                        ValueError("seat_Station_Order[0].get_bike_order().get_brakes() IS NOT SET CORRECTLY")
 
                     SeatStationToCompletedOrders()
                 else:
@@ -2846,11 +2849,11 @@ if __name__ == "__main__":
                 # Next Station update table
                 updateCompletedOrdersTable(completed_Orders[-1])
                 # Remove Order from orders dict
-                orders.pop(seat_Station_Order[0].id)
+                orders.pop(str(seat_Station_Order[0].get_id()))
                 # Remove from orders table
                 table = window.Orders_Table
                 for row in range(table.rowCount()):
-                    if int(table.item(row, 0).text()) == seat_Station_Order[0].id:
+                    if int(table.item(row, 0).text()) == seat_Station_Order[0].get_id():
                         table.removeRow(row)
                         break
 
@@ -2867,11 +2870,11 @@ if __name__ == "__main__":
                 # Next Station update table
                 updateCompletedOrdersTable(completed_Orders[-1])
                 # Remove Order from orders dict
-                orders.pop(seat_Station_Order[0].id)
+                orders.pop(str(seat_Station_Order[0].get_id()))
                 # Remove from orders table
                 table = window.Orders_Table
                 for row in range(table.rowCount()):
-                    if int(table.item(row, 0).text()) == seat_Station_Order[0].id:
+                    if int(table.item(row, 0).text()) == seat_Station_Order[0].get_id():
                         table.removeRow(row)
                         break
 
@@ -2892,41 +2895,41 @@ if __name__ == "__main__":
         if next_order:
             # Set new order information
             order = seat_Station_Order[0]
-            window.SeatStation_OrderNumber_Value.setText(str(order.id))
-            window.SeatStation_BikeType_Value.setText(str(order.bike_order.bike_type))
-            window.SeatStation_Colour_Value.setText(str(order.bike_order.colour))
-            window.SeatStation_Pedal_Value.setText(str(order.bike_order.pedals))
-            window.SeatStation_Chain_Value.setText(str(order.bike_order.chain))
-            window.SeatStation_Gear_Value.setText(str(order.bike_order.gears))
-            window.SeatStation_Wheel_Value.setText(str(order.bike_order.wheels))
-            window.SeatStation_Brakes_Value.setText(str(order.bike_order.brakes))
-            window.SeatStation_Lights_Value.setText(str(order.bike_order.lights))
-            window.SeatStation_Seat_Value.setText(str(order.bike_order.seat))
+            window.SeatStation_OrderNumber_Value.setText(str(order.get_id()))
+            window.SeatStation_BikeType_Value.setText(order.get_bike_order().get_bike_type())
+            window.SeatStation_Colour_Value.setText(order.get_bike_order().get_colour())
+            window.SeatStation_Pedal_Value.setText(order.get_bike_order().get_pedals())
+            window.SeatStation_Chain_Value.setText(order.get_bike_order().get_chain())
+            window.SeatStation_Gear_Value.setText(order.get_bike_order().get_gears())
+            window.SeatStation_Wheel_Value.setText(order.get_bike_order().get_wheels())
+            window.SeatStation_Brakes_Value.setText(order.get_bike_order().get_brakes())
+            window.SeatStation_Lights_Value.setText(order.get_bike_order().get_lights())
+            window.SeatStation_Seat_Value.setText(order.get_bike_order().get_seat())
 
             # Station Info:
-            if seat_Station_Order[0].bike_order.bike_type == "Standard":
+            if seat_Station_Order[0].get_bike_order().get_bike_type() == "Standard":
                 window.SeatStation_Assembly_Chassis_Value.setText("Standard Chassis")
-            elif seat_Station_Order[0].bike_order.bike_type == "Mountain Bike":
+            elif seat_Station_Order[0].get_bike_order().get_bike_type() == "Mountain Bike":
                 window.SeatStation_Assembly_Chassis_Value.setText("Mountain Chassis")
-            elif seat_Station_Order[0].bike_order.bike_type == "Road Bike":
+            elif seat_Station_Order[0].get_bike_order().get_bike_type() == "Road Bike":
                 window.SeatStation_Assembly_Chassis_Value.setText("Road Chassis")
-            elif seat_Station_Order[0].bike_order.bike_type == "Track Bike":
+            elif seat_Station_Order[0].get_bike_order().get_bike_type() == "Track Bike":
                 window.SeatStation_Assembly_Chassis_Value.setText("Track Chassis")
-            elif seat_Station_Order[0].bike_order.bike_type == "BMX":
+            elif seat_Station_Order[0].get_bike_order().get_bike_type() == "BMX":
                 window.SeatStation_Assembly_Chassis_Value.setText("BMX Chassis")
-            elif seat_Station_Order[0].bike_order.bike_type == "Kids":
+            elif seat_Station_Order[0].get_bike_order().get_bike_type() == "Kids":
                 window.SeatStation_Assembly_Chassis_Value.setText("Kids Chassis")
             else:
                 ValueError("The bike type for the order is wrong and does not match bikes being made in this factory.")
                 
-            window.SeatStation_Assembly_Colour_Value.setText(str(order.bike_order.colour))
-            window.SeatStation_Assembly_Pedal_Value.setText(str(order.bike_order.pedals))
-            window.SeatStation_Assembly_Chain_Value.setText(str(order.bike_order.chain))
-            window.SeatStation_Assembly_Gear_Value.setText(str(order.bike_order.gears))
-            window.SeatStation_Assembly_Wheel_Value.setText(str(order.bike_order.wheels))
-            window.SeatStation_Assembly_Brake_Value.setText(str(order.bike_order.brakes))
-            window.SeatStation_Assembly_Light_Value.setText(str(order.bike_order.lights))
-            window.SeatStation_Assembly_Seat_Value.setText(str(order.bike_order.seat))
+            window.SeatStation_Assembly_Colour_Value.setText(order.get_bike_order().get_colour())
+            window.SeatStation_Assembly_Pedal_Value.setText(order.get_bike_order().get_pedals())
+            window.SeatStation_Assembly_Chain_Value.setText(order.get_bike_order().get_chain())
+            window.SeatStation_Assembly_Gear_Value.setText(order.get_bike_order().get_gears())
+            window.SeatStation_Assembly_Wheel_Value.setText(order.get_bike_order().get_wheels())
+            window.SeatStation_Assembly_Brake_Value.setText(order.get_bike_order().get_brakes())
+            window.SeatStation_Assembly_Light_Value.setText(order.get_bike_order().get_lights())
+            window.SeatStation_Assembly_Seat_Value.setText(order.get_bike_order().get_seat())
 
             # If required amount for order set button to enabled
             if SeatHasRequiredAmount():
